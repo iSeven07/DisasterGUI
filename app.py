@@ -2,7 +2,6 @@ import pandas as pd  # pip install pandas
 import plotly.express as px  # pip install plotly
 import streamlit as st  # pip install streamlit
 import datetime
-import numpy as np
 import plotly.graph_objects as go
 
 # Streamlit Documentation: https://docs.streamlit.io/ 
