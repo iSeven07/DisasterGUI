@@ -4,9 +4,9 @@ import streamlit as st  # pip install streamlit
 import datetime
 import plotly.graph_objects as go
 
-# Streamlit Documentation: https://docs.streamlit.io/ 
-# Plotly: https://plotly.com/python/ 
-# Pandas: https://www.w3schools.com/python/pandas/default.asp 
+# Streamlit Documentation: https://docs.streamlit.io/
+# Plotly: https://plotly.com/python/
+# Pandas: https://www.w3schools.com/python/pandas/default.asp
 
 st.set_page_config(page_title="NDD",
                    page_icon=":bar_chart:", layout="wide")
@@ -39,7 +39,7 @@ incident_type = st.sidebar.multiselect(
 
 )
 
-st.sidebar.header("Experimental")
+st.sidebar.header("Features In Progress")
 start_year = st.sidebar.date_input("Select Start Date", datetime.date(2011, 1, 1))
 end_year = st.sidebar.date_input("Select End Date")
 
@@ -123,7 +123,7 @@ right_column.plotly_chart(fig_incidents_by_state, use_container_width=True)
 fig_scatter = go.Figure(data=go.Scattergl(
     x = df_selection['incident_begin_date'],
     y = df_selection['incident_type'],
-    text = 'State: ' + df_selection['state'] + 
+    text = 'State: ' + df_selection['state'] +
             '<br>Area: ' + df_selection['designated_area'] +
             '<br>Title: ' + df_selection['declaration_title'] +
             '<br>Type: ' + df_selection['incident_type'] +
