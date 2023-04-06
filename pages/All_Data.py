@@ -8,8 +8,8 @@ import plotly.graph_objects as go
 # Plotly: https://plotly.com/python/
 # Pandas: https://www.w3schools.com/python/pandas/default.asp
 
-st.set_page_config(page_title="NDD",
-                   page_icon=":bar_chart:", layout="wide")
+st.set_page_config(page_title="NDD - All Data",
+                   page_icon="📊", layout="wide")
 
 @st.cache_data
 def get_data():
@@ -56,7 +56,7 @@ if askBot:
 st.sidebar.write(':tea: SDEV-282 Prototype by Joe A. and Aaron C.')
 
 # ---- MAINPAGE ----
-st.title(":bar_chart: Natural Disaster Dashboard")
+st.title("📊 Natural Disaster Dashboard")
 st.markdown("##")
 
 # Top portion for totals
