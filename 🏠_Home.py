@@ -33,3 +33,13 @@ with st.container():
             One thing our team prides itself on is our creativeness. We will be working hard throughout the next weeks to integrate AI into this data analysis tool. Keep a lookout for future updates!
             """)
         st.markdown("[Filler Link](https://google.com)")
+
+# ---- STREAMLIT STYLE ----
+st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(st_style, unsafe_allow_html=True)
