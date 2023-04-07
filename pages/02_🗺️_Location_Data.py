@@ -7,6 +7,7 @@ st.set_page_config(page_title="NDD - Location Data",
 
 # Adds title to top of page
 st.title("🗺️ Disaster Locations Dashboard")
+st.markdown("##")
 
 # Reads in the csv file and limits the number of rows it reads to 10000
 df = pd.read_csv('locations_for_storm_events.csv', nrows=10000)
@@ -17,17 +18,19 @@ def scatter_map(df):
 
   # Refines the scope of the scatter plot map [SCATTER PLOT MAP]
   scatter_map.update_layout(
-      title='Disasters Latitude / Longitude Location',
+      title='U.S. Disasters Latitude / Longitude Location',
       geo=dict(
           scope='usa',
           showsubunits=True,
-          subunitcolor='black',
+          subunitcolor='white',
           subunitwidth=2,
           center=dict(lat=37.0902, lon=-95.7129),
-          projection=dict(type='albers usa'), #equirectangular
+          projection=dict(type='albers usa'),
+          projection_scale=0.9,
           showcountries=False,
-
-      )
+          bgcolor="rgba(14,17,23,1)",
+      ),
+      margin=dict(l=0, r=0, t=35, b=0),
   )
 
   # Customizes the map to add lakes and rivers [SCATTER PLOT MAP]
@@ -43,7 +46,10 @@ def scatter_map(df):
   map_container = st.container()
   map_container.plotly_chart(scatter_map, use_container_width=True)
 
-scatter_map(df)
+def load_graphs():
+  scatter_map(df)
+
+load_graphs()
 
 # ---- STREAMLIT STYLE ----
 st_style = """
