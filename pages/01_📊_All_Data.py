@@ -53,8 +53,6 @@ askBot = st.sidebar.button("Ask DisasterBot", use_container_width=True)
 if askBot:
     st.sidebar.info('This feature is coming soon.', icon="ℹ️")
 
-st.sidebar.write(':tea: SDEV-282 Prototype by Joe A. and Aaron C.')
-
 # ---- MAINPAGE ----
 st.title("📊 Natural Disaster Dashboard")
 st.markdown("##")
