@@ -1,6 +1,7 @@
 import streamlit as st
 import plotly.graph_objects as go
 import pandas as pd
+
 # Sets browser tab information
 st.set_page_config(page_title="NDD - Location Data",
                    page_icon="🗺️", layout="wide")
@@ -18,7 +19,7 @@ def scatter_map(df):
 
   # Refines the scope of the scatter plot map [SCATTER PLOT MAP]
   scatter_map.update_layout(
-      title='U.S. Disasters Latitude / Longitude Location',
+      title='U.S. Disasters Latitude / Longitude Locations',
       geo=dict(
           scope='usa',
           showsubunits=True,

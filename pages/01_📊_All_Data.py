@@ -30,6 +30,13 @@ df = get_data()
 
 # ---- SIDEBAR ----
 
+# Potentially future idea to refactor sidebar in a better manner
+# class mySidebar:
+#    i = 1234
+
+#    def getI(self):
+#       return self.i
+
 def sidebar(df):
     # Future use for AI Button
     askBot = st.sidebar.button("Ask DisasterBot", use_container_width=True)
@@ -38,13 +45,14 @@ def sidebar(df):
 
     st.sidebar.header("Filter Selections")
 
+    # Below variable IS USED, just used in string below on line 63
     state = st.sidebar.multiselect(
         "State Selections",
         options=df["state"].unique(),
         default=df["state"].unique()
 
     )
-
+    # Below variable IS USED, just used in string below on line 63
     incident_type = st.sidebar.multiselect(
         "Incident Selections",
         options=df["incident_type"].unique(),
@@ -63,6 +71,8 @@ def sidebar(df):
         "state == @state & incident_type == @incident_type"
     )
 
+
+    
 # ---- MAINPAGE ----
 
 def top_info():
@@ -70,7 +80,7 @@ def top_info():
   st.markdown("##")
 
   # Top portion for totals
-  st.title('Disaster Totals')
+  st.title('Quick Glance')
   total_incidents = int(df["incident_type"].count())
   total_states = df['state'].nunique()
 
@@ -88,15 +98,15 @@ def top_info():
 # Total Incidents in each State [BAR CHART]
 def incident_by_state():
   incidents_by_state = (
-      DF_SELECTION.groupby(by=["state"]).count()[["incident_type"]].sort_values(
-          by="incident_type")
+      DF_SELECTION.groupby(by=["state"]).count()[["incident_type"]].sort_values(by="incident_type") #Look into validating sort_values usage
   )
 
   fig_incidents_by_state = px.bar(incidents_by_state, y=incidents_by_state.index,
                                   x="incident_type", labels={"incident_type": "No. Incidents", "state": "State"}, color=incidents_by_state.index, title="Total Incidents in each State")
 
   fig_incidents_by_state.update_layout(
-      yaxis=dict(autorange="reversed"))  # Sorts Bar Chart
+      yaxis=dict(autorange="reversed")
+      )  # Sorts Bar Chart
   return fig_incidents_by_state
 
 # Incident Frequency [BAR CHART]
