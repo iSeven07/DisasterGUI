@@ -1,0 +1,3247 @@
+﻿FIPS_CODE,LOCATION_NAME,Row Labels,Count of LOCATION_NAME
+1,ALABAMA,Abbeville County,1
+2,ALASKA,Acadia Parish,1
+4,ARIZONA,Accomack County,1
+5,ARKANSAS,Ada County,1
+6,CALIFORNIA,Adair County,4
+8,COLORADO,Adams County,12
+9,CONNECTICUT,Addison County,1
+10,DELAWARE,Aiken County,1
+11,DISTRICT OF COLUMBIA,Aitkin County,1
+12,FLORIDA,ALABAMA,2
+13,GEORGIA,Alachua County,1
+15,HAWAII,Alamance County,1
+16,IDAHO,Alameda County,1
+17,ILLINOIS,Alamosa County,1
+18,INDIANA,ALASKA,2
+19,IOWA,Albany County,2
+20,KANSAS,Albemarle County,1
+21,KENTUCKY,Alcona County,1
+22,LOUISIANA,Alcorn County,1
+23,MAINE,Aleutians East Borough,1
+24,MARYLAND,Aleutians West Census Area,1
+25,MASSACHUSETTS,Alexander County,2
+26,MICHIGAN,Alexandria city,1
+27,MINNESOTA,Alfalfa County,1
+28,MISSISSIPPI,Alger County,1
+29,MISSOURI,Allamakee County,1
+30,MONTANA,Allegan County,1
+31,NEBRASKA,Allegany County,2
+32,NEVADA,Alleghany County,2
+33,NEW HAMPSHIRE,Allegheny County,1
+34,NEW JERSEY,Allen County,4
+35,NEW MEXICO,Allen Parish,1
+36,NEW YORK,Allendale County,1
+37,NORTH CAROLINA,Alpena County,1
+38,NORTH DAKOTA,Alpine County,1
+39,OHIO,Amador County,1
+40,OKLAHOMA,Amelia County,1
+41,OREGON,Amherst County,1
+42,PENNSYLVANIA,Amite County,1
+44,RHODE ISLAND,Anchorage Borough,1
+45,SOUTH CAROLINA,Anderson County,5
+46,SOUTH DAKOTA,Andrew County,1
+47,TENNESSEE,Andrews County,1
+48,TEXAS,Androscoggin County,1
+49,UTAH,Angelina County,1
+50,VERMONT,Anne Arundel County,1
+51,VIRGINIA,Anoka County,1
+53,WASHINGTON,Anson County,1
+54,WEST VIRGINIA,Antelope County,1
+55,WISCONSIN,Antrim County,1
+56,WYOMING,Apache County,1
+1000,Alabama,Appanoose County,1
+1001,Autauga County,Appling County,1
+1003,Baldwin County,Appomattox County,1
+1005,Barbour County,Aransas County,1
+1007,Bibb County,Arapahoe County,1
+1009,Blount County,Archer County,1
+1011,Bullock County,Archuleta County,1
+1013,Butler County,Arenac County,1
+1015,Calhoun County,ARIZONA,2
+1017,Chambers County,ARKANSAS,2
+1019,Cherokee County,Arkansas County,1
+1021,Chilton County,Arlington County,1
+1023,Choctaw County,Armstrong County,2
+1025,Clarke County,Aroostook County,1
+1027,Clay County,Arthur County,1
+1029,Cleburne County,Ascension Parish,1
+1031,Coffee County,Ashe County,1
+1033,Colbert County,Ashland County,2
+1035,Conecuh County,Ashley County,1
+1037,Coosa County,Ashtabula County,1
+1039,Covington County,Asotin County,1
+1041,Crenshaw County,Assumption Parish,1
+1043,Cullman County,Atascosa County,1
+1045,Dale County,Atchison County,2
+1047,Dallas County,Athens County,1
+1049,DeKalb County,Atkinson County,1
+1051,Elmore County,Atlantic County,1
+1053,Escambia County,Atoka County,1
+1055,Etowah County,Attala County,1
+1057,Fayette County,Audrain County,1
+1059,Franklin County,Audubon County,1
+1061,Geneva County,Auglaize County,1
+1063,Greene County,Augusta County,1
+1065,Hale County,Aurora County,1
+1067,Henry County,Austin County,1
+1069,Houston County,Autauga County,1
+1071,Jackson County,Avery County,1
+1073,Jefferson County,Avoyelles Parish,1
+1075,Lamar County,Baca County,1
+1077,Lauderdale County,Bacon County,1
+1079,Lawrence County,Bailey County,1
+1081,Lee County,Baker County,3
+1083,Limestone County,Baldwin County,2
+1085,Lowndes County,Ballard County,1
+1087,Macon County,Baltimore city,1
+1089,Madison County,Baltimore County,1
+1091,Marengo County,Bamberg County,1
+1093,Marion County,Bandera County,1
+1095,Marshall County,Banks County,1
+1097,Mobile County,Banner County,1
+1099,Monroe County,Bannock County,1
+1101,Montgomery County,Baraga County,1
+1103,Morgan County,Barber County,1
+1105,Perry County,Barbour County,2
+1107,Pickens County,Barnes County,1
+1109,Pike County,Barnstable County,1
+1111,Randolph County,Barnwell County,1
+1113,Russell County,Barren County,1
+1115,St. Clair County,Barron County,1
+1117,Shelby County,Barrow County,1
+1119,Sumter County,Barry County,2
+1121,Talladega County,Bartholomew County,1
+1123,Tallapoosa County,Barton County,2
+1125,Tuscaloosa County,Bartow County,1
+1127,Walker County,Bastrop County,1
+1129,Washington County,Bates County,1
+1131,Wilcox County,Bath County,2
+1133,Winston County,Baxter County,1
+2000,Alaska,Bay County,2
+2013,Aleutians East Borough,Bayfield County,1
+2016,Aleutians West Census Area,Baylor County,1
+2020,Anchorage Borough,Beadle County,1
+2050,Bethel Census Area,Bear Lake County,1
+2060,Bristol Bay Borough,Beaufort County,2
+2068,Denali Borough                         (created after 1990),Beauregard Parish,1
+2070,Dillingham Census Area,Beaver County,3
+2090,Fairbanks North Star Borough,Beaverhead County,1
+2100,Haines Borough,Becker County,1
+2110,Juneau Borough,Beckham County,1
+2122,Kenai Peninsula Borough,Bedford city,1
+2130,Ketchikan Gateway Borough,Bedford County,3
+2150,Kodiak Island Borough,Bee County,1
+2164,Lake and Peninsula Borough,Belknap County,1
+2170,Matanuska-Susitna Borough,Bell County,2
+2180,Nome Census Area,Belmont County,1
+2185,North Slope Borough,Beltrami County,1
+2188,Northwest Arctic Borough,Ben Hill County,1
+2201,Prince of Wales-Outer Ketchikan Census Area,Benewah County,1
+2220,Sitka Borough,Bennett County,1
+2231,Skagway-Yakutat-Angoon Census Area         (1990 Census Area),Bennington County,1
+2232,Skagway-Hoonah-Angoon Census Area          (created after 1990),Benson County,1
+2240,Southeast Fairbanks Census Area,Bent County,1
+2261,Valdez-Cordova Census Area,Benton County,9
+2270,Wade Hampton Census Area,Benzie County,1
+2280,Wrangell-Petersburg Census Area,Bergen County,1
+2282,Yakutat Borough                       (created after 1990),Berkeley County,2
+2290,Yukon-Koyukuk Census Area,Berks County,1
+4000,Arizona,Berkshire County,1
+4001,Apache County,Bernalillo County,1
+4003,Cochise County,Berrien County,2
+4005,Coconino County,Bertie County,1
+4007,Gila County,Bethel Census Area,1
+4009,Graham County,Bexar County,1
+4011,Greenlee County,Bibb County,2
+4012,La Paz County,Bienville Parish,1
+4013,Maricopa County,Big Horn County,2
+4015,Mohave County,Big Stone County,1
+4017,Navajo County,Billings County,1
+4019,Pima County,Bingham County,1
+4021,Pinal County,Black Hawk County,1
+4023,Santa Cruz County,Blackford County,1
+4025,Yavapai County,Bladen County,1
+4027,Yuma County,Blaine County,4
+5000,Arkansas,Blair County,1
+5001,Arkansas County,Blanco County,1
+5003,Ashley County,Bland County,1
+5005,Baxter County,Bleckley County,1
+5007,Benton County,Bledsoe County,1
+5009,Boone County,Blount County,2
+5011,Bradley County,Blue Earth County,1
+5013,Calhoun County,Boise County,1
+5015,Carroll County,Bolivar County,1
+5017,Chicot County,Bollinger County,1
+5019,Clark County,Bon Homme County,1
+5021,Clay County,Bond County,1
+5023,Cleburne County,Bonner County,1
+5025,Cleveland County,Bonneville County,1
+5027,Columbia County,Boone County,8
+5029,Conway County,Borden County,1
+5031,Craighead County,Bosque County,1
+5033,Crawford County,Bossier Parish,1
+5035,Crittenden County,Botetourt County,1
+5037,Cross County,Bottineau County,1
+5039,Dallas County,Boulder County,1
+5041,Desha County,Boundary County,1
+5043,Drew County,Bourbon County,2
+5045,Faulkner County,Bowie County,1
+5047,Franklin County,Bowman County,1
+5049,Fulton County,Box Butte County,1
+5051,Garland County,Box Elder County,1
+5053,Grant County,Boyd County,2
+5055,Greene County,Boyle County,1
+5057,Hempstead County,Bracken County,1
+5059,Hot Spring County,Bradford County,2
+5061,Howard County,Bradley County,2
+5063,Independence County,Branch County,1
+5065,Izard County,Brantley County,1
+5067,Jackson County,Braxton County,1
+5069,Jefferson County,Brazoria County,1
+5071,Johnson County,Brazos County,1
+5073,Lafayette County,Breathitt County,1
+5075,Lawrence County,Breckinridge County,1
+5077,Lee County,Bremer County,1
+5079,Lincoln County,Brevard County,1
+5081,Little River County,Brewster County,1
+5083,Logan County,Briscoe County,1
+5085,Lonoke County,Bristol Bay Borough,1
+5087,Madison County,Bristol city,1
+5089,Marion County,Bristol County,2
+5091,Miller County,Broadwater County,1
+5093,Mississippi County,Bronx County,1
+5095,Monroe County,Brooke County,1
+5097,Montgomery County,Brookings County,1
+5099,Nevada County,Brooks County,2
+5101,Newton County,Broome County,1
+5103,Ouachita County,Broward County,1
+5105,Perry County,Brown County,9
+5107,Phillips County,Brule County,1
+5109,Pike County,Brunswick County,2
+5111,Poinsett County,Bryan County,2
+5113,Polk County,Buchanan County,3
+5115,Pope County,Buckingham County,1
+5117,Prairie County,Bucks County,1
+5119,Pulaski County,Buena Vista city,1
+5121,Randolph County,Buena Vista County,1
+5123,St. Francis County,Buffalo County,3
+5125,Saline County,Bullitt County,1
+5127,Scott County,Bulloch County,1
+5129,Searcy County,Bullock County,1
+5131,Sebastian County,Buncombe County,1
+5133,Sevier County,Bureau County,1
+5135,Sharp County,Burke County,3
+5137,Stone County,Burleigh County,1
+5139,Union County,Burleson County,1
+5141,Van Buren County,Burlington County,1
+5143,Washington County,Burnet County,1
+5145,White County,Burnett County,1
+5147,Woodruff County,Burt County,1
+5149,Yell County,Butler County,8
+6000,California,Butte County,3
+6001,Alameda County,Butts County,1
+6003,Alpine County,Cabarrus County,1
+6005,Amador County,Cabell County,1
+6007,Butte County,Cache County,1
+6009,Calaveras County,Caddo County,1
+6011,Colusa County,Caddo Parish,1
+6013,Contra Costa County,Calaveras County,1
+6015,Del Norte County,Calcasieu Parish,1
+6017,El Dorado County,Caldwell County,4
+6019,Fresno County,Caldwell Parish,1
+6021,Glenn County,Caledonia County,1
+6023,Humboldt County,Calhoun County,11
+6025,Imperial County,CALIFORNIA,2
+6027,Inyo County,Callahan County,1
+6029,Kern County,Callaway County,1
+6031,Kings County,Calloway County,1
+6033,Lake County,Calumet County,1
+6035,Lassen County,Calvert County,1
+6037,Los Angeles County,Camas County,1
+6039,Madera County,Cambria County,1
+6041,Marin County,Camden County,4
+6043,Mariposa County,Cameron County,2
+6045,Mendocino County,Cameron Parish,1
+6047,Merced County,Camp County,1
+6049,Modoc County,Campbell County,5
+6051,Mono County,Canadian County,1
+6053,Monterey County,Candler County,1
+6055,Napa County,Cannon County,1
+6057,Nevada County,Canyon County,1
+6059,Orange County,Cape Girardeau County,1
+6061,Placer County,Cape May County,1
+6063,Plumas County,Carbon County,4
+6065,Riverside County,Caribou County,1
+6067,Sacramento County,Carlisle County,1
+6069,San Benito County,Carlton County,1
+6071,San Bernardino County,Caroline County,2
+6073,San Diego County,Carroll County,13
+6075,San Francisco County,Carson City,1
+6077,San Joaquin County,Carson County,1
+6079,San Luis Obispo County,Carter County,5
+6081,San Mateo County,Carteret County,1
+6083,Santa Barbara County,Carver County,1
+6085,Santa Clara County,Cascade County,1
+6087,Santa Cruz County,Casey County,1
+6089,Shasta County,Cass County,9
+6091,Sierra County,Cassia County,1
+6093,Siskiyou County,Castro County,1
+6095,Solano County,Caswell County,1
+6097,Sonoma County,Catahoula Parish,1
+6099,Stanislaus County,Catawba County,1
+6101,Sutter County,Catoosa County,1
+6103,Tehama County,Catron County,1
+6105,Trinity County,Cattaraugus County,1
+6107,Tulare County,Cavalier County,1
+6109,Tuolumne County,Cayuga County,1
+6111,Ventura County,Cecil County,1
+6113,Yolo County,Cedar County,3
+6115,Yuba County,Centre County,1
+8000,Colorado,Cerro Gordo County,1
+8001,Adams County,Chaffee County,1
+8003,Alamosa County,Chambers County,2
+8005,Arapahoe County,Champaign County,2
+8007,Archuleta County,Chariton County,1
+8009,Baca County,Charles City County,1
+8011,Bent County,Charles County,1
+8013,Boulder County,Charles Mix County,1
+8015,Chaffee County,Charleston County,1
+8017,Cheyenne County,Charlevoix County,1
+8019,Clear Creek County,Charlotte County,2
+8021,Conejos County,Charlottesville city,1
+8023,Costilla County,Charlton County,1
+8025,Crowley County,Chase County,2
+8027,Custer County,Chatham County,2
+8029,Delta County,Chattahoochee County,1
+8031,Denver County,Chattooga County,1
+8033,Dolores County,Chautauqua County,2
+8035,Douglas County,Chaves County,1
+8037,Eagle County,Cheatham County,1
+8039,Elbert County,Cheboygan County,1
+8041,El Paso County,Chelan County,1
+8043,Fremont County,Chemung County,1
+8045,Garfield County,Chenango County,1
+8047,Gilpin County,Cherokee County,8
+8049,Grand County,Cherry County,1
+8051,Gunnison County,Chesapeake city,1
+8053,Hinsdale County,Cheshire County,1
+8055,Huerfano County,Chester County,3
+8057,Jackson County,Chesterfield County,2
+8059,Jefferson County,Cheyenne County,3
+8061,Kiowa County,Chickasaw County,2
+8063,Kit Carson County,Chicot County,1
+8065,Lake County,Childress County,1
+8067,La Plata County,Chilton County,1
+8069,Larimer County,Chippewa County,3
+8071,Las Animas County,Chisago County,1
+8073,Lincoln County,Chittenden County,1
+8075,Logan County,Choctaw County,3
+8077,Mesa County,Chouteau County,1
+8079,Mineral County,Chowan County,1
+8081,Moffat County,Christian County,3
+8083,Montezuma County,Churchill County,1
+8085,Montrose County,Cibola County,1
+8087,Morgan County,Cimarron County,1
+8089,Otero County,Citrus County,1
+8091,Ouray County,Clackamas County,1
+8093,Park County,Claiborne County,2
+8095,Phillips County,Claiborne Parish,1
+8097,Pitkin County,Clallam County,1
+8099,Prowers County,Clare County,1
+8101,Pueblo County,Clarendon County,1
+8103,Rio Blanco County,Clarion County,1
+8105,Rio Grande County,Clark County,12
+8107,Routt County,Clarke County,5
+8109,Saguache County,Clatsop County,1
+8111,San Juan County,Clay County,18
+8113,San Miguel County,Clayton County,2
+8115,Sedgwick County,Clear Creek County,1
+8117,Summit County,Clearfield County,1
+8119,Teller County,Clearwater County,2
+8121,Washington County,Cleburne County,2
+8123,Weld County,Clermont County,1
+8125,Yuma County,Cleveland County,3
+9000,Connecticut,Clifton Forge city,1
+9001,Fairfield County,Clinch County,1
+9003,Hartford County,Clinton County,9
+9005,Litchfield County,Cloud County,1
+9007,Middlesex County,Coahoma County,1
+9009,New Haven County,Coal County,1
+9011,New London County,Cobb County,1
+9013,Tolland County,Cochise County,1
+9015,Windham County,Cochran County,1
+10000,Delaware,Cocke County,1
+10001,Kent County,Coconino County,1
+10003,New Castle County,Codington County,1
+10005,Sussex County,Coffee County,3
+11000,District of Columbia,Coffey County,1
+11001,District of Columbia,Coke County,1
+12000,Florida,Colbert County,1
+12001,Alachua County,Cole County,1
+12003,Baker County,Coleman County,1
+12005,Bay County,Coles County,1
+12007,Bradford County,Colfax County,2
+12009,Brevard County,Colleton County,1
+12011,Broward County,Collier County,1
+12013,Calhoun County,Collin County,1
+12015,Charlotte County,Collingsworth County,1
+12017,Citrus County,Colonial Heights city,1
+12019,Clay County,COLORADO,2
+12021,Collier County,Colorado County,1
+12023,Columbia County,Colquitt County,1
+12025,Dade County,Columbia County,8
+12027,DeSoto County,Columbiana County,1
+12029,Dixie County,Columbus County,1
+12031,Duval County,Colusa County,1
+12033,Escambia County,Comal County,1
+12035,Flagler County,Comanche County,3
+12037,Franklin County,Concho County,1
+12039,Gadsden County,Concordia Parish,1
+12041,Gilchrist County,Conecuh County,1
+12043,Glades County,Conejos County,1
+12045,Gulf County,CONNECTICUT,2
+12047,Hamilton County,Contra Costa County,1
+12049,Hardee County,Converse County,1
+12051,Hendry County,Conway County,1
+12053,Hernando County,Cook County,3
+12055,Highlands County,Cooke County,1
+12057,Hillsborough County,Cooper County,1
+12059,Holmes County,Coos County,2
+12061,Indian River County,Coosa County,1
+12063,Jackson County,Copiah County,1
+12065,Jefferson County,Corson County,1
+12067,Lafayette County,Cortland County,1
+12069,Lake County,Coryell County,1
+12071,Lee County,Coshocton County,1
+12073,Leon County,Costilla County,1
+12075,Levy County,Cottle County,1
+12077,Liberty County,Cotton County,1
+12079,Madison County,Cottonwood County,1
+12081,Manatee County,Covington city,1
+12083,Marion County,Covington County,2
+12085,Martin County,Coweta County,1
+12087,Monroe County,Cowley County,1
+12089,Nassau County,Cowlitz County,1
+12091,Okaloosa County,Craig County,2
+12093,Okeechobee County,Craighead County,1
+12095,Orange County,Crane County,1
+12097,Osceola County,Craven County,1
+12099,Palm Beach County,Crawford County,11
+12101,Pasco County,Creek County,1
+12103,Pinellas County,Crenshaw County,1
+12105,Polk County,Crisp County,1
+12107,Putnam County,Crittenden County,2
+12109,St. Johns County,Crockett County,2
+12111,St. Lucie County,Crook County,2
+12113,Santa Rosa County,Crosby County,1
+12115,Sarasota County,Cross County,1
+12117,Seminole County,Crow Wing County,1
+12119,Sumter County,Crowley County,1
+12121,Suwannee County,Culberson County,1
+12123,Taylor County,Cullman County,1
+12125,Union County,Culpeper County,1
+12127,Volusia County,Cumberland County,8
+12129,Wakulla County,Cuming County,1
+12131,Walton County,Currituck County,1
+12133,Washington County,Curry County,2
+13000,Georgia,Custer County,6
+13001,Appling County,Cuyahoga County,1
+13003,Atkinson County,Dade County,3
+13005,Bacon County,Daggett County,1
+13007,Baker County,Dakota County,2
+13009,Baldwin County,Dale County,1
+13011,Banks County,Dallam County,1
+13013,Barrow County,Dallas County,5
+13015,Bartow County,Dane County,1
+13017,Ben Hill County,Daniels County,1
+13019,Berrien County,Danville city,1
+13021,Bibb County,Dare County,1
+13023,Bleckley County,Darke County,1
+13025,Brantley County,Darlington County,1
+13027,Brooks County,Dauphin County,1
+13029,Bryan County,Davidson County,2
+13031,Bulloch County,Davie County,1
+13033,Burke County,Daviess County,3
+13035,Butts County,Davis County,2
+13037,Calhoun County,Davison County,1
+13039,Camden County,Dawes County,1
+13043,Candler County,Dawson County,4
+13045,Carroll County,Day County,1
+13047,Catoosa County,De Kalb County,1
+13049,Charlton County,De Soto Parish,1
+13051,Chatham County,De Witt County,1
+13053,Chattahoochee County,Deaf Smith County,1
+13055,Chattooga County,Dearborn County,1
+13057,Cherokee County,DeBaca County,1
+13059,Clarke County,Decatur County,5
+13061,Clay County,Deer Lodge County,1
+13063,Clayton County,Defiance County,1
+13065,Clinch County,DeKalb County,5
+13067,Cobb County,Del Norte County,1
+13069,Coffee County,DELAWARE,2
+13071,Colquitt County,Delaware County,6
+13073,Columbia County,Delta County,3
+13075,Cook County,Denali Borough                         (created after 1990),1
+13077,Coweta County,Dent County,1
+13079,Crawford County,Denton County,1
+13081,Crisp County,Denver County,1
+13083,Dade County,Des Moines County,1
+13085,Dawson County,Deschutes County,1
+13087,Decatur County,Desha County,1
+13089,DeKalb County,DeSoto County,2
+13091,Dodge County,Deuel County,2
+13093,Dooly County,Dewey County,2
+13095,Dougherty County,DeWitt County,1
+13097,Douglas County,Dickens County,1
+13099,Early County,Dickenson County,1
+13101,Echols County,Dickey County,1
+13103,Effingham County,Dickinson County,3
+13105,Elbert County,Dickson County,1
+13107,Emanuel County,Dillingham Census Area,1
+13109,Evans County,Dillon County,1
+13111,Fannin County,Dimmit County,1
+13113,Fayette County,Dinwiddie County,1
+13115,Floyd County,DISTRICT OF COLUMBIA,3
+13117,Forsyth County,Divide County,1
+13119,Franklin County,Dixie County,1
+13121,Fulton County,Dixon County,1
+13123,Gilmer County,Doddridge County,1
+13125,Glascock County,Dodge County,4
+13127,Glynn County,Dolores County,1
+13129,Gordon County,Dona Ana County,1
+13131,Grady County,Doniphan County,1
+13133,Greene County,Donley County,1
+13135,Gwinnett County,Dooly County,1
+13137,Habersham County,Door County,1
+13139,Hall County,Dorchester County,2
+13141,Hancock County,Dougherty County,1
+13143,Haralson County,Douglas County,12
+13145,Harris County,Drew County,1
+13147,Hart County,Dubois County,1
+13149,Heard County,Dubuque County,1
+13151,Henry County,Duchesne County,1
+13153,Houston County,Dukes County,1
+13155,Irwin County,Dundy County,1
+13157,Jackson County,Dunklin County,1
+13159,Jasper County,Dunn County,2
+13161,Jeff Davis County,DuPage County,1
+13163,Jefferson County,Duplin County,1
+13165,Jenkins County,Durham County,1
+13167,Johnson County,Dutchess County,1
+13169,Jones County,Duval County,2
+13171,Lamar County,Dyer County,1
+13173,Lanier County,Eagle County,1
+13175,Laurens County,Early County,1
+13177,Lee County,East Baton Rouge Parish,1
+13179,Liberty County,East Carroll Parish,1
+13181,Lincoln County,East Feliciana Parish,1
+13183,Long County,Eastland County,1
+13185,Lowndes County,Eaton County,1
+13187,Lumpkin County,Eau Claire County,1
+13189,McDuffie County,Echols County,1
+13191,McIntosh County,Ector County,1
+13193,Macon County,Eddy County,2
+13195,Madison County,Edgar County,1
+13197,Marion County,Edgecombe County,1
+13199,Meriwether County,Edgefield County,1
+13201,Miller County,Edmonson County,1
+13205,Mitchell County,Edmunds County,1
+13207,Monroe County,Edwards County,3
+13209,Montgomery County,Effingham County,2
+13211,Morgan County,El Dorado County,1
+13213,Murray County,El Paso County,2
+13215,Muscogee County,Elbert County,2
+13217,Newton County,Elk County,2
+13219,Oconee County,Elkhart County,1
+13221,Oglethorpe County,Elko County,1
+13223,Paulding County,Elliott County,1
+13225,Peach County,Ellis County,3
+13227,Pickens County,Ellsworth County,1
+13229,Pierce County,Elmore County,2
+13231,Pike County,Emanuel County,1
+13233,Polk County,Emery County,1
+13235,Pulaski County,Emmet County,2
+13237,Putnam County,Emmons County,1
+13239,Quitman County,Emporia city,1
+13241,Rabun County,Erath County,1
+13243,Randolph County,Erie County,3
+13245,Richmond County,Escambia County,2
+13247,Rockdale County,Esmeralda County,1
+13249,Schley County,Essex County,5
+13251,Screven County,Estill County,1
+13253,Seminole County,Etowah County,1
+13255,Spalding County,Eureka County,1
+13257,Stephens County,Evangeline Parish,1
+13259,Stewart County,Evans County,1
+13261,Sumter County,Fairbanks North Star Borough,1
+13263,Talbot County,Fairfax city,1
+13265,Taliaferro County,Fairfax County,1
+13267,Tattnall County,Fairfield County,3
+13269,Taylor County,Fall River County,1
+13271,Telfair County,Fallon County,1
+13273,Terrell County,Falls Church city,1
+13275,Thomas County,Falls County,1
+13277,Tift County,Fannin County,2
+13279,Toombs County,Faribault County,1
+13281,Towns County,Faulk County,1
+13283,Treutlen County,Faulkner County,1
+13285,Troup County,Fauquier County,1
+13287,Turner County,Fayette County,11
+13289,Twiggs County,Fentress County,1
+13291,Union County,Fergus County,1
+13293,Upson County,Ferry County,1
+13295,Walker County,Fillmore County,2
+13297,Walton County,Finney County,1
+13299,Ware County,Fisher County,1
+13301,Warren County,Flagler County,1
+13303,Washington County,Flathead County,1
+13305,Wayne County,Fleming County,1
+13307,Webster County,Florence County,2
+13309,Wheeler County,FLORIDA,2
+13311,White County,Floyd County,6
+13313,Whitfield County,Fluvanna County,1
+13315,Wilcox County,Foard County,1
+13317,Wilkes County,Fond du Lac County,1
+13319,Wilkinson County,Ford County,2
+13321,Worth County,Forest County,2
+15000,Hawaii,Forrest County,1
+15001,Hawaii County,Forsyth County,2
+15003,Honolulu County,Fort Bend County,1
+15005,Kalawao County,Foster County,1
+15007,Kauai County,Fountain County,1
+15009,Maui County,Franklin city,1
+16000,Idaho,Franklin County,24
+16001,Ada County,Franklin Parish,1
+16003,Adams County,Frederick County,2
+16005,Bannock County,Fredericksburg city,1
+16007,Bear Lake County,Freeborn County,1
+16009,Benewah County,Freestone County,1
+16011,Bingham County,Fremont County,4
+16013,Blaine County,Fresno County,1
+16015,Boise County,Frio County,1
+16017,Bonner County,Frontier County,1
+16019,Bonneville County,Fulton County,8
+16021,Boundary County,Furnas County,1
+16023,Butte County,Gadsden County,1
+16025,Camas County,Gage County,1
+16027,Canyon County,Gaines County,1
+16029,Caribou County,Galax city,1
+16031,Cassia County,Gallatin County,3
+16033,Clark County,Gallia County,1
+16035,Clearwater County,Galveston County,1
+16037,Custer County,Garden County,1
+16039,Elmore County,Garfield County,6
+16041,Franklin County,Garland County,1
+16043,Fremont County,Garrard County,1
+16045,Gem County,Garrett County,1
+16047,Gooding County,Garvin County,1
+16049,Idaho County,Garza County,1
+16051,Jefferson County,Gasconade County,1
+16053,Jerome County,Gaston County,1
+16055,Kootenai County,Gates County,1
+16057,Latah County,Geary County,1
+16059,Lemhi County,Geauga County,1
+16061,Lewis County,Gem County,1
+16063,Lincoln County,Genesee County,2
+16065,Madison County,Geneva County,1
+16067,Minidoka County,Gentry County,1
+16069,Nez Perce County,George County,1
+16071,Oneida County,Georgetown County,1
+16073,Owyhee County,GEORGIA,2
+16075,Payette County,Gibson County,2
+16077,Power County,Gila County,1
+16079,Shoshone County,Gilchrist County,1
+16081,Teton County,Giles County,2
+16083,Twin Falls County,Gillespie County,1
+16085,Valley County,Gilliam County,1
+16087,Washington County,Gilmer County,2
+17000,Illinois,Gilpin County,1
+17001,Adams County,Glacier County,1
+17003,Alexander County,Glades County,1
+17005,Bond County,Gladwin County,1
+17007,Boone County,Glascock County,1
+17009,Brown County,Glasscock County,1
+17011,Bureau County,Glenn County,1
+17013,Calhoun County,Gloucester County,2
+17015,Carroll County,Glynn County,1
+17017,Cass County,Gogebic County,1
+17019,Champaign County,Golden Valley County,2
+17021,Christian County,Goliad County,1
+17023,Clark County,Gonzales County,1
+17025,Clay County,Goochland County,1
+17027,Clinton County,Goodhue County,1
+17029,Coles County,Gooding County,1
+17031,Cook County,Gordon County,1
+17033,Crawford County,Goshen County,1
+17035,Cumberland County,Gosper County,1
+17037,DeKalb County,Gove County,1
+17039,De Witt County,Grady County,2
+17041,Douglas County,Grafton County,1
+17043,DuPage County,Graham County,3
+17045,Edgar County,Grainger County,1
+17047,Edwards County,Grand County,2
+17049,Effingham County,Grand Forks County,1
+17051,Fayette County,Grand Isle County,1
+17053,Ford County,Grand Traverse County,1
+17055,Franklin County,Granite County,1
+17057,Fulton County,Grant County,14
+17059,Gallatin County,Grant Parish,1
+17061,Greene County,Granville County,1
+17063,Grundy County,Gratiot County,1
+17065,Hamilton County,Graves County,1
+17067,Hancock County,Gray County,2
+17069,Hardin County,Grays Harbor County,1
+17071,Henderson County,Grayson County,3
+17073,Henry County,Greeley County,2
+17075,Iroquois County,Green County,2
+17077,Jackson County,Green Lake County,1
+17079,Jasper County,Greenbrier County,1
+17081,Jefferson County,Greene County,14
+17083,Jersey County,Greenlee County,1
+17085,Jo Daviess County,Greensville County,1
+17087,Johnson County,Greenup County,1
+17089,Kane County,Greenville County,1
+17091,Kankakee County,Greenwood County,2
+17093,Kendall County,Greer County,1
+17095,Knox County,Gregg County,1
+17097,Lake County,Gregory County,1
+17099,La Salle County,Grenada County,1
+17101,Lawrence County,Griggs County,1
+17103,Lee County,Grimes County,1
+17105,Livingston County,Grundy County,4
+17107,Logan County,Guadalupe County,2
+17109,McDonough County,Guernsey County,1
+17111,McHenry County,Guilford County,1
+17113,McLean County,Gulf County,1
+17115,Macon County,Gunnison County,1
+17117,Macoupin County,Guthrie County,1
+17119,Madison County,Gwinnett County,1
+17121,Marion County,Haakon County,1
+17123,Marshall County,Habersham County,1
+17125,Mason County,Haines Borough,1
+17127,Massac County,Hale County,2
+17129,Menard County,Halifax County,2
+17131,Mercer County,Hall County,3
+17133,Monroe County,Hamblen County,1
+17135,Montgomery County,Hamilton County,10
+17137,Morgan County,Hamlin County,1
+17139,Moultrie County,Hampden County,1
+17141,Ogle County,Hampshire County,2
+17143,Peoria County,Hampton city,1
+17145,Perry County,Hampton County,1
+17147,Piatt County,Hancock County,10
+17149,Pike County,Hand County,1
+17151,Pope County,Hanover County,1
+17153,Pulaski County,Hansford County,1
+17155,Putnam County,Hanson County,1
+17157,Randolph County,Haralson County,1
+17159,Richland County,Hardee County,1
+17161,Rock Island County,Hardeman County,2
+17163,St. Clair County,Hardin County,6
+17165,Saline County,Harding County,2
+17167,Sangamon County,Hardy County,1
+17169,Schuyler County,Harford County,1
+17171,Scott County,Harlan County,2
+17173,Shelby County,Harmon County,1
+17175,Stark County,Harnett County,1
+17177,Stephenson County,Harney County,1
+17179,Tazewell County,Harper County,2
+17181,Union County,Harris County,2
+17183,Vermilion County,Harrison County,8
+17185,Wabash County,Harrisonburg city,1
+17187,Warren County,Hart County,2
+17189,Washington County,Hartford County,1
+17191,Wayne County,Hartley County,1
+17193,White County,Harvey County,1
+17195,Whiteside County,Haskell County,3
+17197,Will County,HAWAII,2
+17199,Williamson County,Hawaii County,1
+17201,Winnebago County,Hawkins County,1
+17203,Woodford County,Hayes County,1
+18000,Indiana,Hays County,1
+18001,Adams County,Haywood County,2
+18003,Allen County,Heard County,1
+18005,Bartholomew County,Hemphill County,1
+18007,Benton County,Hempstead County,1
+18009,Blackford County,Henderson County,5
+18011,Boone County,Hendricks County,1
+18013,Brown County,Hendry County,1
+18015,Carroll County,Hennepin County,1
+18017,Cass County,Henrico County,1
+18019,Clark County,Henry County,10
+18021,Clay County,Herkimer County,1
+18023,Clinton County,Hernando County,1
+18025,Crawford County,Hertford County,1
+18027,Daviess County,Hettinger County,1
+18029,Dearborn County,Hickman County,2
+18031,Decatur County,Hickory County,1
+18033,De Kalb County,Hidalgo County,2
+18035,Delaware County,Highland County,2
+18037,Dubois County,Highlands County,1
+18039,Elkhart County,Hill County,2
+18041,Fayette County,Hillsborough County,2
+18043,Floyd County,Hillsdale County,1
+18045,Fountain County,Hinds County,1
+18047,Franklin County,Hinsdale County,1
+18049,Fulton County,Hitchcock County,1
+18051,Gibson County,Hocking County,1
+18053,Grant County,Hockley County,1
+18055,Greene County,Hodgeman County,1
+18057,Hamilton County,Hoke County,1
+18059,Hancock County,Holmes County,3
+18061,Harrison County,Holt County,2
+18063,Hendricks County,Honolulu County,1
+18065,Henry County,Hood County,1
+18067,Howard County,Hood River County,1
+18069,Huntington County,Hooker County,1
+18071,Jackson County,Hopewell city,1
+18073,Jasper County,Hopkins County,2
+18075,Jay County,Horry County,1
+18077,Jefferson County,Hot Spring County,1
+18079,Jennings County,Hot Springs County,1
+18081,Johnson County,Houghton County,1
+18083,Knox County,Houston County,5
+18085,Kosciusko County,Howard County,7
+18087,Lagrange County,Howell County,1
+18089,Lake County,Hubbard County,1
+18091,La Porte County,Hudson County,1
+18093,Lawrence County,Hudspeth County,1
+18095,Madison County,Huerfano County,1
+18097,Marion County,Hughes County,2
+18099,Marshall County,Humboldt County,3
+18101,Martin County,Humphreys County,2
+18103,Miami County,Hunt County,1
+18105,Monroe County,Hunterdon County,1
+18107,Montgomery County,Huntingdon County,1
+18109,Morgan County,Huntington County,1
+18111,Newton County,Huron County,2
+18113,Noble County,Hutchinson County,2
+18115,Ohio County,Hyde County,2
+18117,Orange County,Iberia Parish,1
+18119,Owen County,Iberville Parish,1
+18121,Parke County,Ida County,1
+18123,Perry County,IDAHO,2
+18125,Pike County,Idaho County,1
+18127,Porter County,ILLINOIS,2
+18129,Posey County,Imperial County,1
+18131,Pulaski County,Independence County,1
+18133,Putnam County,Indian River County,1
+18135,Randolph County,INDIANA,2
+18137,Ripley County,Indiana County,1
+18139,Rush County,Ingham County,1
+18141,St. Joseph County,Inyo County,1
+18143,Scott County,Ionia County,1
+18145,Shelby County,Iosco County,1
+18147,Spencer County,IOWA,2
+18149,Starke County,Iowa County,2
+18151,Steuben County,Iredell County,1
+18153,Sullivan County,Irion County,1
+18155,Switzerland County,Iron County,4
+18157,Tippecanoe County,Iroquois County,1
+18159,Tipton County,Irwin County,1
+18161,Union County,Isabella County,1
+18163,Vanderburgh County,Isanti County,1
+18165,Vermillion County,Island County,1
+18167,Vigo County,Isle of Wight County,1
+18169,Wabash County,Issaquena County,1
+18171,Warren County,Itasca County,1
+18173,Warrick County,Itawamba County,1
+18175,Washington County,Izard County,1
+18177,Wayne County,Jack County,1
+18179,Wells County,Jackson County,23
+18181,White County,Jackson Parish,1
+18183,Whitley County,James City County,1
+19000,Iowa,Jasper County,8
+19001,Adair County,Jay County,1
+19003,Adams County,Jeff Davis County,2
+19005,Allamakee County,Jefferson County,25
+19007,Appanoose County,Jefferson Davis County,1
+19009,Audubon County,Jefferson Davis Parish,1
+19011,Benton County,Jefferson Parish,1
+19013,Black Hawk County,Jenkins County,1
+19015,Boone County,Jennings County,1
+19017,Bremer County,Jerauld County,1
+19019,Buchanan County,Jerome County,1
+19021,Buena Vista County,Jersey County,1
+19023,Butler County,Jessamine County,1
+19025,Calhoun County,Jewell County,1
+19027,Carroll County,Jim Hogg County,1
+19029,Cass County,Jim Wells County,1
+19031,Cedar County,Jo Daviess County,1
+19033,Cerro Gordo County,Johnson County,12
+19035,Cherokee County,Johnston County,2
+19037,Chickasaw County,Jones County,6
+19039,Clarke County,Josephine County,1
+19041,Clay County,Juab County,1
+19043,Clayton County,Judith Basin County,1
+19045,Clinton County,Juneau Borough,1
+19047,Crawford County,Juneau County,1
+19049,Dallas County,Juniata County,1
+19051,Davis County,Kalamazoo County,1
+19053,Decatur County,Kalawao County,1
+19055,Delaware County,Kalkaska County,1
+19057,Des Moines County,Kanabec County,1
+19059,Dickinson County,Kanawha County,1
+19061,Dubuque County,Kandiyohi County,1
+19063,Emmet County,Kane County,2
+19065,Fayette County,Kankakee County,1
+19067,Floyd County,KANSAS,2
+19069,Franklin County,Karnes County,1
+19071,Fremont County,Kauai County,1
+19073,Greene County,Kaufman County,1
+19075,Grundy County,Kay County,1
+19077,Guthrie County,Kearney County,1
+19079,Hamilton County,Kearny County,1
+19081,Hancock County,Keith County,1
+19083,Hardin County,Kemper County,1
+19085,Harrison County,Kenai Peninsula Borough,1
+19087,Henry County,Kendall County,2
+19089,Howard County,Kenedy County,1
+19091,Humboldt County,Kennebec County,1
+19093,Ida County,Kenosha County,1
+19095,Iowa County,Kent County,5
+19097,Jackson County,Kenton County,1
+19099,Jasper County,KENTUCKY,2
+19101,Jefferson County,Keokuk County,1
+19103,Johnson County,Kern County,1
+19105,Jones County,Kerr County,1
+19107,Keokuk County,Kershaw County,1
+19109,Kossuth County,Ketchikan Gateway Borough,1
+19111,Lee County,Kewaunee County,1
+19113,Linn County,Keweenaw County,1
+19115,Louisa County,Keya Paha County,1
+19117,Lucas County,Kidder County,1
+19119,Lyon County,Kimball County,1
+19121,Madison County,Kimble County,1
+19123,Mahaska County,King and Queen County,1
+19125,Marion County,King County,2
+19127,Marshall County,King George County,1
+19129,Mills County,King William County,1
+19131,Mitchell County,Kingfisher County,1
+19133,Monona County,Kingman County,1
+19135,Monroe County,Kings County,2
+19137,Montgomery County,Kingsbury County,1
+19139,Muscatine County,Kinney County,1
+19141,O,Kiowa County,3
+19143,Osceola County,Kit Carson County,1
+19145,Page County,Kitsap County,1
+19147,Palo Alto County,Kittitas County,1
+19149,Plymouth County,Kittson County,1
+19151,Pocahontas County,Klamath County,1
+19153,Polk County,Kleberg County,1
+19155,Pottawattamie County,Klickitat County,1
+19157,Poweshiek County,Knott County,1
+19159,Ringgold County,Knox County,9
+19161,Sac County,Kodiak Island Borough,1
+19163,Scott County,Koochiching County,1
+19165,Shelby County,Kootenai County,1
+19167,Sioux County,Kosciusko County,1
+19169,Story County,Kossuth County,1
+19171,Tama County,La Crosse County,1
+19173,Taylor County,La Paz County,1
+19175,Union County,La Plata County,1
+19177,Van Buren County,La Porte County,1
+19179,Wapello County,La Salle County,2
+19181,Warren County,La Salle Parish,1
+19183,Washington County,Labette County,1
+19185,Wayne County,Lac qui Parle County,1
+19187,Webster County,Lackawanna County,1
+19189,Winnebago County,Laclede County,1
+19191,Winneshiek County,Lafayette County,5
+19193,Woodbury County,Lafayette Parish,1
+19195,Worth County,Lafourche Parish,1
+19197,Wright County,Lagrange County,1
+20000,Kansas,Lake and Peninsula Borough,1
+20001,Allen County,Lake County,12
+20003,Anderson County,Lake of the Woods County,1
+20005,Atchison County,Lamar County,4
+20007,Barber County,Lamb County,1
+20009,Barton County,Lamoille County,1
+20011,Bourbon County,LaMoure County,1
+20013,Brown County,Lampasas County,1
+20015,Butler County,Lancaster County,4
+20017,Chase County,Lander County,1
+20019,Chautauqua County,Lane County,2
+20021,Cherokee County,Langlade County,1
+20023,Cheyenne County,Lanier County,1
+20025,Clark County,Lapeer County,1
+20027,Clay County,Laramie County,1
+20029,Cloud County,Larimer County,1
+20031,Coffey County,Larue County,1
+20033,Comanche County,Las Animas County,1
+20035,Cowley County,Lassen County,1
+20037,Crawford County,Latah County,1
+20039,Decatur County,Latimer County,1
+20041,Dickinson County,Lauderdale County,3
+20043,Doniphan County,Laurel County,1
+20045,Douglas County,Laurens County,2
+20047,Edwards County,Lavaca County,1
+20049,Elk County,Lawrence County,11
+20051,Ellis County,Le Flore County,1
+20053,Ellsworth County,Le Sueur County,1
+20055,Finney County,Lea County,1
+20057,Ford County,Leake County,1
+20059,Franklin County,Leavenworth County,1
+20061,Geary County,Lebanon County,1
+20063,Gove County,Lee County,12
+20065,Graham County,Leelanau County,1
+20067,Grant County,Leflore County,1
+20069,Gray County,Lehigh County,1
+20071,Greeley County,Lemhi County,1
+20073,Greenwood County,Lenawee County,1
+20075,Hamilton County,Lenoir County,1
+20077,Harper County,Leon County,2
+20079,Harvey County,Leslie County,1
+20081,Haskell County,Letcher County,1
+20083,Hodgeman County,Levy County,1
+20085,Jackson County,Lewis and Clark County,1
+20087,Jefferson County,Lewis County,7
+20089,Jewell County,Lexington city,1
+20091,Johnson County,Lexington County,1
+20093,Kearny County,Liberty County,4
+20095,Kingman County,Licking County,1
+20097,Kiowa County,Limestone County,2
+20099,Labette County,Lincoln County,23
+20101,Lane County,Lincoln Parish,1
+20103,Leavenworth County,Linn County,4
+20105,Lincoln County,Lipscomb County,1
+20107,Linn County,Litchfield County,1
+20109,Logan County,Little River County,1
+20111,Lyon County,Live Oak County,1
+20113,McPherson County,Livingston County,5
+20115,Marion County,Livingston Parish,1
+20117,Marshall County,Llano County,1
+20119,Meade County,Logan County,10
+20121,Miami County,Long County,1
+20123,Mitchell County,Lonoke County,1
+20125,Montgomery County,Lorain County,1
+20127,Morris County,Los Alamos County,1
+20129,Morton County,Los Angeles County,1
+20131,Nemaha County,Loudon County,1
+20133,Neosho County,Loudoun County,1
+20135,Ness County,Louisa County,2
+20137,Norton County,LOUISIANA,2
+20139,Osage County,Loup County,1
+20141,Osborne County,Love County,1
+20143,Ottawa County,Loving County,1
+20145,Pawnee County,Lowndes County,3
+20147,Phillips County,Lubbock County,1
+20149,Pottawatomie County,Lucas County,2
+20151,Pratt County,Luce County,1
+20153,Rawlins County,Lumpkin County,1
+20155,Reno County,Luna County,1
+20157,Republic County,Lunenburg County,1
+20159,Rice County,Luzerne County,1
+20161,Riley County,Lycoming County,1
+20163,Rooks County,Lyman County,1
+20165,Rush County,Lynchburg city,1
+20167,Russell County,Lynn County,1
+20169,Saline County,Lyon County,5
+20171,Scott County,Mackinac County,1
+20173,Sedgwick County,Macomb County,1
+20175,Seward County,Macon County,6
+20177,Shawnee County,Macoupin County,1
+20179,Sheridan County,Madera County,1
+20181,Sherman County,Madison County,19
+20183,Smith County,Madison Parish,1
+20185,Stafford County,Magoffin County,1
+20187,Stanton County,Mahaska County,1
+20189,Stevens County,Mahnomen County,1
+20191,Sumner County,Mahoning County,1
+20193,Thomas County,MAINE,2
+20195,Trego County,Major County,1
+20197,Wabaunsee County,Malheur County,1
+20199,Wallace County,Manassas city,1
+20201,Washington County,Manassas Park city,1
+20203,Wichita County,Manatee County,1
+20205,Wilson County,Manistee County,1
+20207,Woodson County,Manitowoc County,1
+20209,Wyandotte County,Marathon County,1
+21000,Kentucky,Marengo County,1
+21001,Adair County,Maricopa County,1
+21003,Allen County,Maries County,1
+21005,Anderson County,Marin County,1
+21007,Ballard County,Marinette County,1
+21009,Barren County,Marion County,17
+21011,Bath County,Mariposa County,1
+21013,Bell County,Marlboro County,1
+21015,Boone County,Marquette County,2
+21017,Bourbon County,Marshall County,12
+21019,Boyd County,Martin County,6
+21021,Boyle County,Martinsville city,1
+21023,Bracken County,MARYLAND,2
+21025,Breathitt County,Mason County,6
+21027,Breckinridge County,Massac County,1
+21029,Bullitt County,MASSACHUSETTS,2
+21031,Butler County,Matagorda County,1
+21033,Caldwell County,Matanuska-Susitna Borough,1
+21035,Calloway County,Mathews County,1
+21037,Campbell County,Maui County,1
+21039,Carlisle County,Maury County,1
+21041,Carroll County,Maverick County,1
+21043,Carter County,Mayes County,1
+21045,Casey County,Mc Kean County,1
+21047,Christian County,McClain County,1
+21049,Clark County,McCone County,1
+21051,Clay County,McCook County,1
+21053,Clinton County,McCormick County,1
+21055,Crittenden County,McCracken County,1
+21057,Cumberland County,McCreary County,1
+21059,Daviess County,McCulloch County,1
+21061,Edmonson County,McCurtain County,1
+21063,Elliott County,McDonald County,1
+21065,Estill County,McDonough County,1
+21067,Fayette County,McDowell County,2
+21069,Fleming County,McDuffie County,1
+21071,Floyd County,McHenry County,2
+21073,Franklin County,McIntosh County,3
+21075,Fulton County,McKenzie County,1
+21077,Gallatin County,McKinley County,1
+21079,Garrard County,McLean County,3
+21081,Grant County,McLennan County,1
+21083,Graves County,McLeod County,1
+21085,Grayson County,McMinn County,1
+21087,Green County,McMullen County,1
+21089,Greenup County,McNairy County,1
+21091,Hancock County,McPherson County,3
+21093,Hardin County,Meade County,3
+21095,Harlan County,Meagher County,1
+21097,Harrison County,Mecklenburg County,2
+21099,Hart County,Mecosta County,1
+21101,Henderson County,Medina County,2
+21103,Henry County,Meeker County,1
+21105,Hickman County,Meigs County,2
+21107,Hopkins County,Mellette County,1
+21109,Jackson County,Menard County,2
+21111,Jefferson County,Mendocino County,1
+21113,Jessamine County,Menifee County,1
+21115,Johnson County,Menominee County,2
+21117,Kenton County,Merced County,1
+21119,Knott County,Mercer County,8
+21121,Knox County,Meriwether County,1
+21123,Larue County,Merrick County,1
+21125,Laurel County,Merrimack County,1
+21127,Lawrence County,Mesa County,1
+21129,Lee County,Metcalfe County,1
+21131,Leslie County,Miami County,3
+21133,Letcher County,MICHIGAN,2
+21135,Lewis County,Middlesex County,4
+21137,Lincoln County,Midland County,2
+21139,Livingston County,Mifflin County,1
+21141,Logan County,Milam County,1
+21143,Lyon County,Millard County,1
+21145,McCracken County,Mille Lacs County,1
+21147,McCreary County,Miller County,3
+21149,McLean County,Mills County,2
+21151,Madison County,Milwaukee County,1
+21153,Magoffin County,Miner County,1
+21155,Marion County,Mineral County,4
+21157,Marshall County,Mingo County,1
+21159,Martin County,Minidoka County,1
+21161,Mason County,Minnehaha County,1
+21163,Meade County,MINNESOTA,2
+21165,Menifee County,Missaukee County,1
+21167,Mercer County,MISSISSIPPI,2
+21169,Metcalfe County,Mississippi County,2
+21171,Monroe County,Missoula County,1
+21173,Montgomery County,MISSOURI,2
+21175,Morgan County,Mitchell County,5
+21177,Muhlenberg County,Mobile County,1
+21179,Nelson County,Modoc County,1
+21181,Nicholas County,Moffat County,1
+21183,Ohio County,Mohave County,1
+21185,Oldham County,Moniteau County,1
+21187,Owen County,Monmouth County,1
+21189,Owsley County,Mono County,1
+21191,Pendleton County,Monona County,1
+21193,Perry County,Monongalia County,1
+21195,Pike County,Monroe County,17
+21197,Powell County,Montague County,1
+21199,Pulaski County,MONTANA,2
+21201,Robertson County,Montcalm County,1
+21203,Rockcastle County,Monterey County,1
+21205,Rowan County,Montezuma County,1
+21207,Russell County,Montgomery County,18
+21209,Scott County,Montmorency County,1
+21211,Shelby County,Montour County,1
+21213,Simpson County,Montrose County,1
+21215,Spencer County,Moody County,1
+21217,Taylor County,Moore County,3
+21219,Todd County,Mora County,1
+21221,Trigg County,Morehouse Parish,1
+21223,Trimble County,Morgan County,11
+21225,Union County,Morrill County,1
+21227,Warren County,Morris County,3
+21229,Washington County,Morrison County,1
+21231,Wayne County,Morrow County,2
+21233,Webster County,Morton County,2
+21235,Whitley County,Motley County,1
+21237,Wolfe County,Moultrie County,1
+21239,Woodford County,Mountrail County,1
+22000,Louisiana,Mower County,1
+22001,Acadia Parish,Muhlenberg County,1
+22003,Allen Parish,Multnomah County,1
+22005,Ascension Parish,Murray County,3
+22007,Assumption Parish,Muscatine County,1
+22009,Avoyelles Parish,Muscogee County,1
+22011,Beauregard Parish,Muskegon County,1
+22013,Bienville Parish,Muskingum County,1
+22015,Bossier Parish,Muskogee County,1
+22017,Caddo Parish,Musselshell County,1
+22019,Calcasieu Parish,Nacogdoches County,1
+22021,Caldwell Parish,Nance County,1
+22023,Cameron Parish,Nantucket County,1
+22025,Catahoula Parish,Napa County,1
+22027,Claiborne Parish,Nash County,1
+22029,Concordia Parish,Nassau County,2
+22031,De Soto Parish,Natchitoches Parish,1
+22033,East Baton Rouge Parish,Natrona County,1
+22035,East Carroll Parish,Navajo County,1
+22037,East Feliciana Parish,Navarro County,1
+22039,Evangeline Parish,NEBRASKA,2
+22041,Franklin Parish,Nelson County,3
+22043,Grant Parish,Nemaha County,2
+22045,Iberia Parish,Neosho County,1
+22047,Iberville Parish,Neshoba County,1
+22049,Jackson Parish,Ness County,1
+22051,Jefferson Parish,NEVADA,2
+22053,Jefferson Davis Parish,Nevada County,2
+22055,Lafayette Parish,New Castle County,1
+22057,Lafourche Parish,NEW HAMPSHIRE,2
+22059,La Salle Parish,New Hanover County,1
+22061,Lincoln Parish,New Haven County,1
+22063,Livingston Parish,NEW JERSEY,2
+22065,Madison Parish,New Kent County,1
+22067,Morehouse Parish,New London County,1
+22069,Natchitoches Parish,New Madrid County,1
+22071,Orleans Parish,NEW MEXICO,2
+22073,Ouachita Parish,NEW YORK,2
+22075,Plaquemines Parish,New York County,1
+22077,Pointe Coupee Parish,Newaygo County,1
+22079,Rapides Parish,Newberry County,1
+22081,Red River Parish,Newport County,1
+22083,Richland Parish,Newport News city,1
+22085,Sabine Parish,Newton County,6
+22087,St. Bernard Parish,Nez Perce County,1
+22089,St. Charles Parish,Niagara County,1
+22091,St. Helena Parish,Nicholas County,2
+22093,St. James Parish,Nicollet County,1
+22095,St. John the Baptist Parish,Niobrara County,1
+22097,St. Landry Parish,Noble County,3
+22099,St. Martin Parish,Nobles County,1
+22101,St. Mary Parish,Nodaway County,1
+22103,St. Tammany Parish,Nolan County,1
+22105,Tangipahoa Parish,Nome Census Area,1
+22107,Tensas Parish,Norfolk city,1
+22109,Terrebonne Parish,Norfolk County,1
+22111,Union Parish,Norman County,1
+22113,Vermilion Parish,NORTH CAROLINA,2
+22115,Vernon Parish,NORTH DAKOTA,2
+22117,Washington Parish,North Slope Borough,1
+22119,Webster Parish,Northampton County,3
+22121,West Baton Rouge Parish,Northumberland County,2
+22123,West Carroll Parish,Northwest Arctic Borough,1
+22125,West Feliciana Parish,Norton city,1
+22127,Winn Parish,Norton County,1
+23000,Maine,Nottoway County,1
+23001,Androscoggin County,Nowata County,1
+23003,Aroostook County,Noxubee County,1
+23005,Cumberland County,Nuckolls County,1
+23007,Franklin County,Nueces County,1
+23009,Hancock County,Nye County,1
+23011,Kennebec County,O,1
+23013,Knox County,Oakland County,1
+23015,Lincoln County,Obion County,1
+23017,Oxford County,Ocean County,1
+23019,Penobscot County,Oceana County,1
+23021,Piscataquis County,Ochiltree County,1
+23023,Sagadahoc County,Oconee County,2
+23025,Somerset County,Oconto County,1
+23027,Waldo County,Ogemaw County,1
+23029,Washington County,Ogle County,1
+23031,York County,Oglethorpe County,1
+24000,Maryland,OHIO,2
+24001,Allegany County,Ohio County,3
+24003,Anne Arundel County,Okaloosa County,1
+24005,Baltimore County,Okanogan County,1
+24009,Calvert County,Okeechobee County,1
+24011,Caroline County,Okfuskee County,1
+24013,Carroll County,OKLAHOMA,2
+24015,Cecil County,Oklahoma County,1
+24017,Charles County,Okmulgee County,1
+24019,Dorchester County,Oktibbeha County,1
+24021,Frederick County,Oldham County,2
+24023,Garrett County,Oliver County,1
+24025,Harford County,Olmsted County,1
+24027,Howard County,Oneida County,3
+24029,Kent County,Onondaga County,1
+24031,Montgomery County,Onslow County,1
+24033,Prince George,Ontario County,1
+24035,Queen Anne,Ontonagon County,1
+24037,St. Mary,Orange County,8
+24039,Somerset County,Orangeburg County,1
+24041,Talbot County,OREGON,2
+24043,Washington County,Oregon County,1
+24045,Wicomico County,Orleans County,2
+24047,Worcester County,Orleans Parish,1
+24510,Baltimore city,Osage County,3
+25000,Massachusetts,Osborne County,1
+25001,Barnstable County,Osceola County,3
+25003,Berkshire County,Oscoda County,1
+25005,Bristol County,Oswego County,1
+25007,Dukes County,Otero County,2
+25009,Essex County,Otoe County,1
+25011,Franklin County,Otsego County,2
+25013,Hampden County,Ottawa County,4
+25015,Hampshire County,Otter Tail County,1
+25017,Middlesex County,Ouachita County,1
+25019,Nantucket County,Ouachita Parish,1
+25021,Norfolk County,Ouray County,1
+25023,Plymouth County,Outagamie County,1
+25025,Suffolk County,Overton County,1
+25027,Worcester County,Owen County,2
+26000,Michigan,Owsley County,1
+26001,Alcona County,Owyhee County,1
+26003,Alger County,Oxford County,1
+26005,Allegan County,Ozark County,1
+26007,Alpena County,Ozaukee County,1
+26009,Antrim County,Pacific County,1
+26011,Arenac County,Page County,2
+26013,Baraga County,Palm Beach County,1
+26015,Barry County,Palo Alto County,1
+26017,Bay County,Palo Pinto County,1
+26019,Benzie County,Pamlico County,1
+26021,Berrien County,Panola County,2
+26023,Branch County,Park County,3
+26025,Calhoun County,Parke County,1
+26027,Cass County,Parker County,1
+26029,Charlevoix County,Parmer County,1
+26031,Cheboygan County,Pasco County,1
+26033,Chippewa County,Pasquotank County,1
+26035,Clare County,Passaic County,1
+26037,Clinton County,Patrick County,1
+26039,Crawford County,Paulding County,2
+26041,Delta County,Pawnee County,3
+26043,Dickinson County,Payette County,1
+26045,Eaton County,Payne County,1
+26047,Emmet County,Peach County,1
+26049,Genesee County,Pearl River County,1
+26051,Gladwin County,Pecos County,1
+26053,Gogebic County,Pembina County,1
+26055,Grand Traverse County,Pemiscot County,1
+26057,Gratiot County,Pend Oreille County,1
+26059,Hillsdale County,Pender County,1
+26061,Houghton County,Pendleton County,2
+26063,Huron County,Pennington County,2
+26065,Ingham County,PENNSYLVANIA,2
+26067,Ionia County,Penobscot County,1
+26069,Iosco County,Peoria County,1
+26071,Iron County,Pepin County,1
+26073,Isabella County,Perkins County,2
+26075,Jackson County,Perquimans County,1
+26077,Kalamazoo County,Perry County,10
+26079,Kalkaska County,Pershing County,1
+26081,Kent County,Person County,1
+26083,Keweenaw County,Petersburg city,1
+26085,Lake County,Petroleum County,1
+26087,Lapeer County,Pettis County,1
+26089,Leelanau County,Phelps County,2
+26091,Lenawee County,Philadelphia County,1
+26093,Livingston County,Phillips County,4
+26095,Luce County,Piatt County,1
+26097,Mackinac County,Pickaway County,1
+26099,Macomb County,Pickens County,3
+26101,Manistee County,Pickett County,1
+26103,Marquette County,Pierce County,5
+26105,Mason County,Pike County,10
+26107,Mecosta County,Pima County,1
+26109,Menominee County,Pinal County,1
+26111,Midland County,Pine County,1
+26113,Missaukee County,Pinellas County,1
+26115,Monroe County,Pipestone County,1
+26117,Montcalm County,Piscataquis County,1
+26119,Montmorency County,Pitkin County,1
+26121,Muskegon County,Pitt County,1
+26123,Newaygo County,Pittsburg County,1
+26125,Oakland County,Pittsylvania County,1
+26127,Oceana County,Piute County,1
+26129,Ogemaw County,Placer County,1
+26131,Ontonagon County,Plaquemines Parish,1
+26133,Osceola County,Platte County,3
+26135,Oscoda County,Pleasants County,1
+26137,Otsego County,Plumas County,1
+26139,Ottawa County,Plymouth County,2
+26141,Presque Isle County,Pocahontas County,2
+26143,Roscommon County,Poinsett County,1
+26145,Saginaw County,Pointe Coupee Parish,1
+26147,St. Clair County,Polk County,12
+26149,St. Joseph County,Pondera County,1
+26151,Sanilac County,Pontotoc County,2
+26153,Schoolcraft County,Pope County,3
+26155,Shiawassee County,Poquoson city,1
+26157,Tuscola County,Portage County,2
+26159,Van Buren County,Porter County,1
+26161,Washtenaw County,Portsmouth city,1
+26163,Wayne County,Posey County,1
+26165,Wexford County,Pottawatomie County,2
+27000,Minnesota,Pottawattamie County,1
+27001,Aitkin County,Potter County,3
+27003,Anoka County,Powder River County,1
+27005,Becker County,Powell County,2
+27007,Beltrami County,Power County,1
+27009,Benton County,Poweshiek County,1
+27011,Big Stone County,Powhatan County,1
+27013,Blue Earth County,Prairie County,2
+27015,Brown County,Pratt County,1
+27017,Carlton County,Preble County,1
+27019,Carver County,Prentiss County,1
+27021,Cass County,Presidio County,1
+27023,Chippewa County,Presque Isle County,1
+27025,Chisago County,Preston County,1
+27027,Clay County,Price County,1
+27029,Clearwater County,Prince Edward County,1
+27031,Cook County,Prince George,1
+27033,Cottonwood County,Prince George County,1
+27035,Crow Wing County,Prince of Wales-Outer Ketchikan Census Area,1
+27037,Dakota County,Prince William County,1
+27039,Dodge County,Providence County,1
+27041,Douglas County,Prowers County,1
+27043,Faribault County,Pueblo County,1
+27045,Fillmore County,Pulaski County,7
+27047,Freeborn County,Pushmataha County,1
+27049,Goodhue County,Putnam County,9
+27051,Grant County,Quay County,1
+27053,Hennepin County,Queen Anne,1
+27055,Houston County,Queens County,1
+27057,Hubbard County,Quitman County,2
+27059,Isanti County,Rabun County,1
+27061,Itasca County,Racine County,1
+27063,Jackson County,Radford city,1
+27065,Kanabec County,Rains County,1
+27067,Kandiyohi County,Raleigh County,1
+27069,Kittson County,Ralls County,1
+27071,Koochiching County,Ramsey County,2
+27073,Lac qui Parle County,Randall County,1
+27075,Lake County,Randolph County,8
+27077,Lake of the Woods County,Rankin County,1
+27079,Le Sueur County,Ransom County,1
+27081,Lincoln County,Rapides Parish,1
+27083,Lyon County,Rappahannock County,1
+27085,McLeod County,Ravalli County,1
+27087,Mahnomen County,Rawlins County,1
+27089,Marshall County,Ray County,1
+27091,Martin County,Reagan County,1
+27093,Meeker County,Real County,1
+27095,Mille Lacs County,Red Lake County,1
+27097,Morrison County,Red River County,1
+27099,Mower County,Red River Parish,1
+27101,Murray County,Red Willow County,1
+27103,Nicollet County,Redwood County,1
+27105,Nobles County,Reeves County,1
+27107,Norman County,Refugio County,1
+27109,Olmsted County,Reno County,1
+27111,Otter Tail County,Rensselaer County,1
+27113,Pennington County,Renville County,2
+27115,Pine County,Republic County,1
+27117,Pipestone County,Reynolds County,1
+27119,Polk County,Rhea County,1
+27121,Pope County,RHODE ISLAND,2
+27123,Ramsey County,Rice County,2
+27125,Red Lake County,Rich County,1
+27127,Redwood County,Richardson County,1
+27129,Renville County,Richland County,6
+27131,Rice County,Richland Parish,1
+27133,Rock County,Richmond city,1
+27135,Roseau County,Richmond County,4
+27137,St. Louis County,Riley County,1
+27139,Scott County,Ringgold County,1
+27141,Sherburne County,Rio Arriba County,1
+27143,Sibley County,Rio Blanco County,1
+27145,Stearns County,Rio Grande County,1
+27147,Steele County,Ripley County,2
+27149,Stevens County,Ritchie County,1
+27151,Swift County,Riverside County,1
+27153,Todd County,Roane County,2
+27155,Traverse County,Roanoke city,1
+27157,Wabasha County,Roanoke County,1
+27159,Wadena County,Roberts County,2
+27161,Waseca County,Robertson County,3
+27163,Washington County,Robeson County,1
+27165,Watonwan County,Rock County,3
+27167,Wilkin County,Rock Island County,1
+27169,Winona County,Rockbridge County,1
+27171,Wright County,Rockcastle County,1
+27173,Yellow Medicine County,Rockdale County,1
+28000,Mississippi,Rockingham County,3
+28001,Adams County,Rockland County,1
+28003,Alcorn County,Rockwall County,1
+28005,Amite County,Roger Mills County,1
+28007,Attala County,Rogers County,1
+28009,Benton County,Rolette County,1
+28011,Bolivar County,Rooks County,1
+28013,Calhoun County,Roosevelt County,2
+28015,Carroll County,Roscommon County,1
+28017,Chickasaw County,Roseau County,1
+28019,Choctaw County,Rosebud County,1
+28021,Claiborne County,Ross County,1
+28023,Clarke County,Routt County,1
+28025,Clay County,Rowan County,2
+28027,Coahoma County,Runnels County,1
+28029,Copiah County,Rush County,2
+28031,Covington County,Rusk County,2
+28033,DeSoto County,Russell County,4
+28035,Forrest County,Rutherford County,2
+28037,Franklin County,Rutland County,1
+28039,George County,Sabine County,1
+28041,Greene County,Sabine Parish,1
+28043,Grenada County,Sac County,1
+28045,Hancock County,Sacramento County,1
+28047,Harrison County,Sagadahoc County,1
+28049,Hinds County,Saginaw County,1
+28051,Holmes County,Saguache County,1
+28053,Humphreys County,Salem city,1
+28055,Issaquena County,Salem County,1
+28057,Itawamba County,Saline County,5
+28059,Jackson County,Salt Lake County,1
+28061,Jasper County,Saluda County,1
+28063,Jefferson County,Sampson County,1
+28065,Jefferson Davis County,San Augustine County,1
+28067,Jones County,San Benito County,1
+28069,Kemper County,San Bernardino County,1
+28071,Lafayette County,San Diego County,1
+28073,Lamar County,San Francisco County,1
+28075,Lauderdale County,San Jacinto County,1
+28077,Lawrence County,San Joaquin County,1
+28079,Leake County,San Juan County,4
+28081,Lee County,San Luis Obispo County,1
+28083,Leflore County,San Mateo County,1
+28085,Lincoln County,San Miguel County,2
+28087,Lowndes County,San Patricio County,1
+28089,Madison County,San Saba County,1
+28091,Marion County,Sanborn County,1
+28093,Marshall County,Sanders County,1
+28095,Monroe County,Sandoval County,1
+28097,Montgomery County,Sandusky County,1
+28099,Neshoba County,Sangamon County,1
+28101,Newton County,Sanilac County,1
+28103,Noxubee County,Sanpete County,1
+28105,Oktibbeha County,Santa Barbara County,1
+28107,Panola County,Santa Clara County,1
+28109,Pearl River County,Santa Cruz County,2
+28111,Perry County,Santa Fe County,1
+28113,Pike County,Santa Rosa County,1
+28115,Pontotoc County,Sarasota County,1
+28117,Prentiss County,Saratoga County,1
+28119,Quitman County,Sargent County,1
+28121,Rankin County,Sarpy County,1
+28123,Scott County,Sauk County,1
+28125,Sharkey County,Saunders County,1
+28127,Simpson County,Sawyer County,1
+28129,Smith County,Schenectady County,1
+28131,Stone County,Schleicher County,1
+28133,Sunflower County,Schley County,1
+28135,Tallahatchie County,Schoharie County,1
+28137,Tate County,Schoolcraft County,1
+28139,Tippah County,Schuyler County,3
+28141,Tishomingo County,Schuylkill County,1
+28143,Tunica County,Scioto County,1
+28145,Union County,Scotland County,2
+28147,Walthall County,Scott County,11
+28149,Warren County,Scotts Bluff County,1
+28151,Washington County,Screven County,1
+28153,Wayne County,Scurry County,1
+28155,Webster County,Searcy County,1
+28157,Wilkinson County,Sebastian County,1
+28159,Winston County,Sedgwick County,2
+28161,Yalobusha County,Seminole County,3
+28163,Yazoo County,Seneca County,2
+29000,Missouri,Sequatchie County,1
+29001,Adair County,Sequoyah County,1
+29003,Andrew County,Sevier County,3
+29005,Atchison County,Seward County,2
+29007,Audrain County,Shackelford County,1
+29009,Barry County,Shannon County,2
+29011,Barton County,Sharkey County,1
+29013,Bates County,Sharp County,1
+29015,Benton County,Shasta County,1
+29017,Bollinger County,Shawano County,1
+29019,Boone County,Shawnee County,1
+29021,Buchanan County,Sheboygan County,1
+29023,Butler County,Shelby County,9
+29025,Caldwell County,Shenandoah County,1
+29027,Callaway County,Sherburne County,1
+29029,Camden County,Sheridan County,5
+29031,Cape Girardeau County,Sherman County,4
+29033,Carroll County,Shiawassee County,1
+29035,Carter County,Shoshone County,1
+29037,Cass County,Sibley County,1
+29039,Cedar County,Sierra County,2
+29041,Chariton County,Silver Bow County,1
+29043,Christian County,Simpson County,2
+29045,Clark County,Sioux County,3
+29047,Clay County,Siskiyou County,1
+29049,Clinton County,Sitka Borough,1
+29051,Cole County,Skagit County,1
+29053,Cooper County,Skagway-Hoonah-Angoon Census Area          (created after 1990),1
+29055,Crawford County,Skagway-Yakutat-Angoon Census Area         (1990 Census Area),1
+29057,Dade County,Skamania County,1
+29059,Dallas County,Slope County,1
+29061,Daviess County,Smith County,4
+29063,DeKalb County,Smyth County,1
+29065,Dent County,Snohomish County,1
+29067,Douglas County,Snyder County,1
+29069,Dunklin County,Socorro County,1
+29071,Franklin County,Solano County,1
+29073,Gasconade County,Somerset County,4
+29075,Gentry County,Somervell County,1
+29077,Greene County,Sonoma County,1
+29079,Grundy County,"South Boston city                (After 1990, part of Halifax County)",1
+29081,Harrison County,SOUTH CAROLINA,2
+29083,Henry County,SOUTH DAKOTA,2
+29085,Hickory County,Southampton County,1
+29087,Holt County,Southeast Fairbanks Census Area,1
+29089,Howard County,Spalding County,1
+29091,Howell County,Spartanburg County,1
+29093,Iron County,Spencer County,2
+29095,Jackson County,Spink County,1
+29097,Jasper County,Spokane County,1
+29099,Jefferson County,Spotsylvania County,1
+29101,Johnson County,St. Bernard Parish,1
+29103,Knox County,St. Charles County,1
+29105,Laclede County,St. Charles Parish,1
+29107,Lafayette County,St. Clair County,4
+29109,Lawrence County,St. Croix County,1
+29111,Lewis County,St. Francis County,1
+29113,Lincoln County,St. Francois County,1
+29115,Linn County,St. Helena Parish,1
+29117,Livingston County,St. James Parish,1
+29119,McDonald County,St. John the Baptist Parish,1
+29121,Macon County,St. Johns County,1
+29123,Madison County,St. Joseph County,2
+29125,Maries County,St. Landry Parish,1
+29127,Marion County,St. Lawrence County,1
+29129,Mercer County,St. Louis city,1
+29131,Miller County,St. Louis County,2
+29133,Mississippi County,St. Lucie County,1
+29135,Moniteau County,St. Martin Parish,1
+29137,Monroe County,St. Mary,1
+29139,Montgomery County,St. Mary Parish,1
+29141,Morgan County,St. Tammany Parish,1
+29143,New Madrid County,Stafford County,2
+29145,Newton County,Stanislaus County,1
+29147,Nodaway County,Stanley County,1
+29149,Oregon County,Stanly County,1
+29151,Osage County,Stanton County,2
+29153,Ozark County,Stark County,3
+29155,Pemiscot County,Starke County,1
+29157,Perry County,Starr County,1
+29159,Pettis County,Staunton city,1
+29161,Phelps County,Ste. Genevieve County,1
+29163,Pike County,Stearns County,1
+29165,Platte County,Steele County,2
+29167,Polk County,Stephens County,3
+29169,Pulaski County,Stephenson County,1
+29171,Putnam County,Sterling County,1
+29173,Ralls County,Steuben County,2
+29175,Randolph County,Stevens County,3
+29177,Ray County,Stewart County,2
+29179,Reynolds County,Stillwater County,1
+29181,Ripley County,Stoddard County,1
+29183,St. Charles County,Stokes County,1
+29185,St. Clair County,Stone County,3
+29186,Ste. Genevieve County,Stonewall County,1
+29187,St. Francois County,Storey County,1
+29189,St. Louis County,Story County,1
+29195,Saline County,Strafford County,1
+29197,Schuyler County,Stutsman County,1
+29199,Scotland County,Sublette County,1
+29201,Scott County,Suffolk city,1
+29203,Shannon County,Suffolk County,2
+29205,Shelby County,Sullivan County,6
+29207,Stoddard County,Sully County,1
+29209,Stone County,Summers County,1
+29211,Sullivan County,Summit County,3
+29213,Taney County,Sumner County,2
+29215,Texas County,Sumter County,4
+29217,Vernon County,Sunflower County,1
+29219,Warren County,Surry County,2
+29221,Washington County,Susquehanna County,1
+29223,Wayne County,Sussex County,3
+29225,Webster County,Sutter County,1
+29227,Worth County,Sutton County,1
+29229,Wright County,Suwannee County,1
+29510,St. Louis city,Swain County,1
+30000,Montana,Sweet Grass County,1
+30001,Beaverhead County,Sweetwater County,1
+30003,Big Horn County,Swift County,1
+30005,Blaine County,Swisher County,1
+30007,Broadwater County,Switzerland County,1
+30009,Carbon County,Talbot County,2
+30011,Carter County,Taliaferro County,1
+30013,Cascade County,Talladega County,1
+30015,Chouteau County,Tallahatchie County,1
+30017,Custer County,Tallapoosa County,1
+30019,Daniels County,Tama County,1
+30021,Dawson County,Taney County,1
+30023,Deer Lodge County,Tangipahoa Parish,1
+30025,Fallon County,Taos County,1
+30027,Fergus County,Tarrant County,1
+30029,Flathead County,Tate County,1
+30031,Gallatin County,Tattnall County,1
+30033,Garfield County,Taylor County,7
+30035,Glacier County,Tazewell County,2
+30037,Golden Valley County,Tehama County,1
+30039,Granite County,Telfair County,1
+30041,Hill County,Teller County,1
+30043,Jefferson County,TENNESSEE,2
+30045,Judith Basin County,Tensas Parish,1
+30047,Lake County,Terrebonne Parish,1
+30049,Lewis and Clark County,Terrell County,2
+30051,Liberty County,Terry County,1
+30053,Lincoln County,Teton County,3
+30055,McCone County,TEXAS,2
+30057,Madison County,Texas County,2
+30059,Meagher County,Thayer County,1
+30061,Mineral County,Thomas County,3
+30063,Missoula County,Throckmorton County,1
+30065,Musselshell County,Thurston County,2
+30067,Park County,Tift County,1
+30069,Petroleum County,Tillamook County,1
+30071,Phillips County,Tillman County,1
+30073,Pondera County,Tioga County,2
+30075,Powder River County,Tippah County,1
+30077,Powell County,Tippecanoe County,1
+30079,Prairie County,Tipton County,2
+30081,Ravalli County,Tishomingo County,1
+30083,Richland County,Titus County,1
+30085,Roosevelt County,Todd County,3
+30087,Rosebud County,Tolland County,1
+30089,Sanders County,Tom Green County,1
+30091,Sheridan County,Tompkins County,1
+30093,Silver Bow County,Tooele County,1
+30095,Stillwater County,Toole County,1
+30097,Sweet Grass County,Toombs County,1
+30099,Teton County,Torrance County,1
+30101,Toole County,Towner County,1
+30103,Treasure County,Towns County,1
+30105,Valley County,Traill County,1
+30107,Wheatland County,Transylvania County,1
+30109,Wibaux County,Traverse County,1
+30111,Yellowstone County,Travis County,1
+30113,Yellowstone National Park,Treasure County,1
+31000,Nebraska,Trego County,1
+31001,Adams County,Trempealeau County,1
+31003,Antelope County,Treutlen County,1
+31005,Arthur County,Trigg County,1
+31007,Banner County,Trimble County,1
+31009,Blaine County,Trinity County,2
+31011,Boone County,Tripp County,1
+31013,Box Butte County,Troup County,1
+31015,Boyd County,Trousdale County,1
+31017,Brown County,Trumbull County,1
+31019,Buffalo County,Tucker County,1
+31021,Burt County,Tulare County,1
+31023,Butler County,Tulsa County,1
+31025,Cass County,Tunica County,1
+31027,Cedar County,Tuolumne County,1
+31029,Chase County,Turner County,2
+31031,Cherry County,Tuscaloosa County,1
+31033,Cheyenne County,Tuscarawas County,1
+31035,Clay County,Tuscola County,1
+31037,Colfax County,Twiggs County,1
+31039,Cuming County,Twin Falls County,1
+31041,Custer County,Tyler County,2
+31043,Dakota County,Tyrrell County,1
+31045,Dawes County,Uinta County,1
+31047,Dawson County,Uintah County,1
+31049,Deuel County,Ulster County,1
+31051,Dixon County,Umatilla County,1
+31053,Dodge County,Unicoi County,1
+31055,Douglas County,Union County,17
+31057,Dundy County,Union Parish,1
+31059,Fillmore County,Upshur County,2
+31061,Franklin County,Upson County,1
+31063,Frontier County,Upton County,1
+31065,Furnas County,UTAH,2
+31067,Gage County,Utah County,1
+31069,Garden County,Uvalde County,1
+31071,Garfield County,Val Verde County,1
+31073,Gosper County,Valdez-Cordova Census Area,1
+31075,Grant County,Valencia County,1
+31077,Greeley County,Valley County,3
+31079,Hall County,Van Buren County,4
+31081,Hamilton County,Van Wert County,1
+31083,Harlan County,Van Zandt County,1
+31085,Hayes County,Vance County,1
+31087,Hitchcock County,Vanderburgh County,1
+31089,Holt County,Venango County,1
+31091,Hooker County,Ventura County,1
+31093,Howard County,Vermilion County,1
+31095,Jefferson County,Vermilion Parish,1
+31097,Johnson County,Vermillion County,1
+31099,Kearney County,VERMONT,2
+31101,Keith County,Vernon County,2
+31103,Keya Paha County,Vernon Parish,1
+31105,Kimball County,Victoria County,1
+31107,Knox County,Vigo County,1
+31109,Lancaster County,Vilas County,1
+31111,Lincoln County,Vinton County,1
+31113,Logan County,VIRGINIA,2
+31115,Loup County,Virginia Beach city,1
+31117,McPherson County,Volusia County,1
+31119,Madison County,Wabash County,2
+31121,Merrick County,Wabasha County,1
+31123,Morrill County,Wabaunsee County,1
+31125,Nance County,Wade Hampton Census Area,1
+31127,Nemaha County,Wadena County,1
+31129,Nuckolls County,Wagoner County,1
+31131,Otoe County,Wahkiakum County,1
+31133,Pawnee County,Wake County,1
+31135,Perkins County,Wakulla County,1
+31137,Phelps County,Waldo County,1
+31139,Pierce County,Walker County,3
+31141,Platte County,Walla Walla County,1
+31143,Polk County,Wallace County,1
+31145,Red Willow County,Waller County,1
+31147,Richardson County,Wallowa County,1
+31149,Rock County,Walsh County,1
+31151,Saline County,Walthall County,1
+31153,Sarpy County,Walton County,2
+31155,Saunders County,Walworth County,2
+31157,Scotts Bluff County,Wapello County,1
+31159,Seward County,Ward County,2
+31161,Sheridan County,Ware County,1
+31163,Sherman County,Warren County,14
+31165,Sioux County,Warrick County,1
+31167,Stanton County,Wasatch County,1
+31169,Thayer County,Wasco County,1
+31171,Thomas County,Waseca County,1
+31173,Thurston County,Washakie County,1
+31175,Valley County,Washburn County,1
+31177,Washington County,WASHINGTON,2
+31179,Wayne County,Washington County,30
+31181,Webster County,Washington Parish,1
+31183,Wheeler County,Washita County,1
+31185,York County,Washoe County,1
+32000,Nevada,Washtenaw County,1
+32001,Churchill County,Watauga County,1
+32003,Clark County,Watonwan County,1
+32005,Douglas County,Waukesha County,1
+32007,Elko County,Waupaca County,1
+32009,Esmeralda County,Waushara County,1
+32011,Eureka County,Wayne County,16
+32013,Humboldt County,Waynesboro city,1
+32015,Lander County,Weakley County,1
+32017,Lincoln County,Webb County,1
+32019,Lyon County,Weber County,1
+32021,Mineral County,Webster County,7
+32023,Nye County,Webster Parish,1
+32027,Pershing County,Weld County,1
+32029,Storey County,Wells County,2
+32031,Washoe County,West Baton Rouge Parish,1
+32033,White Pine County,West Carroll Parish,1
+32510,Carson City,West Feliciana Parish,1
+33000,New Hampshire,WEST VIRGINIA,2
+33001,Belknap County,Westchester County,1
+33003,Carroll County,Westmoreland County,2
+33005,Cheshire County,Weston County,1
+33007,Coos County,Wetzel County,1
+33009,Grafton County,Wexford County,1
+33011,Hillsborough County,Wharton County,1
+33013,Merrimack County,Whatcom County,1
+33015,Rockingham County,Wheatland County,1
+33017,Strafford County,Wheeler County,4
+33019,Sullivan County,White County,5
+34000,New Jersey,White Pine County,1
+34001,Atlantic County,Whiteside County,1
+34003,Bergen County,Whitfield County,1
+34005,Burlington County,Whitley County,2
+34007,Camden County,Whitman County,1
+34009,Cape May County,Wibaux County,1
+34011,Cumberland County,Wichita County,2
+34013,Essex County,Wicomico County,1
+34015,Gloucester County,Wilbarger County,1
+34017,Hudson County,Wilcox County,2
+34019,Hunterdon County,Wilkes County,2
+34021,Mercer County,Wilkin County,1
+34023,Middlesex County,Wilkinson County,2
+34025,Monmouth County,Will County,1
+34027,Morris County,Willacy County,1
+34029,Ocean County,Williams County,2
+34031,Passaic County,Williamsburg city,1
+34033,Salem County,Williamsburg County,1
+34035,Somerset County,Williamson County,3
+34037,Sussex County,Wilson County,4
+34039,Union County,Winchester city,1
+34041,Warren County,Windham County,2
+35000,New Mexico,Windsor County,1
+35001,Bernalillo County,Winkler County,1
+35003,Catron County,Winn Parish,1
+35005,Chaves County,Winnebago County,3
+35006,Cibola County,Winneshiek County,1
+35007,Colfax County,Winona County,1
+35009,Curry County,Winston County,2
+35011,DeBaca County,Wirt County,1
+35013,Dona Ana County,WISCONSIN,2
+35015,Eddy County,Wise County,2
+35017,Grant County,Wolfe County,1
+35019,Guadalupe County,Wood County,4
+35021,Harding County,Woodbury County,1
+35023,Hidalgo County,Woodford County,2
+35025,Lea County,Woodruff County,1
+35027,Lincoln County,Woods County,1
+35028,Los Alamos County,Woodson County,1
+35029,Luna County,Woodward County,1
+35031,McKinley County,Worcester County,2
+35033,Mora County,Worth County,3
+35035,Otero County,Wrangell-Petersburg Census Area,1
+35037,Quay County,Wright County,3
+35039,Rio Arriba County,Wyandot County,1
+35041,Roosevelt County,Wyandotte County,1
+35043,Sandoval County,WYOMING,2
+35045,San Juan County,Wyoming County,3
+35047,San Miguel County,Wythe County,1
+35049,Santa Fe County,Yadkin County,1
+35051,Sierra County,Yakima County,1
+35053,Socorro County,Yakutat Borough                       (created after 1990),1
+35055,Taos County,Yalobusha County,1
+35057,Torrance County,Yamhill County,1
+35059,Union County,Yancey County,1
+35061,Valencia County,Yankton County,1
+36000,New York,Yates County,1
+36001,Albany County,Yavapai County,1
+36003,Allegany County,Yazoo County,1
+36005,Bronx County,Yell County,1
+36007,Broome County,Yellow Medicine County,1
+36009,Cattaraugus County,Yellowstone County,1
+36011,Cayuga County,Yellowstone National Park,1
+36013,Chautauqua County,Yoakum County,1
+36015,Chemung County,Yolo County,1
+36017,Chenango County,York County,5
+36019,Clinton County,Young County,1
+36021,Columbia County,Yuba County,1
+36023,Cortland County,Yukon-Koyukuk Census Area,1
+36025,Delaware County,Yuma County,2
+36027,Dutchess County,Zapata County,1
+36029,Erie County,Zavala County,1
+36031,Essex County,Ziebach County,1
+36033,Franklin County,(blank),
+36035,Fulton County,Grand Total,3246
+36037,Genesee County,,
+36039,Greene County,,
+36041,Hamilton County,,
+36043,Herkimer County,,
+36045,Jefferson County,,
+36047,Kings County,,
+36049,Lewis County,,
+36051,Livingston County,,
+36053,Madison County,,
+36055,Monroe County,,
+36057,Montgomery County,,
+36059,Nassau County,,
+36061,New York County,,
+36063,Niagara County,,
+36065,Oneida County,,
+36067,Onondaga County,,
+36069,Ontario County,,
+36071,Orange County,,
+36073,Orleans County,,
+36075,Oswego County,,
+36077,Otsego County,,
+36079,Putnam County,,
+36081,Queens County,,
+36083,Rensselaer County,,
+36085,Richmond County,,
+36087,Rockland County,,
+36089,St. Lawrence County,,
+36091,Saratoga County,,
+36093,Schenectady County,,
+36095,Schoharie County,,
+36097,Schuyler County,,
+36099,Seneca County,,
+36101,Steuben County,,
+36103,Suffolk County,,
+36105,Sullivan County,,
+36107,Tioga County,,
+36109,Tompkins County,,
+36111,Ulster County,,
+36113,Warren County,,
+36115,Washington County,,
+36117,Wayne County,,
+36119,Westchester County,,
+36121,Wyoming County,,
+36123,Yates County,,
+37000,North Carolina,,
+37001,Alamance County,,
+37003,Alexander County,,
+37005,Alleghany County,,
+37007,Anson County,,
+37009,Ashe County,,
+37011,Avery County,,
+37013,Beaufort County,,
+37015,Bertie County,,
+37017,Bladen County,,
+37019,Brunswick County,,
+37021,Buncombe County,,
+37023,Burke County,,
+37025,Cabarrus County,,
+37027,Caldwell County,,
+37029,Camden County,,
+37031,Carteret County,,
+37033,Caswell County,,
+37035,Catawba County,,
+37037,Chatham County,,
+37039,Cherokee County,,
+37041,Chowan County,,
+37043,Clay County,,
+37045,Cleveland County,,
+37047,Columbus County,,
+37049,Craven County,,
+37051,Cumberland County,,
+37053,Currituck County,,
+37055,Dare County,,
+37057,Davidson County,,
+37059,Davie County,,
+37061,Duplin County,,
+37063,Durham County,,
+37065,Edgecombe County,,
+37067,Forsyth County,,
+37069,Franklin County,,
+37071,Gaston County,,
+37073,Gates County,,
+37075,Graham County,,
+37077,Granville County,,
+37079,Greene County,,
+37081,Guilford County,,
+37083,Halifax County,,
+37085,Harnett County,,
+37087,Haywood County,,
+37089,Henderson County,,
+37091,Hertford County,,
+37093,Hoke County,,
+37095,Hyde County,,
+37097,Iredell County,,
+37099,Jackson County,,
+37101,Johnston County,,
+37103,Jones County,,
+37105,Lee County,,
+37107,Lenoir County,,
+37109,Lincoln County,,
+37111,McDowell County,,
+37113,Macon County,,
+37115,Madison County,,
+37117,Martin County,,
+37119,Mecklenburg County,,
+37121,Mitchell County,,
+37123,Montgomery County,,
+37125,Moore County,,
+37127,Nash County,,
+37129,New Hanover County,,
+37131,Northampton County,,
+37133,Onslow County,,
+37135,Orange County,,
+37137,Pamlico County,,
+37139,Pasquotank County,,
+37141,Pender County,,
+37143,Perquimans County,,
+37145,Person County,,
+37147,Pitt County,,
+37149,Polk County,,
+37151,Randolph County,,
+37153,Richmond County,,
+37155,Robeson County,,
+37157,Rockingham County,,
+37159,Rowan County,,
+37161,Rutherford County,,
+37163,Sampson County,,
+37165,Scotland County,,
+37167,Stanly County,,
+37169,Stokes County,,
+37171,Surry County,,
+37173,Swain County,,
+37175,Transylvania County,,
+37177,Tyrrell County,,
+37179,Union County,,
+37181,Vance County,,
+37183,Wake County,,
+37185,Warren County,,
+37187,Washington County,,
+37189,Watauga County,,
+37191,Wayne County,,
+37193,Wilkes County,,
+37195,Wilson County,,
+37197,Yadkin County,,
+37199,Yancey County,,
+38000,North Dakota,,
+38001,Adams County,,
+38003,Barnes County,,
+38005,Benson County,,
+38007,Billings County,,
+38009,Bottineau County,,
+38011,Bowman County,,
+38013,Burke County,,
+38015,Burleigh County,,
+38017,Cass County,,
+38019,Cavalier County,,
+38021,Dickey County,,
+38023,Divide County,,
+38025,Dunn County,,
+38027,Eddy County,,
+38029,Emmons County,,
+38031,Foster County,,
+38033,Golden Valley County,,
+38035,Grand Forks County,,
+38037,Grant County,,
+38039,Griggs County,,
+38041,Hettinger County,,
+38043,Kidder County,,
+38045,LaMoure County,,
+38047,Logan County,,
+38049,McHenry County,,
+38051,McIntosh County,,
+38053,McKenzie County,,
+38055,McLean County,,
+38057,Mercer County,,
+38059,Morton County,,
+38061,Mountrail County,,
+38063,Nelson County,,
+38065,Oliver County,,
+38067,Pembina County,,
+38069,Pierce County,,
+38071,Ramsey County,,
+38073,Ransom County,,
+38075,Renville County,,
+38077,Richland County,,
+38079,Rolette County,,
+38081,Sargent County,,
+38083,Sheridan County,,
+38085,Sioux County,,
+38087,Slope County,,
+38089,Stark County,,
+38091,Steele County,,
+38093,Stutsman County,,
+38095,Towner County,,
+38097,Traill County,,
+38099,Walsh County,,
+38101,Ward County,,
+38103,Wells County,,
+38105,Williams County,,
+39000,Ohio,,
+39001,Adams County,,
+39003,Allen County,,
+39005,Ashland County,,
+39007,Ashtabula County,,
+39009,Athens County,,
+39011,Auglaize County,,
+39013,Belmont County,,
+39015,Brown County,,
+39017,Butler County,,
+39019,Carroll County,,
+39021,Champaign County,,
+39023,Clark County,,
+39025,Clermont County,,
+39027,Clinton County,,
+39029,Columbiana County,,
+39031,Coshocton County,,
+39033,Crawford County,,
+39035,Cuyahoga County,,
+39037,Darke County,,
+39039,Defiance County,,
+39041,Delaware County,,
+39043,Erie County,,
+39045,Fairfield County,,
+39047,Fayette County,,
+39049,Franklin County,,
+39051,Fulton County,,
+39053,Gallia County,,
+39055,Geauga County,,
+39057,Greene County,,
+39059,Guernsey County,,
+39061,Hamilton County,,
+39063,Hancock County,,
+39065,Hardin County,,
+39067,Harrison County,,
+39069,Henry County,,
+39071,Highland County,,
+39073,Hocking County,,
+39075,Holmes County,,
+39077,Huron County,,
+39079,Jackson County,,
+39081,Jefferson County,,
+39083,Knox County,,
+39085,Lake County,,
+39087,Lawrence County,,
+39089,Licking County,,
+39091,Logan County,,
+39093,Lorain County,,
+39095,Lucas County,,
+39097,Madison County,,
+39099,Mahoning County,,
+39101,Marion County,,
+39103,Medina County,,
+39105,Meigs County,,
+39107,Mercer County,,
+39109,Miami County,,
+39111,Monroe County,,
+39113,Montgomery County,,
+39115,Morgan County,,
+39117,Morrow County,,
+39119,Muskingum County,,
+39121,Noble County,,
+39123,Ottawa County,,
+39125,Paulding County,,
+39127,Perry County,,
+39129,Pickaway County,,
+39131,Pike County,,
+39133,Portage County,,
+39135,Preble County,,
+39137,Putnam County,,
+39139,Richland County,,
+39141,Ross County,,
+39143,Sandusky County,,
+39145,Scioto County,,
+39147,Seneca County,,
+39149,Shelby County,,
+39151,Stark County,,
+39153,Summit County,,
+39155,Trumbull County,,
+39157,Tuscarawas County,,
+39159,Union County,,
+39161,Van Wert County,,
+39163,Vinton County,,
+39165,Warren County,,
+39167,Washington County,,
+39169,Wayne County,,
+39171,Williams County,,
+39173,Wood County,,
+39175,Wyandot County,,
+40000,Oklahoma,,
+40001,Adair County,,
+40003,Alfalfa County,,
+40005,Atoka County,,
+40007,Beaver County,,
+40009,Beckham County,,
+40011,Blaine County,,
+40013,Bryan County,,
+40015,Caddo County,,
+40017,Canadian County,,
+40019,Carter County,,
+40021,Cherokee County,,
+40023,Choctaw County,,
+40025,Cimarron County,,
+40027,Cleveland County,,
+40029,Coal County,,
+40031,Comanche County,,
+40033,Cotton County,,
+40035,Craig County,,
+40037,Creek County,,
+40039,Custer County,,
+40041,Delaware County,,
+40043,Dewey County,,
+40045,Ellis County,,
+40047,Garfield County,,
+40049,Garvin County,,
+40051,Grady County,,
+40053,Grant County,,
+40055,Greer County,,
+40057,Harmon County,,
+40059,Harper County,,
+40061,Haskell County,,
+40063,Hughes County,,
+40065,Jackson County,,
+40067,Jefferson County,,
+40069,Johnston County,,
+40071,Kay County,,
+40073,Kingfisher County,,
+40075,Kiowa County,,
+40077,Latimer County,,
+40079,Le Flore County,,
+40081,Lincoln County,,
+40083,Logan County,,
+40085,Love County,,
+40087,McClain County,,
+40089,McCurtain County,,
+40091,McIntosh County,,
+40093,Major County,,
+40095,Marshall County,,
+40097,Mayes County,,
+40099,Murray County,,
+40101,Muskogee County,,
+40103,Noble County,,
+40105,Nowata County,,
+40107,Okfuskee County,,
+40109,Oklahoma County,,
+40111,Okmulgee County,,
+40113,Osage County,,
+40115,Ottawa County,,
+40117,Pawnee County,,
+40119,Payne County,,
+40121,Pittsburg County,,
+40123,Pontotoc County,,
+40125,Pottawatomie County,,
+40127,Pushmataha County,,
+40129,Roger Mills County,,
+40131,Rogers County,,
+40133,Seminole County,,
+40135,Sequoyah County,,
+40137,Stephens County,,
+40139,Texas County,,
+40141,Tillman County,,
+40143,Tulsa County,,
+40145,Wagoner County,,
+40147,Washington County,,
+40149,Washita County,,
+40151,Woods County,,
+40153,Woodward County,,
+41000,Oregon,,
+41001,Baker County,,
+41003,Benton County,,
+41005,Clackamas County,,
+41007,Clatsop County,,
+41009,Columbia County,,
+41011,Coos County,,
+41013,Crook County,,
+41015,Curry County,,
+41017,Deschutes County,,
+41019,Douglas County,,
+41021,Gilliam County,,
+41023,Grant County,,
+41025,Harney County,,
+41027,Hood River County,,
+41029,Jackson County,,
+41031,Jefferson County,,
+41033,Josephine County,,
+41035,Klamath County,,
+41037,Lake County,,
+41039,Lane County,,
+41041,Lincoln County,,
+41043,Linn County,,
+41045,Malheur County,,
+41047,Marion County,,
+41049,Morrow County,,
+41051,Multnomah County,,
+41053,Polk County,,
+41055,Sherman County,,
+41057,Tillamook County,,
+41059,Umatilla County,,
+41061,Union County,,
+41063,Wallowa County,,
+41065,Wasco County,,
+41067,Washington County,,
+41069,Wheeler County,,
+41071,Yamhill County,,
+42000,Pennsylvania,,
+42001,Adams County,,
+42003,Allegheny County,,
+42005,Armstrong County,,
+42007,Beaver County,,
+42009,Bedford County,,
+42011,Berks County,,
+42013,Blair County,,
+42015,Bradford County,,
+42017,Bucks County,,
+42019,Butler County,,
+42021,Cambria County,,
+42023,Cameron County,,
+42025,Carbon County,,
+42027,Centre County,,
+42029,Chester County,,
+42031,Clarion County,,
+42033,Clearfield County,,
+42035,Clinton County,,
+42037,Columbia County,,
+42039,Crawford County,,
+42041,Cumberland County,,
+42043,Dauphin County,,
+42045,Delaware County,,
+42047,Elk County,,
+42049,Erie County,,
+42051,Fayette County,,
+42053,Forest County,,
+42055,Franklin County,,
+42057,Fulton County,,
+42059,Greene County,,
+42061,Huntingdon County,,
+42063,Indiana County,,
+42065,Jefferson County,,
+42067,Juniata County,,
+42069,Lackawanna County,,
+42071,Lancaster County,,
+42073,Lawrence County,,
+42075,Lebanon County,,
+42077,Lehigh County,,
+42079,Luzerne County,,
+42081,Lycoming County,,
+42083,Mc Kean County,,
+42085,Mercer County,,
+42087,Mifflin County,,
+42089,Monroe County,,
+42091,Montgomery County,,
+42093,Montour County,,
+42095,Northampton County,,
+42097,Northumberland County,,
+42099,Perry County,,
+42101,Philadelphia County,,
+42103,Pike County,,
+42105,Potter County,,
+42107,Schuylkill County,,
+42109,Snyder County,,
+42111,Somerset County,,
+42113,Sullivan County,,
+42115,Susquehanna County,,
+42117,Tioga County,,
+42119,Union County,,
+42121,Venango County,,
+42123,Warren County,,
+42125,Washington County,,
+42127,Wayne County,,
+42129,Westmoreland County,,
+42131,Wyoming County,,
+42133,York County,,
+44000,Rhode Island,,
+44001,Bristol County,,
+44003,Kent County,,
+44005,Newport County,,
+44007,Providence County,,
+44009,Washington County,,
+45000,South Carolina,,
+45001,Abbeville County,,
+45003,Aiken County,,
+45005,Allendale County,,
+45007,Anderson County,,
+45009,Bamberg County,,
+45011,Barnwell County,,
+45013,Beaufort County,,
+45015,Berkeley County,,
+45017,Calhoun County,,
+45019,Charleston County,,
+45021,Cherokee County,,
+45023,Chester County,,
+45025,Chesterfield County,,
+45027,Clarendon County,,
+45029,Colleton County,,
+45031,Darlington County,,
+45033,Dillon County,,
+45035,Dorchester County,,
+45037,Edgefield County,,
+45039,Fairfield County,,
+45041,Florence County,,
+45043,Georgetown County,,
+45045,Greenville County,,
+45047,Greenwood County,,
+45049,Hampton County,,
+45051,Horry County,,
+45053,Jasper County,,
+45055,Kershaw County,,
+45057,Lancaster County,,
+45059,Laurens County,,
+45061,Lee County,,
+45063,Lexington County,,
+45065,McCormick County,,
+45067,Marion County,,
+45069,Marlboro County,,
+45071,Newberry County,,
+45073,Oconee County,,
+45075,Orangeburg County,,
+45077,Pickens County,,
+45079,Richland County,,
+45081,Saluda County,,
+45083,Spartanburg County,,
+45085,Sumter County,,
+45087,Union County,,
+45089,Williamsburg County,,
+45091,York County,,
+46000,South Dakota,,
+46003,Aurora County,,
+46005,Beadle County,,
+46007,Bennett County,,
+46009,Bon Homme County,,
+46011,Brookings County,,
+46013,Brown County,,
+46015,Brule County,,
+46017,Buffalo County,,
+46019,Butte County,,
+46021,Campbell County,,
+46023,Charles Mix County,,
+46025,Clark County,,
+46027,Clay County,,
+46029,Codington County,,
+46031,Corson County,,
+46033,Custer County,,
+46035,Davison County,,
+46037,Day County,,
+46039,Deuel County,,
+46041,Dewey County,,
+46043,Douglas County,,
+46045,Edmunds County,,
+46047,Fall River County,,
+46049,Faulk County,,
+46051,Grant County,,
+46053,Gregory County,,
+46055,Haakon County,,
+46057,Hamlin County,,
+46059,Hand County,,
+46061,Hanson County,,
+46063,Harding County,,
+46065,Hughes County,,
+46067,Hutchinson County,,
+46069,Hyde County,,
+46071,Jackson County,,
+46073,Jerauld County,,
+46075,Jones County,,
+46077,Kingsbury County,,
+46079,Lake County,,
+46081,Lawrence County,,
+46083,Lincoln County,,
+46085,Lyman County,,
+46087,McCook County,,
+46089,McPherson County,,
+46091,Marshall County,,
+46093,Meade County,,
+46095,Mellette County,,
+46097,Miner County,,
+46099,Minnehaha County,,
+46101,Moody County,,
+46103,Pennington County,,
+46105,Perkins County,,
+46107,Potter County,,
+46109,Roberts County,,
+46111,Sanborn County,,
+46113,Shannon County,,
+46115,Spink County,,
+46117,Stanley County,,
+46119,Sully County,,
+46121,Todd County,,
+46123,Tripp County,,
+46125,Turner County,,
+46127,Union County,,
+46129,Walworth County,,
+46135,Yankton County,,
+46137,Ziebach County,,
+47000,Tennessee,,
+47001,Anderson County,,
+47003,Bedford County,,
+47005,Benton County,,
+47007,Bledsoe County,,
+47009,Blount County,,
+47011,Bradley County,,
+47013,Campbell County,,
+47015,Cannon County,,
+47017,Carroll County,,
+47019,Carter County,,
+47021,Cheatham County,,
+47023,Chester County,,
+47025,Claiborne County,,
+47027,Clay County,,
+47029,Cocke County,,
+47031,Coffee County,,
+47033,Crockett County,,
+47035,Cumberland County,,
+47037,Davidson County,,
+47039,Decatur County,,
+47041,DeKalb County,,
+47043,Dickson County,,
+47045,Dyer County,,
+47047,Fayette County,,
+47049,Fentress County,,
+47051,Franklin County,,
+47053,Gibson County,,
+47055,Giles County,,
+47057,Grainger County,,
+47059,Greene County,,
+47061,Grundy County,,
+47063,Hamblen County,,
+47065,Hamilton County,,
+47067,Hancock County,,
+47069,Hardeman County,,
+47071,Hardin County,,
+47073,Hawkins County,,
+47075,Haywood County,,
+47077,Henderson County,,
+47079,Henry County,,
+47081,Hickman County,,
+47083,Houston County,,
+47085,Humphreys County,,
+47087,Jackson County,,
+47089,Jefferson County,,
+47091,Johnson County,,
+47093,Knox County,,
+47095,Lake County,,
+47097,Lauderdale County,,
+47099,Lawrence County,,
+47101,Lewis County,,
+47103,Lincoln County,,
+47105,Loudon County,,
+47107,McMinn County,,
+47109,McNairy County,,
+47111,Macon County,,
+47113,Madison County,,
+47115,Marion County,,
+47117,Marshall County,,
+47119,Maury County,,
+47121,Meigs County,,
+47123,Monroe County,,
+47125,Montgomery County,,
+47127,Moore County,,
+47129,Morgan County,,
+47131,Obion County,,
+47133,Overton County,,
+47135,Perry County,,
+47137,Pickett County,,
+47139,Polk County,,
+47141,Putnam County,,
+47143,Rhea County,,
+47145,Roane County,,
+47147,Robertson County,,
+47149,Rutherford County,,
+47151,Scott County,,
+47153,Sequatchie County,,
+47155,Sevier County,,
+47157,Shelby County,,
+47159,Smith County,,
+47161,Stewart County,,
+47163,Sullivan County,,
+47165,Sumner County,,
+47167,Tipton County,,
+47169,Trousdale County,,
+47171,Unicoi County,,
+47173,Union County,,
+47175,Van Buren County,,
+47177,Warren County,,
+47179,Washington County,,
+47181,Wayne County,,
+47183,Weakley County,,
+47185,White County,,
+47187,Williamson County,,
+47189,Wilson County,,
+48000,Texas,,
+48001,Anderson County,,
+48003,Andrews County,,
+48005,Angelina County,,
+48007,Aransas County,,
+48009,Archer County,,
+48011,Armstrong County,,
+48013,Atascosa County,,
+48015,Austin County,,
+48017,Bailey County,,
+48019,Bandera County,,
+48021,Bastrop County,,
+48023,Baylor County,,
+48025,Bee County,,
+48027,Bell County,,
+48029,Bexar County,,
+48031,Blanco County,,
+48033,Borden County,,
+48035,Bosque County,,
+48037,Bowie County,,
+48039,Brazoria County,,
+48041,Brazos County,,
+48043,Brewster County,,
+48045,Briscoe County,,
+48047,Brooks County,,
+48049,Brown County,,
+48051,Burleson County,,
+48053,Burnet County,,
+48055,Caldwell County,,
+48057,Calhoun County,,
+48059,Callahan County,,
+48061,Cameron County,,
+48063,Camp County,,
+48065,Carson County,,
+48067,Cass County,,
+48069,Castro County,,
+48071,Chambers County,,
+48073,Cherokee County,,
+48075,Childress County,,
+48077,Clay County,,
+48079,Cochran County,,
+48081,Coke County,,
+48083,Coleman County,,
+48085,Collin County,,
+48087,Collingsworth County,,
+48089,Colorado County,,
+48091,Comal County,,
+48093,Comanche County,,
+48095,Concho County,,
+48097,Cooke County,,
+48099,Coryell County,,
+48101,Cottle County,,
+48103,Crane County,,
+48105,Crockett County,,
+48107,Crosby County,,
+48109,Culberson County,,
+48111,Dallam County,,
+48113,Dallas County,,
+48115,Dawson County,,
+48117,Deaf Smith County,,
+48119,Delta County,,
+48121,Denton County,,
+48123,DeWitt County,,
+48125,Dickens County,,
+48127,Dimmit County,,
+48129,Donley County,,
+48131,Duval County,,
+48133,Eastland County,,
+48135,Ector County,,
+48137,Edwards County,,
+48139,Ellis County,,
+48141,El Paso County,,
+48143,Erath County,,
+48145,Falls County,,
+48147,Fannin County,,
+48149,Fayette County,,
+48151,Fisher County,,
+48153,Floyd County,,
+48155,Foard County,,
+48157,Fort Bend County,,
+48159,Franklin County,,
+48161,Freestone County,,
+48163,Frio County,,
+48165,Gaines County,,
+48167,Galveston County,,
+48169,Garza County,,
+48171,Gillespie County,,
+48173,Glasscock County,,
+48175,Goliad County,,
+48177,Gonzales County,,
+48179,Gray County,,
+48181,Grayson County,,
+48183,Gregg County,,
+48185,Grimes County,,
+48187,Guadalupe County,,
+48189,Hale County,,
+48191,Hall County,,
+48193,Hamilton County,,
+48195,Hansford County,,
+48197,Hardeman County,,
+48199,Hardin County,,
+48201,Harris County,,
+48203,Harrison County,,
+48205,Hartley County,,
+48207,Haskell County,,
+48209,Hays County,,
+48211,Hemphill County,,
+48213,Henderson County,,
+48215,Hidalgo County,,
+48217,Hill County,,
+48219,Hockley County,,
+48221,Hood County,,
+48223,Hopkins County,,
+48225,Houston County,,
+48227,Howard County,,
+48229,Hudspeth County,,
+48231,Hunt County,,
+48233,Hutchinson County,,
+48235,Irion County,,
+48237,Jack County,,
+48239,Jackson County,,
+48241,Jasper County,,
+48243,Jeff Davis County,,
+48245,Jefferson County,,
+48247,Jim Hogg County,,
+48249,Jim Wells County,,
+48251,Johnson County,,
+48253,Jones County,,
+48255,Karnes County,,
+48257,Kaufman County,,
+48259,Kendall County,,
+48261,Kenedy County,,
+48263,Kent County,,
+48265,Kerr County,,
+48267,Kimble County,,
+48269,King County,,
+48271,Kinney County,,
+48273,Kleberg County,,
+48275,Knox County,,
+48277,Lamar County,,
+48279,Lamb County,,
+48281,Lampasas County,,
+48283,La Salle County,,
+48285,Lavaca County,,
+48287,Lee County,,
+48289,Leon County,,
+48291,Liberty County,,
+48293,Limestone County,,
+48295,Lipscomb County,,
+48297,Live Oak County,,
+48299,Llano County,,
+48301,Loving County,,
+48303,Lubbock County,,
+48305,Lynn County,,
+48307,McCulloch County,,
+48309,McLennan County,,
+48311,McMullen County,,
+48313,Madison County,,
+48315,Marion County,,
+48317,Martin County,,
+48319,Mason County,,
+48321,Matagorda County,,
+48323,Maverick County,,
+48325,Medina County,,
+48327,Menard County,,
+48329,Midland County,,
+48331,Milam County,,
+48333,Mills County,,
+48335,Mitchell County,,
+48337,Montague County,,
+48339,Montgomery County,,
+48341,Moore County,,
+48343,Morris County,,
+48345,Motley County,,
+48347,Nacogdoches County,,
+48349,Navarro County,,
+48351,Newton County,,
+48353,Nolan County,,
+48355,Nueces County,,
+48357,Ochiltree County,,
+48359,Oldham County,,
+48361,Orange County,,
+48363,Palo Pinto County,,
+48365,Panola County,,
+48367,Parker County,,
+48369,Parmer County,,
+48371,Pecos County,,
+48373,Polk County,,
+48375,Potter County,,
+48377,Presidio County,,
+48379,Rains County,,
+48381,Randall County,,
+48383,Reagan County,,
+48385,Real County,,
+48387,Red River County,,
+48389,Reeves County,,
+48391,Refugio County,,
+48393,Roberts County,,
+48395,Robertson County,,
+48397,Rockwall County,,
+48399,Runnels County,,
+48401,Rusk County,,
+48403,Sabine County,,
+48405,San Augustine County,,
+48407,San Jacinto County,,
+48409,San Patricio County,,
+48411,San Saba County,,
+48413,Schleicher County,,
+48415,Scurry County,,
+48417,Shackelford County,,
+48419,Shelby County,,
+48421,Sherman County,,
+48423,Smith County,,
+48425,Somervell County,,
+48427,Starr County,,
+48429,Stephens County,,
+48431,Sterling County,,
+48433,Stonewall County,,
+48435,Sutton County,,
+48437,Swisher County,,
+48439,Tarrant County,,
+48441,Taylor County,,
+48443,Terrell County,,
+48445,Terry County,,
+48447,Throckmorton County,,
+48449,Titus County,,
+48451,Tom Green County,,
+48453,Travis County,,
+48455,Trinity County,,
+48457,Tyler County,,
+48459,Upshur County,,
+48461,Upton County,,
+48463,Uvalde County,,
+48465,Val Verde County,,
+48467,Van Zandt County,,
+48469,Victoria County,,
+48471,Walker County,,
+48473,Waller County,,
+48475,Ward County,,
+48477,Washington County,,
+48479,Webb County,,
+48481,Wharton County,,
+48483,Wheeler County,,
+48485,Wichita County,,
+48487,Wilbarger County,,
+48489,Willacy County,,
+48491,Williamson County,,
+48493,Wilson County,,
+48495,Winkler County,,
+48497,Wise County,,
+48499,Wood County,,
+48501,Yoakum County,,
+48503,Young County,,
+48505,Zapata County,,
+48507,Zavala County,,
+49000,Utah,,
+49001,Beaver County,,
+49003,Box Elder County,,
+49005,Cache County,,
+49007,Carbon County,,
+49009,Daggett County,,
+49011,Davis County,,
+49013,Duchesne County,,
+49015,Emery County,,
+49017,Garfield County,,
+49019,Grand County,,
+49021,Iron County,,
+49023,Juab County,,
+49025,Kane County,,
+49027,Millard County,,
+49029,Morgan County,,
+49031,Piute County,,
+49033,Rich County,,
+49035,Salt Lake County,,
+49037,San Juan County,,
+49039,Sanpete County,,
+49041,Sevier County,,
+49043,Summit County,,
+49045,Tooele County,,
+49047,Uintah County,,
+49049,Utah County,,
+49051,Wasatch County,,
+49053,Washington County,,
+49055,Wayne County,,
+49057,Weber County,,
+50000,Vermont,,
+50001,Addison County,,
+50003,Bennington County,,
+50005,Caledonia County,,
+50007,Chittenden County,,
+50009,Essex County,,
+50011,Franklin County,,
+50013,Grand Isle County,,
+50015,Lamoille County,,
+50017,Orange County,,
+50019,Orleans County,,
+50021,Rutland County,,
+50023,Washington County,,
+50025,Windham County,,
+50027,Windsor County,,
+51000,Virginia,,
+51001,Accomack County,,
+51003,Albemarle County,,
+51005,Alleghany County,,
+51007,Amelia County,,
+51009,Amherst County,,
+51011,Appomattox County,,
+51013,Arlington County,,
+51015,Augusta County,,
+51017,Bath County,,
+51019,Bedford County,,
+51021,Bland County,,
+51023,Botetourt County,,
+51025,Brunswick County,,
+51027,Buchanan County,,
+51029,Buckingham County,,
+51031,Campbell County,,
+51033,Caroline County,,
+51035,Carroll County,,
+51036,Charles City County,,
+51037,Charlotte County,,
+51041,Chesterfield County,,
+51043,Clarke County,,
+51045,Craig County,,
+51047,Culpeper County,,
+51049,Cumberland County,,
+51051,Dickenson County,,
+51053,Dinwiddie County,,
+51057,Essex County,,
+51059,Fairfax County,,
+51061,Fauquier County,,
+51063,Floyd County,,
+51065,Fluvanna County,,
+51067,Franklin County,,
+51069,Frederick County,,
+51071,Giles County,,
+51073,Gloucester County,,
+51075,Goochland County,,
+51077,Grayson County,,
+51079,Greene County,,
+51081,Greensville County,,
+51083,Halifax County,,
+51085,Hanover County,,
+51087,Henrico County,,
+51089,Henry County,,
+51091,Highland County,,
+51093,Isle of Wight County,,
+51095,James City County,,
+51097,King and Queen County,,
+51099,King George County,,
+51101,King William County,,
+51103,Lancaster County,,
+51105,Lee County,,
+51107,Loudoun County,,
+51109,Louisa County,,
+51111,Lunenburg County,,
+51113,Madison County,,
+51115,Mathews County,,
+51117,Mecklenburg County,,
+51119,Middlesex County,,
+51121,Montgomery County,,
+51125,Nelson County,,
+51127,New Kent County,,
+51131,Northampton County,,
+51133,Northumberland County,,
+51135,Nottoway County,,
+51137,Orange County,,
+51139,Page County,,
+51141,Patrick County,,
+51143,Pittsylvania County,,
+51145,Powhatan County,,
+51147,Prince Edward County,,
+51149,Prince George County,,
+51153,Prince William County,,
+51155,Pulaski County,,
+51157,Rappahannock County,,
+51159,Richmond County,,
+51161,Roanoke County,,
+51163,Rockbridge County,,
+51165,Rockingham County,,
+51167,Russell County,,
+51169,Scott County,,
+51171,Shenandoah County,,
+51173,Smyth County,,
+51175,Southampton County,,
+51177,Spotsylvania County,,
+51179,Stafford County,,
+51181,Surry County,,
+51183,Sussex County,,
+51185,Tazewell County,,
+51187,Warren County,,
+51191,Washington County,,
+51193,Westmoreland County,,
+51195,Wise County,,
+51197,Wythe County,,
+51199,York County,,
+51510,Alexandria city,,
+51515,Bedford city,,
+51520,Bristol city,,
+51530,Buena Vista city,,
+51540,Charlottesville city,,
+51550,Chesapeake city,,
+51560,Clifton Forge city,,
+51570,Colonial Heights city,,
+51580,Covington city,,
+51590,Danville city,,
+51595,Emporia city,,
+51600,Fairfax city,,
+51610,Falls Church city,,
+51620,Franklin city,,
+51630,Fredericksburg city,,
+51640,Galax city,,
+51650,Hampton city,,
+51660,Harrisonburg city,,
+51670,Hopewell city,,
+51678,Lexington city,,
+51680,Lynchburg city,,
+51683,Manassas city,,
+51685,Manassas Park city,,
+51690,Martinsville city,,
+51700,Newport News city,,
+51710,Norfolk city,,
+51720,Norton city,,
+51730,Petersburg city,,
+51735,Poquoson city,,
+51740,Portsmouth city,,
+51750,Radford city,,
+51760,Richmond city,,
+51770,Roanoke city,,
+51775,Salem city,,
+51780,"South Boston city                (After 1990, part of Halifax County)",,
+51790,Staunton city,,
+51800,Suffolk city,,
+51810,Virginia Beach city,,
+51820,Waynesboro city,,
+51830,Williamsburg city,,
+51840,Winchester city,,
+53000,Washington,,
+53001,Adams County,,
+53003,Asotin County,,
+53005,Benton County,,
+53007,Chelan County,,
+53009,Clallam County,,
+53011,Clark County,,
+53013,Columbia County,,
+53015,Cowlitz County,,
+53017,Douglas County,,
+53019,Ferry County,,
+53021,Franklin County,,
+53023,Garfield County,,
+53025,Grant County,,
+53027,Grays Harbor County,,
+53029,Island County,,
+53031,Jefferson County,,
+53033,King County,,
+53035,Kitsap County,,
+53037,Kittitas County,,
+53039,Klickitat County,,
+53041,Lewis County,,
+53043,Lincoln County,,
+53045,Mason County,,
+53047,Okanogan County,,
+53049,Pacific County,,
+53051,Pend Oreille County,,
+53053,Pierce County,,
+53055,San Juan County,,
+53057,Skagit County,,
+53059,Skamania County,,
+53061,Snohomish County,,
+53063,Spokane County,,
+53065,Stevens County,,
+53067,Thurston County,,
+53069,Wahkiakum County,,
+53071,Walla Walla County,,
+53073,Whatcom County,,
+53075,Whitman County,,
+53077,Yakima County,,
+54000,West Virginia,,
+54001,Barbour County,,
+54003,Berkeley County,,
+54005,Boone County,,
+54007,Braxton County,,
+54009,Brooke County,,
+54011,Cabell County,,
+54013,Calhoun County,,
+54015,Clay County,,
+54017,Doddridge County,,
+54019,Fayette County,,
+54021,Gilmer County,,
+54023,Grant County,,
+54025,Greenbrier County,,
+54027,Hampshire County,,
+54029,Hancock County,,
+54031,Hardy County,,
+54033,Harrison County,,
+54035,Jackson County,,
+54037,Jefferson County,,
+54039,Kanawha County,,
+54041,Lewis County,,
+54043,Lincoln County,,
+54045,Logan County,,
+54047,McDowell County,,
+54049,Marion County,,
+54051,Marshall County,,
+54053,Mason County,,
+54055,Mercer County,,
+54057,Mineral County,,
+54059,Mingo County,,
+54061,Monongalia County,,
+54063,Monroe County,,
+54065,Morgan County,,
+54067,Nicholas County,,
+54069,Ohio County,,
+54071,Pendleton County,,
+54073,Pleasants County,,
+54075,Pocahontas County,,
+54077,Preston County,,
+54079,Putnam County,,
+54081,Raleigh County,,
+54083,Randolph County,,
+54085,Ritchie County,,
+54087,Roane County,,
+54089,Summers County,,
+54091,Taylor County,,
+54093,Tucker County,,
+54095,Tyler County,,
+54097,Upshur County,,
+54099,Wayne County,,
+54101,Webster County,,
+54103,Wetzel County,,
+54105,Wirt County,,
+54107,Wood County,,
+54109,Wyoming County,,
+55000,Wisconsin,,
+55001,Adams County,,
+55003,Ashland County,,
+55005,Barron County,,
+55007,Bayfield County,,
+55009,Brown County,,
+55011,Buffalo County,,
+55013,Burnett County,,
+55015,Calumet County,,
+55017,Chippewa County,,
+55019,Clark County,,
+55021,Columbia County,,
+55023,Crawford County,,
+55025,Dane County,,
+55027,Dodge County,,
+55029,Door County,,
+55031,Douglas County,,
+55033,Dunn County,,
+55035,Eau Claire County,,
+55037,Florence County,,
+55039,Fond du Lac County,,
+55041,Forest County,,
+55043,Grant County,,
+55045,Green County,,
+55047,Green Lake County,,
+55049,Iowa County,,
+55051,Iron County,,
+55053,Jackson County,,
+55055,Jefferson County,,
+55057,Juneau County,,
+55059,Kenosha County,,
+55061,Kewaunee County,,
+55063,La Crosse County,,
+55065,Lafayette County,,
+55067,Langlade County,,
+55069,Lincoln County,,
+55071,Manitowoc County,,
+55073,Marathon County,,
+55075,Marinette County,,
+55077,Marquette County,,
+55078,Menominee County,,
+55079,Milwaukee County,,
+55081,Monroe County,,
+55083,Oconto County,,
+55085,Oneida County,,
+55087,Outagamie County,,
+55089,Ozaukee County,,
+55091,Pepin County,,
+55093,Pierce County,,
+55095,Polk County,,
+55097,Portage County,,
+55099,Price County,,
+55101,Racine County,,
+55103,Richland County,,
+55105,Rock County,,
+55107,Rusk County,,
+55109,St. Croix County,,
+55111,Sauk County,,
+55113,Sawyer County,,
+55115,Shawano County,,
+55117,Sheboygan County,,
+55119,Taylor County,,
+55121,Trempealeau County,,
+55123,Vernon County,,
+55125,Vilas County,,
+55127,Walworth County,,
+55129,Washburn County,,
+55131,Washington County,,
+55133,Waukesha County,,
+55135,Waupaca County,,
+55137,Waushara County,,
+55139,Winnebago County,,
+55141,Wood County,,
+56000,Wyoming,,
+56001,Albany County,,
+56003,Big Horn County,,
+56005,Campbell County,,
+56007,Carbon County,,
+56009,Converse County,,
+56011,Crook County,,
+56013,Fremont County,,
+56015,Goshen County,,
+56017,Hot Springs County,,
+56019,Johnson County,,
+56021,Laramie County,,
+56023,Lincoln County,,
+56025,Natrona County,,
+56027,Niobrara County,,
+56029,Park County,,
+56031,Platte County,,
+56033,Sheridan County,,
+56035,Sublette County,,
+56037,Sweetwater County,,
+56039,Teton County,,
+56041,Uinta County,,
+56043,Washakie County,,
+56045,Weston County,,
