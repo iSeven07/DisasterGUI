@@ -19,6 +19,15 @@ st_style = """
             footer {visibility: hidden;}
             header {visibility: hidden;}
             .stTabs [data-baseweb="tab-list"] button [data-testid="stMarkdownContainer"] p { font-size: 24px; }
+            .stButton>button {
+              position: fixed;
+              bottom: 20px;
+              right: 20px;
+              z-index: 1;
+              padding: 10px;
+              background-color: gray;
+
+            }
             </style>
             """
 st.markdown(st_style, unsafe_allow_html=True)
@@ -36,11 +45,11 @@ def get_data():
   return df
 
 
-df = get_data()
+df_main = get_data()
 
 # ---- DEFAULT QUERY ----
-defaultStates = list(df["state"].unique())
-defaultQuery = df.query(f'state == {defaultStates}')
+defaultStates = list(df_main["state"].unique())
+defaultQuery = df_main.query(f'state == {defaultStates}')
 
 # ---- FILTER BOOLEAN ----
 show_filters = False
@@ -86,10 +95,13 @@ def filters(df):
 
 # ---- MAINPAGE ----
 
-def top_info():
+def top_info(df):
   st.title("📊 Natural Disaster Dashboard")
   st.markdown("##")
 
+  askBot = st.button("🤖 Ask DisasterBot", use_container_width=False)
+  if askBot:
+    switch_page('disasterbot')
   # Top portion for totals
   st.title('Quick Glance')
   total_incidents = int(df["incident_type"].count())
@@ -113,7 +125,7 @@ def top_info():
 # ---- GRAPHS ----
 # Total Incidents in each State [BAR CHART]
 
-def incident_by_state(filter=defaultQuery):
+def incident_by_state(filter):
   incidents_by_state = (
       filter.groupby(by=["state"]).count()[["incident_type"]].sort_values(by="incident_type") #Look into validating sort_values usage
   )
@@ -127,7 +139,7 @@ def incident_by_state(filter=defaultQuery):
   return fig_incidents_by_state
 
 # Incident Frequency [BAR CHART]
-def incident_freq(filter=defaultQuery):
+def incident_freq(filter):
     incident_frequency = filter.groupby(by=["incident_type"]).count()[
         ['state']].sort_values(by='state')
     fig_incident_frequency = px.bar(
@@ -150,8 +162,8 @@ def incident_freq(filter=defaultQuery):
     return fig_incident_frequency
 
 # Number of incidents per year [LINE GRAPH]
-def incidents_per_year(filter=defaultQuery):
-    events_per_date = filter.groupby(
+def incidents_per_year(filter):
+  events_per_date = filter.groupby(
     'year').size().reset_index(name='events_count')
 
 
@@ -162,7 +174,8 @@ def incidents_per_year(filter=defaultQuery):
 
 
 # Incident types by year [SCATTER GRAPH]
-def incident_type_year():
+def incident_type_year(filter):
+    df = filter
     # generate a unique color for each state
     color_dict = {}
     for i, state in enumerate(df['state'].unique()):
@@ -210,23 +223,22 @@ def incident_type_year():
 
 # ---- RENDER ----
 
-def graphs():
+def graphs(filter=defaultQuery):
   left_column, right_column = st.columns(2, gap='medium')
-  left_column.plotly_chart(incident_freq(), use_container_width=True)
-  right_column.plotly_chart(incident_by_state(), use_container_width=True)
+  left_column.plotly_chart(incident_freq(filter), use_container_width=True)
+  right_column.plotly_chart(incident_by_state(filter), use_container_width=True)
 
   st.markdown("---")
   bottom_row = st.container()
-  bottom_row.plotly_chart(incidents_per_year(), use_container_width=True)
+  bottom_row.plotly_chart(incidents_per_year(filter), use_container_width=True)
 
   st.markdown("---")
   scatter_row = st.container()
-  scatter_row.plotly_chart(incident_type_year(), use_container_width=True)
+  scatter_row.plotly_chart(incident_type_year(filter), use_container_width=True)
 
 
 def render_page(df):
-  sidebar(df)
-  top_info()
+  top_info(df)
   st.title('Visualizations')
   tab1, tab2, tab3, tab4 = st.tabs(["All 📈", "Fire 🔥", "Storms 🌩️", "Custom ⚙️"])
   with tab1:
@@ -240,9 +252,5 @@ def render_page(df):
   with tab4:
     filters(df)
     graphs(DF_SELECTION)
-    
 
-
-render_page(df)
-
-
+render_page(df_main)
