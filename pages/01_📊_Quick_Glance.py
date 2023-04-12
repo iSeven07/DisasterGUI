@@ -179,11 +179,9 @@ def incident_type_year():
                 marker=dict(color=state_color_dict[state]),
                 showlegend=show_legend,
                 text='<br>Area: ' + df_selection['designated_area'] +
-                # '<br>State: ' + df_selection['state'] +
-                # '<br>Title: ' + df_selection['declaration_title'] +
                 '<br>Type: ' + df_selection['incident_type'] +
-                '<br>Begun: ' + df_selection['incident_begin_date'] +
-                '<br>Ended: ' + df_selection['incident_end_date'],
+                '<br>Began: ' + pd.to_datetime(df_selection['incident_begin_date']).dt.strftime("%Y-%m-%d").fillna("N/A") +
+                '<br>Ended: ' + pd.to_datetime(df_selection['incident_end_date']).dt.strftime('%Y-%m-%d').fillna("N/A"),#.apply(lambda x: x.strftime('%Y-%m-%d') if x is not None else 'N/A'),
                 hovertemplate='<b>%{text}</b>'
             )
             # append the trace to the list of traces
@@ -199,7 +197,6 @@ def incident_type_year():
     return fig_scatter
 
 # ---- RENDER ----
-
 
 def graphs():
   left_column, right_column = st.columns(2, gap='medium')
