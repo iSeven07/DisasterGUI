@@ -9,7 +9,7 @@ from streamlit_extras.switch_page_button import switch_page
 # Plotly: https://plotly.com/python/
 # Pandas: https://www.w3schools.com/python/pandas/default.asp
 
-st.set_page_config(page_title="NDD - All Data",
+st.set_page_config(page_title="NDD - Quick Glance",
                    page_icon="📊", layout="wide")
 
 
