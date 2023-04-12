@@ -54,11 +54,7 @@ show_filters = False
 #    def getI(self):
 #       return self.i
 
-def sidebar(df):
-    # Future use for AI Button
-    askBot = st.sidebar.button("Ask DisasterBot", use_container_width=True)
-    if askBot:
-        switch_page('disasterbot')
+
 
 def filters(df):
     fcol1, fcol2 = st.columns(2)
@@ -87,6 +83,7 @@ def filters(df):
     DF_SELECTION = df.query(
         "state == @state & incident_type == @incident_type"
     )
+
 # ---- MAINPAGE ----
 
 def top_info():
@@ -115,6 +112,7 @@ def top_info():
 
 # ---- GRAPHS ----
 # Total Incidents in each State [BAR CHART]
+
 def incident_by_state(filter=defaultQuery):
   incidents_by_state = (
       filter.groupby(by=["state"]).count()[["incident_type"]].sort_values(by="incident_type") #Look into validating sort_values usage
@@ -125,7 +123,7 @@ def incident_by_state(filter=defaultQuery):
 
   fig_incidents_by_state.update_layout(
       yaxis=dict(autorange="reversed")
-      )  # Sorts Bar Chart
+  )  # Sorts Bar Chart
   return fig_incidents_by_state
 
 # Incident Frequency [BAR CHART]
@@ -156,47 +154,75 @@ def incidents_per_year(filter=defaultQuery):
     events_per_date = filter.groupby(
     'year').size().reset_index(name='events_count')
 
-    fig_year = px.line(events_per_date, x="year",
-                    y='events_count', title="Incidents by Year")
 
-    return fig_year
+  fig_year = px.line(events_per_date, x="year",
+                     y='events_count', title="Incidents by Year")
+
+  return fig_year
+
 
 # Incident types by year [SCATTER GRAPH]
-def incident_type_year(DF_SELECTION=defaultQuery):
-    fig_scatter = go.Figure(data=go.Scattergl(
-        x=DF_SELECTION['incident_begin_date'],
-        y=DF_SELECTION['incident_type'],
-        text='State: ' + DF_SELECTION['state'] +
-        '<br>Area: ' + DF_SELECTION['designated_area'] +
-        '<br>Title: ' + DF_SELECTION['declaration_title'] +
-        '<br>Type: ' + DF_SELECTION['incident_type'] +
-        '<br>Begun: ' + DF_SELECTION['incident_begin_date'] +
-        '<br>Ended: ' + DF_SELECTION['incident_end_date'],
-        mode='markers',
-        hovertemplate='%{text}'
-    ))
-    fig_scatter.update_layout(title='Incident Type by Year',
-                            xaxis_title='Year', yaxis_title='Event')
+def incident_type_year():
+    # generate a unique color for each state
+    color_dict = {}
+    for i, state in enumerate(df['state'].unique()):
+        # calculate the color based on a formula using the state index
+        color = 'rgb(' + ','.join(map(str, [((i + 5) * 71) % 255, ((i + 5) * 83) % 255, ((i + 5) * 97) % 255])) + ')'
+        color_dict[state] = color
+
+    traces = []
+    state_color_dict = {}
+    for incident_type in df['incident_type'].unique():
+        # select data only for the current incident type
+        df_selection = df[df['incident_type'] == incident_type]
+        for state in df_selection['state'].unique():
+            if state not in state_color_dict:
+                # assign a color to the state if it has not been assigned one yet
+                state_color_dict[state] = color_dict[state]
+                show_legend = True
+            else:
+                show_legend = False
+            trace = go.Scattergl(
+                # plot the incident begin date on the x-axis and the incident type on the y-axis
+                x=df_selection[df_selection['state'] == state]['incident_begin_date'],
+                y=df_selection[df_selection['state'] == state]['incident_type'],
+                mode='markers',
+                name=state,
+                marker=dict(color=state_color_dict[state]),
+                showlegend=show_legend,
+                text='<br>Area: ' + df_selection['designated_area'] +
+                '<br>Type: ' + df_selection['incident_type'] +
+                '<br>Began: ' + pd.to_datetime(df_selection['incident_begin_date']).dt.strftime("%Y-%m-%d").fillna("N/A") +
+                '<br>Ended: ' + pd.to_datetime(df_selection['incident_end_date']).dt.strftime('%Y-%m-%d').fillna("N/A"),#.apply(lambda x: x.strftime('%Y-%m-%d') if x is not None else 'N/A'),
+                hovertemplate='<b>%{text}</b>'
+            )
+            # append the trace to the list of traces
+            traces.append(trace)
+
+    # create the figure with the list of traces and update the layout
+    fig_scatter = go.Figure(data=traces)
+    fig_scatter.update_layout(
+        title='Incident Type by Year',
+        xaxis_title='Year', yaxis_title='Incident Type',
+        legend=dict(title='Color of State',))
+
     return fig_scatter
 
 # ---- RENDER ----
-def graphs(filter=defaultQuery):
-    left_column, right_column = st.columns(2, gap='medium')
-    left_column.plotly_chart(incident_freq(filter), use_container_width=True)
-    right_column.plotly_chart(incident_by_state(filter), use_container_width=True)
 
-    st.markdown("---")
-    bottom_row = st.container()
-    bottom_row.plotly_chart(incidents_per_year(filter), use_container_width=True)
+def graphs():
+  left_column, right_column = st.columns(2, gap='medium')
+  left_column.plotly_chart(incident_freq(), use_container_width=True)
+  right_column.plotly_chart(incident_by_state(), use_container_width=True)
 
-    st.markdown("---")
-    scatter_row = st.container()
-    scatter_row.plotly_chart(incident_type_year(filter), use_container_width=True)
+  st.markdown("---")
+  bottom_row = st.container()
+  bottom_row.plotly_chart(incidents_per_year(), use_container_width=True)
 
-# ---- RENDER CUSTOM GRAPH PAGES ----
-def graphs_f(filter):
-    left_column, right_column = st.columns(2, gap='medium')
-    left_column.plotly_chart(incident_freq(filter), use_container_width=True)
+  st.markdown("---")
+  scatter_row = st.container()
+  scatter_row.plotly_chart(incident_type_year(), use_container_width=True)
+
 
 def render_page(df):
   sidebar(df)
@@ -215,6 +241,7 @@ def render_page(df):
     filters(df)
     graphs(DF_SELECTION)
     
+
 
 render_page(df)
 
