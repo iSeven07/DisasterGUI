@@ -50,8 +50,6 @@ df_main = get_data()
 defaultStates = list(df_main["state"].unique())
 defaultQuery = df_main.query(f'state == {defaultStates}')
 
-# ---- FILTER BOOLEAN ----
-show_filters = False
 
 # generate a unique color for each state
 color_dict = {}
@@ -98,6 +96,7 @@ def top_info(df):
   askBot = st.button("🤖 Ask DisasterBot", use_container_width=False)
   if askBot:
     switch_page('disasterbot')
+
   # Top portion for totals
   st.title('Quick Glance')
   total_incidents = int(df["incident_type"].count())
@@ -114,17 +113,27 @@ def top_info(df):
   #   f"<div style='width: 50%; display: flex; flex-direction: row; align-items: center;'><h3 style='margin-right: -15px;'>Total States:</h3><h3 style='color:white; margin: 0;'>{total_states}</h3></div>"
   #   f"<div style='width: 50%; display: flex; flex-direction: row; align-items: center;'><h3 style='margin-right: -15px;'>Most Disasters:</h3><h3 style='color:{color_dict[top_state]}; margin: 0;'>{top_state}</h3></div>"
   #   f"</div>", unsafe_allow_html=True)
+
+  top_areas = (df.loc[df['designated_area'] != 'Statewide']).groupby(['designated_area', 'state']).count().sort_values(by='incident_type', ascending=False).head(3)
+  top_areas = (top_areas[['incident_type']].rename(columns={'incident_type': 'count'})).reset_index()
+
   left_column, right_column, blank_column2 = st.columns(3)
 
   with left_column:
+    st.markdown('#####')
     st.subheader(f"Total Incidents: :red[{total_incidents}]")
     st.subheader(f"Top Incident: :red[{top_incident}]")
+    
   with right_column:
-    st.subheader(f"Total States: :red[{total_states}]")
+    st.markdown('#####')
+    st.subheader(f"Total States: :blue[{total_states}]")
     st.subheader(f"Most Disasters: :blue[{top_state}]")
-  with blank_column2:
-    st.empty()
 
+  with blank_column2:
+    stringText = ''
+    for index, row in top_areas.iterrows():
+        stringText += (f"{index+1}. {row['designated_area']}, {row['state']}: {row['count']} incidents<br>")
+    st.markdown('<p style="font-weight: 600; font-color: white; font-size: 30px; margin: auto;">Top 3 Areas</p>' + stringText, unsafe_allow_html=True)
   st.markdown("---")
 
 # ---- GRAPHS ----
@@ -173,15 +182,20 @@ def incident_freq(filter):
 
 # Number of incidents per year [LINE GRAPH]
 def incidents_per_year(filter):
-  events_per_date = filter.groupby(
-    'year').size().reset_index(name='events_count')
+ # filter['year_month'] = pd.to_datetime(filter['incident_begin_date']).dt.strftime("%Y-%m")
+  # Fixes Pandas "A value is trying to be set on a copy of a slice from a DataFrame" warning
+  filter_copy = filter.copy() 
+  filter_copy.loc[:, 'year_month'] = pd.to_datetime(filter_copy['incident_begin_date']).dt.strftime("%Y-%m")
+  df_grouped = filter_copy.groupby(['incident_type', 'year_month']).size().reset_index(name='count')
+  fig_year = px.line(df_grouped, x='year_month', y='count', color='incident_type', markers=True)
 
-
-  fig_year = px.line(events_per_date, x="year",
-                     y='events_count', title="Incidents by Year")
+  fig_year.update_layout(
+        title='Incidents Over Time',
+        xaxis_title='Year', yaxis_title='Count',
+        legend=dict(title='Color of Incident')
+        )
 
   return fig_year
-
 
 # Incident types by year [SCATTER GRAPH]
 def incident_type_year(filter):
