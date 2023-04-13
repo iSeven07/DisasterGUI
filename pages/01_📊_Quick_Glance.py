@@ -35,7 +35,7 @@ st.markdown(st_style, unsafe_allow_html=True)
 @st.cache_data
 def get_data():
   # ---- READ CSV ----
-  df = pd.read_csv('us_disasters_m5.csv')
+  df = pd.read_csv('data/us_disasters_m5.csv')
   # Should return the year, ie 2017
   df["year"] = pd.to_datetime(
     df["incident_begin_date"], format="%Y-%m-%d", exact=False).dt.year
