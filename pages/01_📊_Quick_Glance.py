@@ -109,16 +109,26 @@ def top_info(df):
   top_state = (df.groupby('state')['incident_type'].count()).idxmax()
   #top_incident = incident_counts.index[0]
 
+  top_areas = (df.loc[df['designated_area'] != 'Statewide']).groupby(['designated_area', 'state']).count().sort_values(by='incident_type', ascending=False).head(3)
+  top_areas = (top_areas[['incident_type']].rename(columns={'incident_type': 'count'})).reset_index()
+
   left_column, right_column, blank_column2 = st.columns(3)
 
   with left_column:
+    st.markdown('#####')
     st.subheader(f"Total Incidents: :red[{total_incidents}]")
     st.subheader(f"Top Incident: :red[{top_incident}]")
+    
   with right_column:
+    st.markdown('#####')
     st.subheader(f"Total States: :blue[{total_states}]")
     st.subheader(f"Most Disasters: :blue[{top_state}]")
+
   with blank_column2:
-    st.empty()
+    stringText = ''
+    for index, row in top_areas.iterrows():
+        stringText += (f"{index+1}. {row['designated_area']}, {row['state']}: {row['count']} incidents<br>")
+    st.markdown('<p style="font-weight: 600; font-color: white; font-size: 30px; margin: auto;">Top 3 Areas</p>' + stringText, unsafe_allow_html=True)
   st.markdown("---")
 
 # ---- GRAPHS ----
