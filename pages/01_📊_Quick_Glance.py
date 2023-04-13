@@ -26,7 +26,6 @@ st_style = """
               z-index: 1;
               padding: 10px;
               background-color: gray;
-
             }
             </style>
             """
@@ -54,15 +53,12 @@ defaultQuery = df_main.query(f'state == {defaultStates}')
 # ---- FILTER BOOLEAN ----
 show_filters = False
 
-# ---- SIDEBAR ----
-
-# Potentially future idea to refactor sidebar in a better manner
-# class mySidebar:
-#    i = 1234
-
-#    def getI(self):
-#       return self.i
-
+# generate a unique color for each state
+color_dict = {}
+for i, state in enumerate(df_main['state'].unique()):
+  # calculate the color based on a formula using the state index
+  color = 'rgb(' + ','.join(map(str, [((i + 5) * 71) % 255, ((i + 5) * 83) % 255, ((i + 5) * 97) % 255])) + ')'
+  color_dict[state] = color
 
 
 def filters(df):
@@ -110,28 +106,42 @@ def top_info(df):
   top_state = (df.groupby('state')['incident_type'].count()).idxmax()
   #top_incident = incident_counts.index[0]
 
+  # glance = st.container()
+  # glance.markdown(
+  #   f"<div style='display: flex; flex-wrap: wrap;'>"
+  #   f"<div style='width: 50%; display: flex; flex-direction: row; align-items: center;'><h3 style='margin-right: -15px;'>Total Incidents:</h3><h3 style='color:white; margin: 0;'>{total_incidents}</h3></div>"
+  #   f"<div style='width: 50%; display: flex; flex-direction: row; align-items: center;'><h3 style='margin-right: -15px;'>Top Incident:</h3><h3 style='color:red; margin: 0;'>{top_incident}</h3></div>"
+  #   f"<div style='width: 50%; display: flex; flex-direction: row; align-items: center;'><h3 style='margin-right: -15px;'>Total States:</h3><h3 style='color:white; margin: 0;'>{total_states}</h3></div>"
+  #   f"<div style='width: 50%; display: flex; flex-direction: row; align-items: center;'><h3 style='margin-right: -15px;'>Most Disasters:</h3><h3 style='color:{color_dict[top_state]}; margin: 0;'>{top_state}</h3></div>"
+  #   f"</div>", unsafe_allow_html=True)
   left_column, right_column, blank_column2 = st.columns(3)
 
   with left_column:
     st.subheader(f"Total Incidents: :red[{total_incidents}]")
     st.subheader(f"Top Incident: :red[{top_incident}]")
   with right_column:
-    st.subheader(f"Total States: :blue[{total_states}]")
+    st.subheader(f"Total States: :red[{total_states}]")
     st.subheader(f"Most Disasters: :blue[{top_state}]")
   with blank_column2:
     st.empty()
+
   st.markdown("---")
 
 # ---- GRAPHS ----
 # Total Incidents in each State [BAR CHART]
 
 def incident_by_state(filter):
-  incidents_by_state = (
-      filter.groupby(by=["state"]).count()[["incident_type"]].sort_values(by="incident_type") #Look into validating sort_values usage
-  )
+  incidents_by_state = (filter.groupby(by=["state"]).count()[["incident_type"]].sort_values(by="incident_type"))
 
-  fig_incidents_by_state = px.bar(incidents_by_state, y=incidents_by_state.index,
-                                  x="incident_type", labels={"incident_type": "No. Incidents", "state": "State"}, color=incidents_by_state.index, title="Total Incidents in each State")
+  fig_incidents_by_state = px.bar(
+    incidents_by_state,
+    y=incidents_by_state.index,
+    x="incident_type",
+    labels={"incident_type": "No. Incidents", "state": "State"},
+    color=incidents_by_state.index,
+    # color=incidents_by_state.index.map(color_dict),
+    # color_discrete_map=color_dict,
+    title="Total Incidents in each State")
 
   fig_incidents_by_state.update_layout(
       yaxis=dict(autorange="reversed")
@@ -176,12 +186,6 @@ def incidents_per_year(filter):
 # Incident types by year [SCATTER GRAPH]
 def incident_type_year(filter):
     df = filter
-    # generate a unique color for each state
-    color_dict = {}
-    for i, state in enumerate(df['state'].unique()):
-        # calculate the color based on a formula using the state index
-        color = 'rgb(' + ','.join(map(str, [((i + 5) * 71) % 255, ((i + 5) * 83) % 255, ((i + 5) * 97) % 255])) + ')'
-        color_dict[state] = color
 
     traces = []
     state_color_dict = {}
