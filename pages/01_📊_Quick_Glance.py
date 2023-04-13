@@ -51,8 +51,6 @@ df_main = get_data()
 defaultStates = list(df_main["state"].unique())
 defaultQuery = df_main.query(f'state == {defaultStates}')
 
-# ---- FILTER BOOLEAN ----
-show_filters = False
 
 # ---- SIDEBAR ----
 
@@ -102,6 +100,7 @@ def top_info(df):
   askBot = st.button("🤖 Ask DisasterBot", use_container_width=False)
   if askBot:
     switch_page('disasterbot')
+
   # Top portion for totals
   st.title('Quick Glance')
   total_incidents = int(df["incident_type"].count())
@@ -163,15 +162,20 @@ def incident_freq(filter):
 
 # Number of incidents per year [LINE GRAPH]
 def incidents_per_year(filter):
-  events_per_date = filter.groupby(
-    'year').size().reset_index(name='events_count')
+ # filter['year_month'] = pd.to_datetime(filter['incident_begin_date']).dt.strftime("%Y-%m")
+  # Fixes Pandas "A value is trying to be set on a copy of a slice from a DataFrame" warning
+  filter_copy = filter.copy() 
+  filter_copy.loc[:, 'year_month'] = pd.to_datetime(filter_copy['incident_begin_date']).dt.strftime("%Y-%m")
+  df_grouped = filter_copy.groupby(['incident_type', 'year_month']).size().reset_index(name='count')
+  fig_year = px.line(df_grouped, x='year_month', y='count', color='incident_type', markers=True)
 
-
-  fig_year = px.line(events_per_date, x="year",
-                     y='events_count', title="Incidents by Year")
+  fig_year.update_layout(
+        title='Incidents Over Time',
+        xaxis_title='Year', yaxis_title='Count',
+        legend=dict(title='Color of Incident')
+        )
 
   return fig_year
-
 
 # Incident types by year [SCATTER GRAPH]
 def incident_type_year(filter):
