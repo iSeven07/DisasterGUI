@@ -7,6 +7,8 @@ st.set_page_config(page_title="NDD - DisasterBot",
                    page_icon="💬", layout="wide")
 
 st.title("💬 Chat with DisasterBot")
+st.markdown("Meet DisasterBot; your very own AI bot that will answer any question about U.S. disasters that you can ask in plain text.")
+st.markdown("#")
 
 try:
   openai.api_key = os.environ["OPENAI_API_KEY"]

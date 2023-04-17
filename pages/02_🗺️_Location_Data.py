@@ -11,6 +11,7 @@ st.set_page_config(page_title="NDD - Location Data",
 
 # Adds title to top of page
 st.title("🗺️ Disaster Locations Dashboard")
+st.markdown("This is an interactive scatter map of disasters in the United States.  &nbsp;Hovering over a marked location will show more details.")
 st.markdown("##")
 
 df_main = pd.read_csv('data/short_details_for_storm_events.csv')
