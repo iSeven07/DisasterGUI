@@ -2,6 +2,10 @@ import streamlit as st
 import plotly.graph_objs as go
 import pandas as pd
 from plotly.subplots import make_subplots
+# for choropleth graph
+import geopandas as gpd
+import plotly.express as px
+import json
 
 
 
@@ -247,11 +251,82 @@ def slider_map(df):
 
   return go.Figure(data=data, layout=layout, frames=frames)
 
+# --- CHOROPLETH GRAPH ---
+def ch_graph():
+  # Load the shapefile using geopandas
+  shapefile = gpd.read_file('data/cb_2018_us_county_20m.shp')
+  crop_dec = pd.read_excel('data/crop-year-2014-disaster-declarations-1.xls') 
+
+  crop_dec = crop_dec.rename(columns = {
+                          'FIPS': 'fips'
+                          ,'Designation Number': 'designation number'
+                          ,'DROUGHT': 'drought'
+                          ,'FLOOD, Flash flooding': 'flash flooding'
+                          ,'Excessive rain, moisture, humidity': 'rain'
+                          ,'Severe Storms, thunderstorms': 'severe storms'
+                          ,'Hail': 'hail'
+                          ,'Wind, High Winds': 'high wind'
+                          ,'Fire, Wildfire': 'fire'
+                          ,'Winter Storms, Ice Storms, Snow, Blizzard': 'snow'
+                          ,'Frost, FREEZE': 'frost'
+                          ,'Hurricanes, Typhoons, Tropical Storms': 'hurricane'
+                          ,'Tornadoes': 'tornado'
+                          ,'Volcano': 'volcano'
+                          ,'Mudslides, Debris Flows, Landslides': 'landslide'
+                          ,'Heavy Surf': 'heavy surf'
+                          ,'Ice Jams': 'ice jam'
+                          ,'Insects': 'insects'
+                          ,'Tidal Surges': 'tidal surge'
+                          ,'Cold, wet weather': 'cold and wet'
+                          ,'Cool/Cold, Below-normal Temperatures': 'cold'
+                          ,'Lightning': 'lightning'
+                          ,'Disease': 'disease'})
+
+  shapefile['GEOID'] = shapefile['GEOID'].astype(str)
+  crop_dec['fips'] = crop_dec['fips'].astype(str)
+  crop_dec['fips'] = [x if len(x) == 5 else "0"+x for x in crop_dec['fips']]
+
+  shapeJoin = crop_dec.merge(shapefile, right_on = 'GEOID', left_on = 'fips')
+
+  #shapeJoin['geometry'] = shapeJoin['geometry'].apply(lambda x: x.__geo_interface__)
+
+  # Set custom color scale based on range of drought values
+  scale = [[0, 'rgb(255,255,255)'], [1, 'rgb(0,255,0)']]
+  #color_mapper = lambda x: 0 if x == 0 else 1
+
+  # Convert the geometry column to a GeoSeries
+  geometry = gpd.GeoSeries(shapeJoin['geometry'])
+
+  # Convert the GeoSeries to JSON format
+  geojson = json.loads(geometry.to_json())
+
+
+  # Use Plotly Express to create the choropleth graph
+  fig_ch = px.choropleth_mapbox(shapeJoin, 
+                      #geojson=shapefile.geometry.__geo_interface__, 
+                      title='Choropleth Graph - Work in Progress',
+                      geojson=geojson, 
+                      locations=shapeJoin.index, 
+                      color='drought', 
+                      hover_name='County',
+                      center=dict(lat=39.8, lon=-98.5),
+                      zoom=3.0,
+                      height=800,
+                      #scope='usa',
+                      mapbox_style="open-street-map",
+                      color_continuous_scale=scale,
+                      #color_discrete_map={0: 'rgb(255,255,255)', 1: 'rgb(0,255,0)'},
+                      color_continuous_midpoint=0.5,
+                      labels={'drought': 'Drought'})
+
+  return fig_ch
+
 def graphs(df_main):
   # Creates a container on the page and displays the map
   map_container = st.container()
   map_container.plotly_chart(scatter_map(df_main), use_container_width=True)
-  st.markdown('---')
+  map_container.markdown('---')
+  map_container.plotly_chart(ch_graph(), use_container_width=True)
 
   # IMPORTANT: READ BELOW
   # BEFORE YOU UNCOMMENT THE CODE BELOW YOU NEED TO CHANGE THE DATAFRAME TO ONLY TAKE IN 100 ROWS
