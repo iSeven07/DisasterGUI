@@ -18,8 +18,17 @@ st.title("🗺️ Disaster Locations Dashboard")
 st.markdown("This is an interactive scatter map of disasters in the United States.  &nbsp;Hovering over a marked location will show more details.")
 st.markdown("##")
 
-df_main = pd.read_csv('data/short_details_for_storm_events.csv')
+@st.cache_data
+def get_data():
+     shapefile = gpd.read_file('data/cb_2018_us_county_20m.shp')
+     crop_dec = pd.read_excel('data/crop-year-2014-disaster-declarations-1.xls')
+     df_main = pd.read_csv('data/short_details_for_storm_events.csv')
+     
+     return [shapefile, crop_dec, df_main]
 
+df_files = get_data()
+
+@st.cache_data
 def scatter_map(df):
     hover_template = '<b>%{customdata[0]}</b><br>' + \
                      'Injuries: %{customdata[1]}<br>' + \
@@ -68,57 +77,56 @@ def scatter_map(df):
 
 
 # --- CHOROPLETH GRAPH ---
-def ch_graph():
+
+crop_dec = df_files[1].rename(columns = {
+                        'FIPS': 'fips'
+                        ,'Designation Number': 'designation number'
+                        ,'DROUGHT': 'drought'
+                        ,'FLOOD, Flash flooding': 'flash flooding'
+                        ,'Excessive rain, moisture, humidity': 'rain'
+                        ,'Severe Storms, thunderstorms': 'severe storms'
+                        ,'Ground Saturation\nStanding Water': 'waterlogged'
+                        ,'Hail': 'hail'
+                        ,'Wind, High Winds': 'high wind'
+                        ,'Fire, Wildfire': 'fire'
+                        ,'Heat, Excessive heat\nHigh temp. (incl. low humidity)': 'heatwave'
+                        ,'Winter Storms, Ice Storms, Snow, Blizzard': 'snow'
+                        ,'Frost, FREEZE': 'frost'
+                        ,'Hurricanes, Typhoons, Tropical Storms': 'hurricane'
+                        ,'Tornadoes': 'tornado'
+                        ,'Volcano': 'volcano'
+                        ,'Mudslides, Debris Flows, Landslides': 'landslide'
+                        ,'Heavy Surf': 'heavy surf'
+                        ,'Ice Jams': 'ice jam'
+                        ,'Insects': 'insects'
+                        ,'Tidal Surges': 'tidal surge'
+                        ,'Cold, wet weather': 'cold and wet'
+                        ,'Cool/Cold, Below-normal Temperatures': 'cold'
+                        ,'Lightning': 'lightning'
+                        ,'Disease': 'disease'})
+
+df_files[0]['GEOID'] = df_files[0]['GEOID'].astype(str)
+crop_dec['fips'] = crop_dec['fips'].astype(str)
+crop_dec['fips'] = [x if len(x) == 5 else "0"+x for x in crop_dec['fips']]
+
+shapeJoin = crop_dec.merge(df_files[0], right_on = 'GEOID', left_on = 'fips')
+
+# Set custom color scale based on range of drought values
+scale = [[0, 'rgb(255,255,255)'], [1, 'rgb(0,255,0)']]
+
+# Convert the geometry column to a GeoSeries
+geometry = gpd.GeoSeries(shapeJoin['geometry'])
+
+# Convert the GeoSeries to JSON format
+geojson = json.loads(geometry.to_json())
+
+def ch_graph(sel):
   # Load the shapefile using geopandas
-  shapefile = gpd.read_file('data/cb_2018_us_county_20m.shp')
-  crop_dec = pd.read_excel('data/crop-year-2014-disaster-declarations-1.xls')
-
-  crop_dec = crop_dec.rename(columns = {
-                          'FIPS': 'fips'
-                          ,'Designation Number': 'designation number'
-                          ,'DROUGHT': 'drought'
-                          ,'FLOOD, Flash flooding': 'flash flooding'
-                          ,'Excessive rain, moisture, humidity': 'rain'
-                          ,'Severe Storms, thunderstorms': 'severe storms'
-                          ,'Ground Saturation\nStanding Water': 'waterlogged'
-                          ,'Hail': 'hail'
-                          ,'Wind, High Winds': 'high wind'
-                          ,'Fire, Wildfire': 'fire'
-                          ,'Heat, Excessive heat\nHigh temp. (incl. low humidity)': 'heatwave'
-                          ,'Winter Storms, Ice Storms, Snow, Blizzard': 'snow'
-                          ,'Frost, FREEZE': 'frost'
-                          ,'Hurricanes, Typhoons, Tropical Storms': 'hurricane'
-                          ,'Tornadoes': 'tornado'
-                          ,'Volcano': 'volcano'
-                          ,'Mudslides, Debris Flows, Landslides': 'landslide'
-                          ,'Heavy Surf': 'heavy surf'
-                          ,'Ice Jams': 'ice jam'
-                          ,'Insects': 'insects'
-                          ,'Tidal Surges': 'tidal surge'
-                          ,'Cold, wet weather': 'cold and wet'
-                          ,'Cool/Cold, Below-normal Temperatures': 'cold'
-                          ,'Lightning': 'lightning'
-                          ,'Disease': 'disease'})
-
-  shapefile['GEOID'] = shapefile['GEOID'].astype(str)
-  crop_dec['fips'] = crop_dec['fips'].astype(str)
-  crop_dec['fips'] = [x if len(x) == 5 else "0"+x for x in crop_dec['fips']]
-
-  shapeJoin = crop_dec.merge(shapefile, right_on = 'GEOID', left_on = 'fips')
-
-  # Set custom color scale based on range of drought values
-  scale = [[0, 'rgb(255,255,255)'], [1, 'rgb(0,0,0)']]
-
-  # Convert the geometry column to a GeoSeries
-  geometry = gpd.GeoSeries(shapeJoin['geometry'])
-
-  # Convert the GeoSeries to JSON format
-  geojson = json.loads(geometry.to_json())
 
 
   # --- Selector for Choropleth Graph ---
     # currently "hardcoded" for columns 5 through 28
-  sel = st.selectbox('Selector for Choropleth Graph', shapeJoin.columns[5:28], help='Select the incident type you would like to see on the map. The darker the county, the more of selected incidents in that county. If you selected "drought", the county with the most droughts will appear darkest.')
+  # sel = st.selectbox('Selector for Choropleth Graph', shapeJoin.columns[5:28], help='Select the incident type you would like to see on the map. The darker the county, the more of selected incidents in that county. If you selected "drought", the county with the most droughts will appear darkest.')
 
   # Filter the shapeJoin dataframe based on the selected incident type
   shapeJoin_filtered = shapeJoin[shapeJoin[sel] == 1]
@@ -155,12 +163,14 @@ def graphs(df_main):
 
   scat_cont.plotly_chart(scatter_map(df_main), use_container_width=True)
   scat_cont.markdown('---')
-  choro_cont.plotly_chart(ch_graph(), use_container_width=True)
+  with choro_cont:
+    sel = st.selectbox('Selector for Choropleth Graph', shapeJoin.columns[5:28], help='Select the incident type you would like to see on the map. The darker the county, the more of selected incidents in that county. If you selected "drought", the county with the most droughts will appear darkest.')
+  choro_cont.plotly_chart(ch_graph(sel), use_container_width=True)
 
 def render_page(df_main):
   graphs(df_main)
 
-render_page(df_main)
+render_page(df_files[2])
 # ---- STREAMLIT STYLE ----
 st_style = """
             <style>
