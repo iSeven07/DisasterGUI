@@ -9,7 +9,7 @@ from streamlit_extras.switch_page_button import switch_page
 # Plotly: https://plotly.com/python/
 # Pandas: https://www.w3schools.com/python/pandas/default.asp
 
-st.set_page_config(page_title="NDD - Quick Glance",
+st.set_page_config(page_title="NDD - Dashboard",
                    page_icon="📊", layout="wide")
 
 # ---- STREAMLIT STYLE ----
@@ -123,7 +123,7 @@ def top_info(df):
     st.markdown('#####')
     st.subheader(f"Total Incidents: :red[{total_incidents}]")
     st.subheader(f"Top Incident: :red[{top_incident}]")
-    
+
   with right_column:
     st.markdown('#####')
     st.subheader(f"Total States: :blue[{total_states}]")
@@ -184,7 +184,7 @@ def incident_freq(filter):
 def incidents_per_year(filter):
  # filter['year_month'] = pd.to_datetime(filter['incident_begin_date']).dt.strftime("%Y-%m")
   # Fixes Pandas "A value is trying to be set on a copy of a slice from a DataFrame" warning
-  filter_copy = filter.copy() 
+  filter_copy = filter.copy()
   filter_copy.loc[:, 'year_month'] = pd.to_datetime(filter_copy['incident_begin_date']).dt.strftime("%Y-%m")
   df_grouped = filter_copy.groupby(['incident_type', 'year_month']).size().reset_index(name='count')
   fig_year = px.line(df_grouped, x='year_month', y='count', color='incident_type', markers=True)
@@ -242,13 +242,16 @@ def incident_type_year(filter):
 # ---- RENDER ----
 
 def graphs(filter=defaultQuery):
-  left_column, right_column = st.columns(2, gap='medium')
-  left_column.plotly_chart(incident_freq(filter), use_container_width=True)
-  right_column.plotly_chart(incident_by_state(filter), use_container_width=True)
+  st.markdown("---")
+  inc_freq_cont = st.container()
+  inc_freq_cont.plotly_chart(incident_freq(filter), use_container_width=True)
+  st.markdown("---")
+  by_state_cont = st.container()
+  by_state_cont.plotly_chart(incident_by_state(filter), use_container_width=True)
 
   st.markdown("---")
-  bottom_row = st.container()
-  bottom_row.plotly_chart(incidents_per_year(filter), use_container_width=True)
+  line_row = st.container()
+  line_row.plotly_chart(incidents_per_year(filter), use_container_width=True)
 
   st.markdown("---")
   scatter_row = st.container()
