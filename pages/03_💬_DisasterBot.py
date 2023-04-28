@@ -1,10 +1,13 @@
 import streamlit as st
 import openai
 from streamlit_chat import message
+from streamlit_extras.app_logo import add_logo
 import os
 
 st.set_page_config(page_title="NDD - DisasterBot",
                    page_icon="💬", layout="wide")
+
+add_logo("images/lrw-color.png")
 
 st.title("💬 Chat with DisasterBot")
 st.markdown("Meet DisasterBot; your very own AI bot that will answer any question about U.S. disasters that you can ask in plain text.")

@@ -2,6 +2,7 @@ import streamlit as st
 import plotly.graph_objs as go
 import pandas as pd
 from plotly.subplots import make_subplots
+from streamlit_extras.app_logo import add_logo
 # for choropleth graph
 import geopandas as gpd
 import plotly.express as px
@@ -13,6 +14,8 @@ import json
 st.set_page_config(page_title="NDD - Location Data",
                    page_icon="🗺️", layout="wide")
 
+add_logo("images/lrw-color.png")
+
 # Adds title to top of page
 st.title("🗺️ Disaster Locations Dashboard")
 st.markdown("This is an interactive scatter map of disasters in the United States.  &nbsp;Hovering over a marked location will show more details.")
@@ -23,7 +26,7 @@ def get_data():
      shapefile = gpd.read_file('data/cb_2018_us_county_20m.shp')
      crop_dec = pd.read_excel('data/crop-year-2014-disaster-declarations-1.xls')
      df_main = pd.read_csv('data/short_details_for_storm_events.csv')
-     
+
      return [shapefile, crop_dec, df_main]
 
 df_files = get_data()
@@ -130,7 +133,6 @@ def ch_graph(sel):
 
   # Filter the shapeJoin dataframe based on the selected incident type
   shapeJoin_filtered = shapeJoin[shapeJoin[sel] == 1]
-  print(shapeJoin_filtered.columns)
   # Use Plotly Express to create the choropleth graph
   fig_ch = px.choropleth_mapbox(shapeJoin_filtered,
                       title='Choropleth Graph - Work in Progress',

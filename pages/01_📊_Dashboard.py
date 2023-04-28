@@ -4,6 +4,8 @@ import streamlit as st  # pip install streamlit
 import datetime
 import plotly.graph_objects as go
 from streamlit_extras.switch_page_button import switch_page
+from streamlit_extras.app_logo import add_logo
+
 
 # Streamlit Documentation: https://docs.streamlit.io/
 # Plotly: https://plotly.com/python/
@@ -11,6 +13,8 @@ from streamlit_extras.switch_page_button import switch_page
 
 st.set_page_config(page_title="NDD - Dashboard",
                    page_icon="📊", layout="wide")
+
+add_logo("images/lrw-color.png")
 
 # ---- STREAMLIT STYLE ----
 st_style = """
