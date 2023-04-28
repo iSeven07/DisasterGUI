@@ -112,7 +112,8 @@ crop_dec['fips'] = [x if len(x) == 5 else "0"+x for x in crop_dec['fips']]
 shapeJoin = crop_dec.merge(df_files[0], right_on = 'GEOID', left_on = 'fips')
 
 # Set custom color scale based on range of drought values
-scale = [[0, 'rgb(255,255,255)'], [1, 'rgb(0,255,0)']]
+#scale = [[0, 'rgb(255,255,255)'], [1, 'rgb(0,0,0)']]
+
 
 # Convert the geometry column to a GeoSeries
 geometry = gpd.GeoSeries(shapeJoin['geometry'])
@@ -120,7 +121,7 @@ geometry = gpd.GeoSeries(shapeJoin['geometry'])
 # Convert the GeoSeries to JSON format
 geojson = json.loads(geometry.to_json())
 
-def ch_graph(sel):
+def ch_graph(sel, scale):
   # Load the shapefile using geopandas
 
 
@@ -130,7 +131,7 @@ def ch_graph(sel):
 
   # Filter the shapeJoin dataframe based on the selected incident type
   shapeJoin_filtered = shapeJoin[shapeJoin[sel] == 1]
-  print(shapeJoin_filtered.columns)
+  #print(shapeJoin_filtered.columns)
   # Use Plotly Express to create the choropleth graph
   fig_ch = px.choropleth_mapbox(shapeJoin_filtered,
                       title='Choropleth Graph - Work in Progress',
@@ -156,6 +157,28 @@ def ch_graph(sel):
 
   return fig_ch
 
+# Function to return Choropleth Graph color
+def getScale(sel):
+  if sel == "drought" or sel == "landslide":
+     return [[0, 'rgb(255,255,255)'], [1, 'rgb(255, 215, 0)']]
+  elif sel == "flash flooding" or sel == "severe storms" or sel == "rain" or sel == "waterlogged" or sel == "hail" or sel == "cold and wet":
+     return [[0, 'rgb(255,255,255)'], [1, 'rgb(0, 255, 0)']]
+  elif sel == "fire" or sel == "heatwave" or sel == "volcano":
+     return [[0, 'rgb(255,255,255)'], [1, 'rgb(255,0,0)']]
+  elif sel == "frost" or sel == "snow" or sel == "ice jam" or sel == "cold":
+     return [[0, 'rgb(255,255,255)'], [1, 'rgb(135, 206, 235)']]
+  elif sel == "hurricane" or sel == "heavy surf" or sel == "tidal surge":
+     return [[0, 'rgb(255,255,255)'], [1, 'rgb(0, 0, 255)']]
+  elif sel == "high wind" or sel == "tornado":
+     return [[0, 'rgb(255,255,255)'], [1, 'rgb(128, 128, 128)']]
+  elif sel == "lightning":
+     return [[0, 'rgb(255,255,255)'], [1, 'rgb(255, 255, 0)']]
+  elif sel == "insects":
+     return [[0, 'rgb(255,255,255)'], [1, 'rgb(255, 204, 0)']]
+  elif sel == "disease":
+     return [[0, 'rgb(255,255,255)'], [1, 'rgb(204, 102, 0)']]
+   
+
 def graphs(df_main):
   # Creates a container on the page and displays the map
   scat_cont = st.container()
@@ -165,7 +188,8 @@ def graphs(df_main):
   scat_cont.markdown('---')
   with choro_cont:
     sel = st.selectbox('Selector for Choropleth Graph', shapeJoin.columns[5:28], help='Select the incident type you would like to see on the map. The darker the county, the more of selected incidents in that county. If you selected "drought", the county with the most droughts will appear darkest.')
-  choro_cont.plotly_chart(ch_graph(sel), use_container_width=True)
+    scale = getScale(sel)
+  choro_cont.plotly_chart(ch_graph(sel, scale), use_container_width=True)
 
 def render_page(df_main):
   graphs(df_main)
