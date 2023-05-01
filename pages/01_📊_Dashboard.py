@@ -107,17 +107,6 @@ def top_info(df):
   total_states = df['state'].nunique()
   top_incident = df['incident_type'].value_counts().index[0]
   top_state = (df.groupby('state')['incident_type'].count()).idxmax()
-  #top_incident = incident_counts.index[0]
-
-  # glance = st.container()
-  # glance.markdown(
-  #   f"<div style='display: flex; flex-wrap: wrap;'>"
-  #   f"<div style='width: 50%; display: flex; flex-direction: row; align-items: center;'><h3 style='margin-right: -15px;'>Total Incidents:</h3><h3 style='color:white; margin: 0;'>{total_incidents}</h3></div>"
-  #   f"<div style='width: 50%; display: flex; flex-direction: row; align-items: center;'><h3 style='margin-right: -15px;'>Top Incident:</h3><h3 style='color:red; margin: 0;'>{top_incident}</h3></div>"
-  #   f"<div style='width: 50%; display: flex; flex-direction: row; align-items: center;'><h3 style='margin-right: -15px;'>Total States:</h3><h3 style='color:white; margin: 0;'>{total_states}</h3></div>"
-  #   f"<div style='width: 50%; display: flex; flex-direction: row; align-items: center;'><h3 style='margin-right: -15px;'>Most Disasters:</h3><h3 style='color:{color_dict[top_state]}; margin: 0;'>{top_state}</h3></div>"
-  #   f"</div>", unsafe_allow_html=True)
-
   top_areas = (df.loc[df['designated_area'] != 'Statewide']).groupby(['designated_area', 'state']).count().sort_values(by='incident_type', ascending=False).head(3)
   top_areas = (top_areas[['incident_type']].rename(columns={'incident_type': 'count'})).reset_index()
 
