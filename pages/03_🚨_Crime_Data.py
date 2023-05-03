@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 from streamlit_extras.app_logo import add_logo
+import time
 
 
 st.set_page_config(page_title="NDD - Gun Violence Data",
@@ -127,6 +128,9 @@ def graphs(crime_df):
 
 
 def render_page(crime_df):
-  graphs(crime_df)
+    with st.spinner('Currently loading data...'):
+        graphs(crime_df)
+    st.success('Done!')
+
 
 render_page(crime_df)

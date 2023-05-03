@@ -26,6 +26,7 @@ def get_data():
      shapefile = gpd.read_file('data/cb_2018_us_county_20m.shp')
      crop_dec = pd.read_excel('data/crop-year-2014-disaster-declarations-1.xls')
      df_main = pd.read_csv('data/short_details_for_storm_events.csv')
+     #df_main = df_main[df_main['date'] > '2010-01-01']
 
      return [shapefile, crop_dec, df_main]
 

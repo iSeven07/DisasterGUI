@@ -5,12 +5,15 @@ from streamlit_extras.app_logo import add_logo
 import pandas as pd
 import plotly_express as px
 
+
 st.set_page_config(page_title="NDD - Home",
                    page_icon="🏠", layout="wide")
 add_logo("images/lrw-color.png")
 
-# TEMPORARY FOR QUICK GLANCE --- BELOW THIS LINE
+
 df = pd.read_csv('data/us_disasters_m5.csv')
+
+# TEMPORARY FOR QUICK GLANCE --- BELOW THIS LINE
 # TEMPORARY FOR QUICK GLANCE --- ABOVE THIS LINE
 # TEMPLATE GRAPH FOR SHOW --- BELOW THIS LINE
 def example_graph(df):

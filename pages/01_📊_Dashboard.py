@@ -74,6 +74,7 @@ def filters(df):
           default=df["state"].unique()
 
       )
+      state_selector=st.session_state.state_selector
     with fcol2:
       # Below variable IS USED, just used in string below on line 63
       incident_type = st.multiselect(
@@ -87,14 +88,20 @@ def filters(df):
     # st.sidebar.date_input("Select End Date")
     # Provides results to graphs for active filters
     global DF_SELECTION
-    DF_SELECTION = df.query(
-        "state == @state & incident_type == @incident_type"
-    )
+    if st.session_state.state_selector:
+      DF_SELECTION = df.query(
+    #    "state == @state & incident_type == @incident_type"
+         "state == @state_selector & incident_type == @incident_type",
+      )
+    else:
+      "state == @state & incident_type == @incident_type"
 
 # ---- MAINPAGE ----
 
 def top_info(df):
   st.title("📊 Natural Disaster Dashboard")
+  if st.session_state.state_selector:
+    st.subheader(st.session_state.state_selector)
   st.markdown("##")
 
   askBot = st.button("🤖 Ask DisasterBot", use_container_width=False)
