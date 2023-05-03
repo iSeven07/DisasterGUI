@@ -7,6 +7,7 @@ from streamlit_extras.app_logo import add_logo
 import geopandas as gpd
 import plotly.express as px
 import json
+from datetime import datetime
 
 
 
@@ -116,7 +117,8 @@ crop_dec['fips'] = [x if len(x) == 5 else "0"+x for x in crop_dec['fips']]
 shapeJoin = crop_dec.merge(df_files[0], right_on = 'GEOID', left_on = 'fips')
 
 # Set custom color scale based on range of drought values
-scale = [[0, 'rgb(255,255,255)'], [1, 'rgb(0,255,0)']]
+#scale = [[0, 'rgb(255,255,255)'], [1, 'rgb(0,0,0)']]
+
 
 # Convert the geometry column to a GeoSeries
 geometry = gpd.GeoSeries(shapeJoin['geometry'])
@@ -124,7 +126,7 @@ geometry = gpd.GeoSeries(shapeJoin['geometry'])
 # Convert the GeoSeries to JSON format
 geojson = json.loads(geometry.to_json())
 
-def ch_graph(sel):
+def ch_graph(sel, scale):
   # Load the shapefile using geopandas
 
 
@@ -139,6 +141,7 @@ def ch_graph(sel):
                       title='Choropleth Graph - Work in Progress',
                       geojson=geojson,
                       locations=shapeJoin_filtered.index,
+                      animation_frame=shapeJoin_filtered['Begin Date'].dt.strftime('%B %Y'),
                       color=sel,
                       opacity=0.2,
                       hover_name='County',
@@ -146,18 +149,56 @@ def ch_graph(sel):
                         sel: False,
                         'State': True,
                         'fips': True,
-                        'Begin Date': True,
-                        'End Date': True,
+                        #'Begin Date': True,
+                        #'End Date': True,
                       },
                       center=dict(lat=39.8, lon=-98.5),
                       zoom=3.0,
                       height=800,
-                      mapbox_style="open-street-map",
+                      mapbox_style="carto-positron",
                       color_continuous_scale=scale,
                       color_continuous_midpoint=0.5,
                       labels={sel: sel.capitalize()})
+  
+  #timestamp = datetime.strptime('2013-10-01 00:00:00', '%Y-%m-%d %H:%M:%S')
+#month_year = timestamp.strftime('%B %Y')
+  
+  # fig_ch = px.choropleth(shapeJoin_filtered, 
+  #             locations = shapeJoin_filtered.index,
+  #             color=sel, 
+  #             animation_frame= shapeJoin_filtered['Begin Date'].dt.strftime('%B %Y'),
+  #             color_continuous_scale="Inferno",
+  #             locationmode='USA-states',
+  #             scope="usa",
+  #             range_color=(0, 20),
+  #             title='Test',
+  #             height=600
+  #            )
+
 
   return fig_ch
+
+# Function to return Choropleth Graph color
+def getScale(sel):
+  if sel == "drought" or sel == "landslide":
+     return [[0, 'rgb(255,255,255)'], [1, 'rgb(255, 215, 0)']]
+  elif sel == "flash flooding" or sel == "severe storms" or sel == "rain" or sel == "waterlogged" or sel == "hail" or sel == "cold and wet":
+     return [[0, 'rgb(255,255,255)'], [1, 'rgb(0, 255, 0)']]
+  elif sel == "fire" or sel == "heatwave" or sel == "volcano":
+     return [[0, 'rgb(255,255,255)'], [1, 'rgb(255,0,0)']]
+  elif sel == "frost" or sel == "snow" or sel == "ice jam" or sel == "cold":
+     return [[0, 'rgb(255,255,255)'], [1, 'rgb(135, 206, 235)']]
+  elif sel == "hurricane" or sel == "heavy surf" or sel == "tidal surge":
+     return [[0, 'rgb(255,255,255)'], [1, 'rgb(0, 0, 255)']]
+  elif sel == "high wind" or sel == "tornado":
+     return [[0, 'rgb(255,255,255)'], [1, 'rgb(128, 128, 128)']]
+  elif sel == "lightning":
+     return [[0, 'rgb(255,255,255)'], [1, 'rgb(255, 255, 0)']]
+  elif sel == "insects":
+     return [[0, 'rgb(255,255,255)'], [1, 'rgb(255, 204, 0)']]
+  elif sel == "disease":
+     return [[0, 'rgb(255,255,255)'], [1, 'rgb(204, 102, 0)']]
+   
 
 def graphs(df_main):
   # Creates a container on the page and displays the map
@@ -168,7 +209,8 @@ def graphs(df_main):
   scat_cont.markdown('---')
   with choro_cont:
     sel = st.selectbox('Selector for Choropleth Graph', shapeJoin.columns[5:28], help='Select the incident type you would like to see on the map. The darker the county, the more of selected incidents in that county. If you selected "drought", the county with the most droughts will appear darkest.')
-  choro_cont.plotly_chart(ch_graph(sel), use_container_width=True)
+    scale = getScale(sel)
+  choro_cont.plotly_chart(ch_graph(sel, scale), use_container_width=True)
 
 def render_page(df_main):
   graphs(df_main)
