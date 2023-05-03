@@ -4,6 +4,8 @@ import streamlit as st  # pip install streamlit
 import datetime
 import plotly.graph_objects as go
 from streamlit_extras.switch_page_button import switch_page
+from streamlit_extras.app_logo import add_logo
+
 
 # Streamlit Documentation: https://docs.streamlit.io/
 # Plotly: https://plotly.com/python/
@@ -11,6 +13,8 @@ from streamlit_extras.switch_page_button import switch_page
 
 st.set_page_config(page_title="NDD - Dashboard",
                    page_icon="📊", layout="wide")
+
+add_logo("images/lrw-color.png")
 
 # ---- STREAMLIT STYLE ----
 st_style = """
@@ -70,6 +74,7 @@ def filters(df):
           default=df["state"].unique()
 
       )
+      state_selector=st.session_state.state_selector
     with fcol2:
       # Below variable IS USED, just used in string below on line 63
       incident_type = st.multiselect(
@@ -83,14 +88,20 @@ def filters(df):
     # st.sidebar.date_input("Select End Date")
     # Provides results to graphs for active filters
     global DF_SELECTION
-    DF_SELECTION = df.query(
-        "state == @state & incident_type == @incident_type"
-    )
+    if st.session_state.state_selector:
+      DF_SELECTION = df.query(
+    #    "state == @state & incident_type == @incident_type"
+         "state == @state_selector & incident_type == @incident_type",
+      )
+    else:
+      "state == @state & incident_type == @incident_type"
 
 # ---- MAINPAGE ----
 
 def top_info(df):
   st.title("📊 Natural Disaster Dashboard")
+  if st.session_state.state_selector:
+    st.subheader(st.session_state.state_selector)
   st.markdown("##")
 
   askBot = st.button("🤖 Ask DisasterBot", use_container_width=False)
@@ -103,17 +114,6 @@ def top_info(df):
   total_states = df['state'].nunique()
   top_incident = df['incident_type'].value_counts().index[0]
   top_state = (df.groupby('state')['incident_type'].count()).idxmax()
-  #top_incident = incident_counts.index[0]
-
-  # glance = st.container()
-  # glance.markdown(
-  #   f"<div style='display: flex; flex-wrap: wrap;'>"
-  #   f"<div style='width: 50%; display: flex; flex-direction: row; align-items: center;'><h3 style='margin-right: -15px;'>Total Incidents:</h3><h3 style='color:white; margin: 0;'>{total_incidents}</h3></div>"
-  #   f"<div style='width: 50%; display: flex; flex-direction: row; align-items: center;'><h3 style='margin-right: -15px;'>Top Incident:</h3><h3 style='color:red; margin: 0;'>{top_incident}</h3></div>"
-  #   f"<div style='width: 50%; display: flex; flex-direction: row; align-items: center;'><h3 style='margin-right: -15px;'>Total States:</h3><h3 style='color:white; margin: 0;'>{total_states}</h3></div>"
-  #   f"<div style='width: 50%; display: flex; flex-direction: row; align-items: center;'><h3 style='margin-right: -15px;'>Most Disasters:</h3><h3 style='color:{color_dict[top_state]}; margin: 0;'>{top_state}</h3></div>"
-  #   f"</div>", unsafe_allow_html=True)
-
   top_areas = (df.loc[df['designated_area'] != 'Statewide']).groupby(['designated_area', 'state']).count().sort_values(by='incident_type', ascending=False).head(3)
   top_areas = (top_areas[['incident_type']].rename(columns={'incident_type': 'count'})).reset_index()
 
