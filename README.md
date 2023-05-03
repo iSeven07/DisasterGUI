@@ -1,10 +1,10 @@
 # 5/2 Tuesday Session Notes
 
 ## Emoji Legend
-➕ --> A simple addition to the codebase
-➕➕ --> A bigger feature that needs more work
-➖ --> A deletion or removal of current component
-〰️ --> A subpoint for the above ➕, ➕➕, or ➖ line.
+➕ --> A simple addition to the codebase <br>
+➕➕ --> A bigger feature that needs more work <br>
+➖ --> A deletion or removal of current component <br>
+〰️ --> A subpoint for the above ➕, ➕➕, or ➖ line. <br>
 
 ## Dashboard Wide
 - [ ] ➕ Swap to full dataset, away from m5 <br>
