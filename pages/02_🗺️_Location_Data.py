@@ -7,6 +7,7 @@ from streamlit_extras.app_logo import add_logo
 import geopandas as gpd
 import plotly.express as px
 import json
+from datetime import datetime
 
 
 
@@ -139,6 +140,7 @@ def ch_graph(sel, scale):
                       title='Choropleth Graph - Work in Progress',
                       geojson=geojson,
                       locations=shapeJoin_filtered.index,
+                      animation_frame=shapeJoin_filtered['Begin Date'].dt.strftime('%B %Y'),
                       color=sel,
                       opacity=0.2,
                       hover_name='County',
@@ -146,16 +148,32 @@ def ch_graph(sel, scale):
                         sel: False,
                         'State': True,
                         'fips': True,
-                        'Begin Date': True,
-                        'End Date': True,
+                        #'Begin Date': True,
+                        #'End Date': True,
                       },
                       center=dict(lat=39.8, lon=-98.5),
                       zoom=3.0,
                       height=800,
-                      mapbox_style="open-street-map",
+                      mapbox_style="carto-positron",
                       color_continuous_scale=scale,
                       color_continuous_midpoint=0.5,
                       labels={sel: sel.capitalize()})
+  
+  #timestamp = datetime.strptime('2013-10-01 00:00:00', '%Y-%m-%d %H:%M:%S')
+#month_year = timestamp.strftime('%B %Y')
+  
+  # fig_ch = px.choropleth(shapeJoin_filtered, 
+  #             locations = shapeJoin_filtered.index,
+  #             color=sel, 
+  #             animation_frame= shapeJoin_filtered['Begin Date'].dt.strftime('%B %Y'),
+  #             color_continuous_scale="Inferno",
+  #             locationmode='USA-states',
+  #             scope="usa",
+  #             range_color=(0, 20),
+  #             title='Test',
+  #             height=600
+  #            )
+
 
   return fig_ch
 
