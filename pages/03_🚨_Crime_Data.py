@@ -130,7 +130,6 @@ def graphs(crime_df):
 def render_page(crime_df):
     with st.spinner('Currently loading data...'):
         graphs(crime_df)
-    st.success('Done!')
 
 
 render_page(crime_df)

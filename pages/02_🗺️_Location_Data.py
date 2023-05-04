@@ -159,13 +159,13 @@ def ch_graph(sel, scale):
                       color_continuous_scale=scale,
                       color_continuous_midpoint=0.5,
                       labels={sel: sel.capitalize()})
-  
+
   #timestamp = datetime.strptime('2013-10-01 00:00:00', '%Y-%m-%d %H:%M:%S')
 #month_year = timestamp.strftime('%B %Y')
-  
-  # fig_ch = px.choropleth(shapeJoin_filtered, 
+
+  # fig_ch = px.choropleth(shapeJoin_filtered,
   #             locations = shapeJoin_filtered.index,
-  #             color=sel, 
+  #             color=sel,
   #             animation_frame= shapeJoin_filtered['Begin Date'].dt.strftime('%B %Y'),
   #             color_continuous_scale="Inferno",
   #             locationmode='USA-states',
@@ -198,7 +198,7 @@ def getScale(sel):
      return [[0, 'rgb(255,255,255)'], [1, 'rgb(255, 204, 0)']]
   elif sel == "disease":
      return [[0, 'rgb(255,255,255)'], [1, 'rgb(204, 102, 0)']]
-   
+
 
 def graphs(df_main):
   # Creates a container on the page and displays the map
