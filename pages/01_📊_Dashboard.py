@@ -100,8 +100,12 @@ def filters(df):
 
 def top_info(df):
   st.title("📊 Natural Disaster Dashboard")
-  if st.session_state.state_selector:
+  # EXAMPLE SESSION STATE
+  try:
     st.subheader(st.session_state.state_selector)
+  except:
+    st.subheader('No State Selector')
+
   st.markdown("##")
 
   askBot = st.button("🤖 Ask DisasterBot", use_container_width=False)
