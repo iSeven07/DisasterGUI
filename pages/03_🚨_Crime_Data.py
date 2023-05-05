@@ -60,33 +60,8 @@ def animated_map(crime_df):
                              'n_injured': 'Injured',
                              'date': 'Date'
                                  },
-                         animation_frame='month_year'
+                         animation_frame='month_year',
                          )
-  # Copied styling from Location Data scatter map for testing.
-    # animation_map.update_layout(
-    #     geo=dict(
-    #         scope='usa',
-    #         showsubunits=True,
-    #         subunitcolor='white',
-    #         subunitwidth=2,
-    #         center=dict(lat=39.8, lon=-98.5),
-    #         projection=dict(type='albers usa'),
-    #         projection_scale=0.9,
-    #         showcountries=True,
-    #         bgcolor="rgba(14,17,23,1)",
-    #         countrycolor="white",
-    #     ),
-    #     margin=dict(l=0, r=0, t=35, b=0),
-    # )
-
-    # # Customizes the map to add lakes and rivers
-    # animation_map.update_geos(
-    #     resolution=50,
-    #     showlakes=True,
-    #     lakecolor='Blue',
-    #     showrivers=True,
-    #     rivercolor='Blue',
-    # )
     return animation_map
 
 @st.cache_data
