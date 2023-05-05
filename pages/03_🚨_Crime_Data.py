@@ -38,7 +38,7 @@ st.markdown("##")
 
 @st.cache_data
 def get_data():
-  crime_df = pd.read_csv('data/updated-gun-violence-data.csv')
+  crime_df = pd.read_csv('data/updated_gun_violence_data.csv')
   return crime_df
 
 

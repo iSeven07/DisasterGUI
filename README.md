@@ -14,9 +14,9 @@
 
 ## Home
 - [ ] ➕ Add Quick Glance<br>
-  > 〰️ Incorporate Crime data into Quick Glance <br>
-  > 〰️ Swap Totals to averages of all data? <br>
-  > 〰️ Average incidents over Summer/Winter/Spring/Fall <br>
+  > - [x]〰️ Incorporate Crime data into Quick Glance <br>
+  > - [ ]〰️ Swap Totals to averages of all data? <br>
+  > - [ ]〰️ Average incidents over Summer/Winter/Spring/Fall <br>
 - [ ] ➕➕ Choropleth Graph showing All Data <br>
   > 〰️ average number of events per county <br>
   > 〰️ overlapping of data, aka disasters underneath crime <br>
