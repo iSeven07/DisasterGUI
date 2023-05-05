@@ -3,8 +3,13 @@
 import streamlit as st
 from streamlit_extras.app_logo import add_logo
 import pandas as pd
+import json
+import numpy as np
 import plotly_express as px
 from streamlit_extras.switch_page_button import switch_page
+#choropleth
+import plotly.graph_objs as go
+
 
 
 st.set_page_config(page_title="NDD - Home",
@@ -30,75 +35,61 @@ st.markdown(st_style, unsafe_allow_html=True)
 def getData():
   d_df = pd.read_csv('data/us_disasters_m5.csv')
   g_df = pd.read_csv('data/updated_gun_violence_data.csv')
+  with open('data/state_info.json', 'r') as f:
+    s_info = json.load(f)
 
-  return [d_df, g_df]
+  return [d_df, g_df, s_info]
+
 dfs = getData()
 disaster_df = dfs[0]
 gun_df = dfs[1]
-
-askBot = st.button("🤖 Ask DisasterBot", use_container_width=False)
-if askBot:
-  switch_page('disasterbot')
-
-# TEMPLATE GRAPH FOR SHOW --- BELOW THIS LINE
-def example_graph():
-    state = st.session_state.state_selector
-    incident_frequency = disaster_df[disaster_df['state'] == state].groupby(by=["incident_type"]).count()[
-        ['state']].sort_values(by='state')
-    fig_incident_frequency = px.bar(
-        incident_frequency,
-        x=incident_frequency.index,
-        y='state',
-        labels={
-            "incident_type": "Incident by Type",
-            "state": "Count"
-        },
-        title="<b>Incident Frequency</b>",
-        color=incident_frequency.index,
-        text_auto=True
-    )
-    fig_incident_frequency.update_layout(
-        xaxis=dict(tickmode="linear", autorange="reversed"),
-        plot_bgcolor="rgba(0,0,0,0)",
-        yaxis=(dict(showgrid=False)),
-    )
-    return fig_incident_frequency
-# TEMPLATE GRAPH FOR SHOW --- ABOVE THIS LINE
+state_info = dfs[2]
 
 
-with st.container():
+def header():
+  with st.container():
     one_col, two_col = st.columns((1,2))
     one_col.image('images/logo-main.png', use_column_width=False, width=250)
     with two_col:
         st.markdown('# Welcome Home')
         st.write("##### Showing you the data you didn't know you need.")
         st.write("##### A little stuck? Head over to DisasterBot and ask it for some insights!")
+  askBot = st.button("🤖 Ask DisasterBot", use_container_width=False)
+  if askBot:
+    switch_page('disasterbot')
 
-st.markdown('---')
+def choro_layered():
+  fig = go.Figure(go.Choroplethmapbox()) # here you set all attributes needed for a Choroplethmapbox
+  fig.add_scattermapbox(lat = gun_df['latitude'],
+                        lon = gun_df['longitude'],
+                        mode = 'markers+text',
+                        text = 'example',  #a list of strings, one  for each geographical position  (lon, lat)
+                        below='',
+                        marker_size=3,
+                        marker_color='rgb(235, 0, 100)')
+  fig.update_layout(title_text ='Please work?',
+                    title_x =0.5,
+                    mapbox = dict(center=dict(lat=39.8, lon=-98.5),  #change to the center of your map
+                                  accesstoken= "",
+                                  zoom=2.5, #change this value correspondingly, for your map
+                                  style="dark"  # set your prefered mapbox style
+                               ))
+  return fig
 
-def state_change():
-    st.markdown('---')
-    st.selectbox(
-        'What state would you like to hone in on?',
-        ('TX', 'CA', 'WI'),
-        key='state_selector')
-    if st.session_state.state_selector:
-        st.write('State you chose:', st.session_state.state_selector)
-        st.markdown('---')
-    else:
-        print('000000000000000000000000000000 ERROR STATE NOT IN SESSION STATE 000000000000000000000000000000')
 
 def date_change():
     st.write('Currently pulling from m5 dataset. Uses first value of incident begin date as starting date default and last value as ending date default. Assumes the incident_begin_date column is sorted chronologically.')
-    # st.date_input("Start Date", value=pd.to_datetime("2021-01-31", format="%Y-%m-%d"), key='start_date')
     st.date_input("Start Date", value=pd.to_datetime(disaster_df.iloc[0]['incident_begin_date'], format="%Y-%m-%d"), key='start_date')
     st.date_input("End Date", value=pd.to_datetime(disaster_df.iloc[len(disaster_df)-1]['incident_begin_date'], format="%Y-%m-%d"), key='end_date')
-    # st.date_input("End Date", value=pd.to_datetime("today", format="%Y-%m-%d"), key='end_date')
     if st.session_state.start_date and st.session_state.end_date:
         st.write('Start date you chose:', st.session_state.start_date.strftime('%Y-%m-%d'))
         st.write('End date you chose:', st.session_state.end_date.strftime('%Y-%m-%d'))
     else:
         print('000000000000000000000000000000 ERROR DATE NOT IN SESSION STATE 000000000000000000000000000000')
+
+def filter_data():
+  st.subheader('Looking to hone in?')
+  st.selectbox('What state would you like to hone in on?', state_info.values(), key='state_selected')
 
 # QUICK GLANCE --- BELOW THIS LINE
 def quick_glance():
@@ -208,8 +199,19 @@ def dev_info():
           st.write("Suggestions? Feel free to reach out to us!")
   # ABOUT THIS APPLICATION --- ABOVE THIS LINE
 
+def graphs():
+  choro_cont = st.container()
+  choro_cont.plotly_chart(
+    choro_layered(), use_container_width=True)
+
 def render_page():
+  header()
+  st.markdown('---')
+  graphs()
+  st.markdown('---')
   quick_glance()
+  st.markdown('---')
+  filter_data()
   st.markdown('---')
   dev_info()
 

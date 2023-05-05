@@ -74,7 +74,7 @@ def filters(df):
           default=df["state"].unique()
 
       )
-      state_selector=st.session_state.state_selector
+      state_selected=st.session_state.state_selected
     with fcol2:
       # Below variable IS USED, just used in string below on line 63
       incident_type = st.multiselect(
@@ -88,10 +88,10 @@ def filters(df):
     # st.sidebar.date_input("Select End Date")
     # Provides results to graphs for active filters
     global DF_SELECTION
-    if st.session_state.state_selector:
+    if st.session_state.state_selected:
       DF_SELECTION = df.query(
     #    "state == @state & incident_type == @incident_type"
-         "state == @state_selector & incident_type == @incident_type",
+         "state == @state_selected & incident_type == @incident_type",
       )
     else:
       "state == @state & incident_type == @incident_type"
@@ -102,7 +102,7 @@ def top_info(df):
   st.title("📊 Disaster Dashboard")
   # EXAMPLE SESSION STATE
   try:
-    st.subheader(st.session_state.state_selector)
+    st.subheader(st.session_state.state_selected)
   except:
     st.subheader('No State Selector')
 
