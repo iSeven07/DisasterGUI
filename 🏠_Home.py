@@ -4,17 +4,34 @@ import streamlit as st
 from streamlit_extras.app_logo import add_logo
 import pandas as pd
 import plotly_express as px
+from streamlit_extras.switch_page_button import switch_page
 
 
 st.set_page_config(page_title="NDD - Home",
                    page_icon="🏠", layout="wide")
 add_logo("images/lrw-color.png")
-
+# ---- STREAMLIT STYLE ----
+st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            .stButton>button {
+              position: fixed;
+              bottom: 20px;
+              right: 20px;
+              z-index: 1;
+              padding: 10px;
+              background-color: gray;
+            }
+            </style>
+            """
+st.markdown(st_style, unsafe_allow_html=True)
 
 df = pd.read_csv('data/us_disasters_m5.csv')
-
-# TEMPORARY FOR QUICK GLANCE --- BELOW THIS LINE
-# TEMPORARY FOR QUICK GLANCE --- ABOVE THIS LINE
+askBot = st.button("🤖 Ask DisasterBot", use_container_width=False)
+if askBot:
+  switch_page('disasterbot')
 # TEMPLATE GRAPH FOR SHOW --- BELOW THIS LINE
 def example_graph(df):
     state = st.session_state.state_selector
@@ -169,13 +186,3 @@ with st.expander('About this application (Click to expand)'):
             st.markdown("[Filler Link](https://google.com)")
         st.write("Suggestions? Feel free to reach out to us!")
 # ABOUT THIS APPLICATION --- ABOVE THIS LINE
-
-# ---- STREAMLIT STYLE ----
-st_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            </style>
-            """
-st.markdown(st_style, unsafe_allow_html=True)

@@ -8,8 +8,8 @@
 
 ## Dashboard Wide
 - [ ] ➕ Swap to full dataset, away from m5 <br>
-- [ ] ➕ Add DisasterBot button to all pages <br>
-- [ ] ➕ Add st.spinner to all pages (See Crime Data page for example) <br>
+- [x] ➕ Add DisasterBot button to all pages <br>
+- [x] ➕ Add st.spinner to all pages (See Crime Data page for example) <br>
 - [ ] ➕➕ Filter data down to only columns needed <br>
 
 ## Home
@@ -25,7 +25,7 @@
     > 〰️ https://pypi.org/project/extra-streamlit-components/ <br>
 
 ## Dashboard
-- [ ] ➖ Remove Quick Glance <br>
+- [x] ➖ Remove Quick Glance <br>
 - [ ] ➕ Change line graph to a log scale / exponential growth <br>
   > 〰️ https://plotly.com/python/log-plot/ <br>
   > 〰️ ```fig = px.scatter(df, x="gdpPercap", y="lifeExp", hover_name="country", log_y=True)``` <br>
