@@ -9,12 +9,15 @@ import plotly_express as px
 from streamlit_extras.switch_page_button import switch_page
 #choropleth
 import plotly.graph_objs as go
+from dotenv import load_dotenv
+import os
 
 
 
 st.set_page_config(page_title="NDD - Home",
                    page_icon="🏠", layout="wide")
 add_logo("images/lrw-color.png")
+load_dotenv()
 # ---- STREAMLIT STYLE ----
 st_style = """
             <style>
@@ -70,7 +73,7 @@ def choro_layered():
   fig.update_layout(title_text ='Please work?',
                     title_x =0.5,
                     mapbox = dict(center=dict(lat=39.8, lon=-98.5),  #change to the center of your map
-                                  accesstoken= "",
+                                  accesstoken= os.getenv('AUZ_MAPBOX_KEY'),
                                   zoom=2.5, #change this value correspondingly, for your map
                                   style="dark"  # set your prefered mapbox style
                                ))
