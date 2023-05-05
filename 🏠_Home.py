@@ -11,6 +11,7 @@ from streamlit_extras.switch_page_button import switch_page
 import plotly.graph_objs as go
 from dotenv import load_dotenv
 import os
+import geopandas as gpd
 
 
 
@@ -40,14 +41,16 @@ def getData():
   g_df = pd.read_csv('data/updated_gun_violence_data.csv')
   with open('data/state_info.json', 'r') as f:
     s_info = json.load(f)
+  s_file = gpd.read_file('data/cb_2018_us_county_20m.shp')
 
-  return [d_df, g_df, s_info]
+  return [d_df, g_df, s_info, s_file]
 
 dfs = getData()
 disaster_df = dfs[0]
 gun_df = dfs[1]
 state_info = dfs[2]
-
+shape_file = dfs[3]
+px.set_mapbox_access_token(os.getenv('AUZ_MAPBOX_KEY'))
 
 def header():
   with st.container():
@@ -70,7 +73,7 @@ def choro_layered():
                         below='',
                         marker_size=3,
                         marker_color='rgb(235, 0, 100)')
-  fig.update_layout(title_text ='Please work?',
+  fig.update_layout(title_text ='Scatter Mapbox',
                     title_x =0.5,
                     mapbox = dict(center=dict(lat=39.8, lon=-98.5),  #change to the center of your map
                                   accesstoken= os.getenv('AUZ_MAPBOX_KEY'),
@@ -79,6 +82,12 @@ def choro_layered():
                                ))
   return fig
 
+def cluster_map():
+  # https://plotly.com/python/scattermapbox/
+  fig = px.scatter_mapbox(gun_df, lat='latitude', lon='longitude', size='n_killed', zoom=3)
+  fig.update_layout(title_text ='Scatter Mapbox with Clustering')
+  fig.update_traces(cluster=dict(enabled=True))
+  return fig
 
 def date_change():
     st.write('Currently pulling from m5 dataset. Uses first value of incident begin date as starting date default and last value as ending date default. Assumes the incident_begin_date column is sorted chronologically.')
@@ -204,8 +213,9 @@ def dev_info():
 
 def graphs():
   choro_cont = st.container()
-  choro_cont.plotly_chart(
-    choro_layered(), use_container_width=True)
+  cluster_cont = st.container()
+  choro_cont.plotly_chart(choro_layered(), use_container_width=True)
+  cluster_cont.plotly_chart(cluster_map(), use_container_width=True)
 
 def render_page():
   header()
