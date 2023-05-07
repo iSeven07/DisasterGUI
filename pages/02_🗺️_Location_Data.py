@@ -3,6 +3,7 @@ import plotly.graph_objs as go
 import pandas as pd
 from plotly.subplots import make_subplots
 from streamlit_extras.app_logo import add_logo
+from streamlit_extras.switch_page_button import switch_page
 # for choropleth graph
 import geopandas as gpd
 import plotly.express as px
@@ -17,6 +18,23 @@ st.set_page_config(page_title="NDD - Location Data",
 
 add_logo("images/lrw-color.png")
 
+# ---- STREAMLIT STYLE ----
+st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            .stButton>button {
+              position: fixed;
+              bottom: 20px;
+              right: 20px;
+              z-index: 1;
+              padding: 10px;
+              background-color: gray;
+            }
+            </style>
+            """
+st.markdown(st_style, unsafe_allow_html=True)
 # Adds title to top of page
 st.title("🗺️ Disaster Locations Dashboard")
 st.markdown("This is an interactive scatter map of disasters in the United States.  &nbsp;Hovering over a marked location will show more details.")
@@ -199,8 +217,10 @@ def getScale(sel):
   elif sel == "disease":
      return [[0, 'rgb(255,255,255)'], [1, 'rgb(204, 102, 0)']]
 
-
 def graphs(df_main):
+  askBot = st.button("🤖 Ask DisasterBot", use_container_width=False)
+  if askBot:
+    switch_page('disasterbot')
   # Creates a container on the page and displays the map
   scat_cont = st.container()
   choro_cont = st.container()
@@ -213,15 +233,7 @@ def graphs(df_main):
   choro_cont.plotly_chart(ch_graph(sel, scale), use_container_width=True)
 
 def render_page(df_main):
-  graphs(df_main)
+  with st.spinner('Currently loading data...'):
+    graphs(df_main)
 
 render_page(df_files[2])
-# ---- STREAMLIT STYLE ----
-st_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            </style>
-            """
-st.markdown(st_style, unsafe_allow_html=True)

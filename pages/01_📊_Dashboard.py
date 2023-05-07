@@ -74,7 +74,7 @@ def filters(df):
           default=df["state"].unique()
 
       )
-      state_selector=st.session_state.state_selector
+      state_selected=st.session_state.state_selected
     with fcol2:
       # Below variable IS USED, just used in string below on line 63
       incident_type = st.multiselect(
@@ -88,10 +88,10 @@ def filters(df):
     # st.sidebar.date_input("Select End Date")
     # Provides results to graphs for active filters
     global DF_SELECTION
-    if st.session_state.state_selector:
+    if st.session_state.state_selected:
       DF_SELECTION = df.query(
     #    "state == @state & incident_type == @incident_type"
-         "state == @state_selector & incident_type == @incident_type",
+         "state == @state_selected & incident_type == @incident_type",
       )
     else:
       "state == @state & incident_type == @incident_type"
@@ -99,10 +99,10 @@ def filters(df):
 # ---- MAINPAGE ----
 
 def top_info(df):
-  st.title("📊 Natural Disaster Dashboard")
+  st.title("📊 Disaster Dashboard")
   # EXAMPLE SESSION STATE
   try:
-    st.subheader(st.session_state.state_selector)
+    st.subheader(st.session_state.state_selected)
   except:
     st.subheader('No State Selector')
 
@@ -112,33 +112,6 @@ def top_info(df):
   if askBot:
     switch_page('disasterbot')
 
-  # Top portion for totals
-  st.title('Quick Glance')
-  total_incidents = int(df["incident_type"].count())
-  total_states = df['state'].nunique()
-  top_incident = df['incident_type'].value_counts().index[0]
-  top_state = (df.groupby('state')['incident_type'].count()).idxmax()
-  top_areas = (df.loc[df['designated_area'] != 'Statewide']).groupby(['designated_area', 'state']).count().sort_values(by='incident_type', ascending=False).head(3)
-  top_areas = (top_areas[['incident_type']].rename(columns={'incident_type': 'count'})).reset_index()
-
-  left_column, right_column, blank_column2 = st.columns(3)
-
-  with left_column:
-    st.markdown('#####')
-    st.subheader(f"Total Incidents: :red[{total_incidents}]")
-    st.subheader(f"Top Incident: :red[{top_incident}]")
-
-  with right_column:
-    st.markdown('#####')
-    st.subheader(f"Total States: :blue[{total_states}]")
-    st.subheader(f"Most Disasters: :blue[{top_state}]")
-
-  with blank_column2:
-    stringText = ''
-    for index, row in top_areas.iterrows():
-        stringText += (f"{index+1}. {row['designated_area']}, {row['state']}: {row['count']} incidents<br>")
-    st.markdown('<p style="font-weight: 600; font-color: white; font-size: 30px; margin: auto;">Top 3 Areas</p>' + stringText, unsafe_allow_html=True)
-  st.markdown("---")
 
 # ---- GRAPHS ----
 # Total Incidents in each State [BAR CHART]
@@ -263,19 +236,20 @@ def graphs(filter=defaultQuery):
 
 
 def render_page(df):
-  top_info(df)
-  st.title('Visualizations')
-  tab1, tab2, tab3, tab4 = st.tabs(["All 📈", "Fire 🔥", "Storms 🌩️", "Custom ⚙️"])
-  with tab1:
-    graphs()
-  with tab2:
-    df_fire = df.query('incident_type == ["Fire"]')
-    graphs(df_fire)
-  with tab3:
-    df_storms = df.query('incident_type == ["Severe Storm(s)"]')
-    graphs(df_storms)
-  with tab4:
-    filters(df)
-    graphs(DF_SELECTION)
+  with st.spinner('Currently loading data...'):
+    top_info(df)
+    st.title('Visualizations')
+    tab1, tab2, tab3, tab4 = st.tabs(["All 📈", "Fire 🔥", "Storms 🌩️", "Custom ⚙️"])
+    with tab1:
+      graphs()
+    with tab2:
+      df_fire = df.query('incident_type == ["Fire"]')
+      graphs(df_fire)
+    with tab3:
+      df_storms = df.query('incident_type == ["Severe Storm(s)"]')
+      graphs(df_storms)
+    with tab4:
+      filters(df)
+      graphs(DF_SELECTION)
 
 render_page(df_main)
