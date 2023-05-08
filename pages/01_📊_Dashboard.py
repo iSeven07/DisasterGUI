@@ -102,9 +102,9 @@ def top_info(df):
   st.title("📊 Disaster Dashboard")
   # EXAMPLE SESSION STATE
   try:
-    st.subheader(st.session_state.state_selected)
+    st.subheader('Your current data view: ' + st.session_state.state_selected)
   except:
-    st.subheader('No State Selector')
+    st.subheader('You have not selected a data view from Home page. Showing default data.')
 
   st.markdown("##")
 
