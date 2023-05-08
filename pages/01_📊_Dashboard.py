@@ -38,7 +38,7 @@ st.markdown(st_style, unsafe_allow_html=True)
 @st.cache_data
 def get_data():
   # ---- READ CSV ----
-  df = pd.read_csv('data/us_disasters_m5.csv')
+  df = pd.read_csv('data/us_disaster_declarations.csv')
   # Should return the year, ie 2017
   df["year"] = pd.to_datetime(
     df["incident_begin_date"], format="%Y-%m-%d", exact=False).dt.year
@@ -51,8 +51,17 @@ def get_data():
 df_main = get_data()
 
 # ---- DEFAULT QUERY ----
+#defaultStates = list(df_main["state"].unique())
 defaultStates = list(df_main["state"].unique())
-defaultQuery = df_main.query(f'state == {defaultStates}')
+
+
+def getSelection():
+   if st.session_state.state_selected == 'Ozark Region Plus':
+      return ['MO', 'TN', 'AR', 'KY', 'KS']
+   else:
+      return defaultStates
+
+defaultQuery = df_main.query(f'state == {getSelection()}')  
 
 
 # generate a unique color for each state
@@ -70,8 +79,10 @@ def filters(df):
       # Below variable IS USED, just used in string below on line 63
       state = st.multiselect(
           "State Selections",
-          options=df["state"].unique(),
-          default=df["state"].unique()
+          # options=df["state"].unique(),
+          # default=df["state"].unique()
+          options=getSelection(),
+          default=getSelection()
 
       )
       state_selected=st.session_state.state_selected
@@ -91,10 +102,12 @@ def filters(df):
     if st.session_state.state_selected:
       DF_SELECTION = df.query(
     #    "state == @state & incident_type == @incident_type"
-         "state == @state_selected & incident_type == @incident_type",
+         "state == @state & incident_type == @incident_type",
       )
     else:
-      "state == @state & incident_type == @incident_type"
+      DF_SELECTION = df.query(
+         "state == @state & incident_type == @incident_type",
+      )
 
 # ---- MAINPAGE ----
 
