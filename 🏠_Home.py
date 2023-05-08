@@ -101,7 +101,8 @@ def date_change():
 
 def filter_data():
   st.subheader('Looking to hone in?')
-  st.selectbox('What state would you like to hone in on?', state_info.values(), key='state_selected')
+  # st.selectbox('What state would you like to hone in on?', state_info.values(), key='state_selected')
+  st.selectbox('What dataset would you like?', ['Ozark Region Plus', 'All Data'], key='state_selected')
 
 # QUICK GLANCE --- BELOW THIS LINE
 def quick_glance():
@@ -220,11 +221,11 @@ def graphs():
 def render_page():
   header()
   st.markdown('---')
-  graphs()
+  filter_data()
   st.markdown('---')
   quick_glance()
   st.markdown('---')
-  filter_data()
+  graphs()
   st.markdown('---')
   dev_info()
 
