@@ -9,7 +9,7 @@ import plotly_express as px
 from streamlit_extras.switch_page_button import switch_page
 #choropleth
 import plotly.graph_objs as go
-from dotenv import load_dotenv
+#from dotenv import load_dotenv # can just use import os for the env token
 import os
 import geopandas as gpd
 
@@ -18,7 +18,7 @@ import geopandas as gpd
 st.set_page_config(page_title="NDD - Home",
                    page_icon="🏠", layout="wide")
 add_logo("images/lrw-color.png")
-load_dotenv()
+#load_dotenv()
 # ---- STREAMLIT STYLE ----
 st_style = """
             <style>
@@ -36,8 +36,9 @@ st_style = """
             </style>
             """
 st.markdown(st_style, unsafe_allow_html=True)
+@st.cache_data
 def getData():
-  d_df = pd.read_csv('data/us_disasters_m5.csv')
+  d_df = pd.read_csv('data/us_disaster_declarations.csv')
   g_df = pd.read_csv('data/updated_gun_violence_data.csv')
   with open('data/state_info.json', 'r') as f:
     s_info = json.load(f)
@@ -50,7 +51,11 @@ disaster_df = dfs[0]
 gun_df = dfs[1]
 state_info = dfs[2]
 shape_file = dfs[3]
-px.set_mapbox_access_token(os.getenv('AUZ_MAPBOX_KEY'))
+#px.set_mapbox_access_token(os.getenv('AUZ_MAPBOX_KEY'))
+try:
+  token = os.environ["MAPBOX_API"]
+except KeyError:
+  st.write("API KEY was not found!")
 
 def header():
   with st.container():
@@ -76,7 +81,7 @@ def choro_layered():
   fig.update_layout(title_text ='Scatter Mapbox',
                     title_x =0.5,
                     mapbox = dict(center=dict(lat=39.8, lon=-98.5),  #change to the center of your map
-                                  accesstoken= os.getenv('AUZ_MAPBOX_KEY'),
+                                  accesstoken= token,
                                   zoom=2.5, #change this value correspondingly, for your map
                                   style="dark"  # set your prefered mapbox style
                                ))
@@ -104,17 +109,34 @@ def filter_data():
   # st.selectbox('What state would you like to hone in on?', state_info.values(), key='state_selected')
   st.selectbox('What dataset would you like?', ['Ozark Region Plus', 'All Data'], key='state_selected')
 
+def getSelection():
+  if st.session_state.state_selected == 'Ozark Region Plus':
+    return ['MO', 'TN', 'AR', 'KY', 'KS']
+  else:
+    return disaster_df['state'].unique()
+
 # QUICK GLANCE --- BELOW THIS LINE
 def quick_glance():
     # st.write('Maybe have this with a choropleth of all merged data in database? Or potentially have insights from DisasterBot here, if possible? Thinking that if data is scraped live from the internet, could have this become a "Latest Incident" section.')
 
-    # st.title('Quick Glance')
-    total_incidents = int(disaster_df["incident_type"].count())
-    total_states = (disaster_df['state'].nunique() + gun_df['state'].nunique())
-    top_incident = disaster_df['incident_type'].value_counts().index[0]
-    top_state = (disaster_df.groupby('state')['incident_type'].count()).idxmax()
+    # Filter the DataFrames based on the included states
+    filtered_disaster_df = disaster_df[disaster_df['state'].isin(getSelection())]
+    
 
-    top_areas = (disaster_df.loc[disaster_df['designated_area'] != 'Statewide']).groupby(['designated_area', 'state']).count().sort_values(by='incident_type', ascending=False).head(3)
+    # Load the state abbreviation to state name mapping from JSON file
+    with open('data/state_info.json', 'r') as file:
+        state_mapping = json.load(file)
+
+    filtered_gun_df = gun_df[gun_df['state'].isin([state_mapping.get(abbreviation) for abbreviation in getSelection()])]
+
+    # st.title('Quick Glance')
+    total_incidents = int(filtered_disaster_df["incident_type"].count())
+    #total_states = (filtered_disaster_df['state'].nunique() + gun_df['state'].nunique())
+    total_states = len(set(filtered_disaster_df['state']).union(set(filtered_gun_df['state'])))
+    top_incident = filtered_disaster_df['incident_type'].value_counts().index[0]
+    top_state = (filtered_disaster_df.groupby('state')['incident_type'].count()).idxmax()
+
+    top_areas = (filtered_disaster_df.loc[filtered_disaster_df['designated_area'] != 'Statewide']).groupby(['designated_area', 'state']).count().sort_values(by='incident_type', ascending=False).head(3)
     top_areas = (top_areas[['incident_type']].rename(columns={'incident_type': 'count'})).reset_index()
 
     with st.container():
@@ -136,12 +158,13 @@ def quick_glance():
             for index, row in top_areas.iterrows():
                 stringText += (f"{index+1}. {row['designated_area']}, {row['state']}: {row['count']} incidents<br>")
             st.markdown('<p style="font-weight: 600; font-color: white; font-size: 30px; margin: auto;">Top 3 Areas for Natural Disasters</p>' + stringText, unsafe_allow_html=True)
+        
 
-        total_crime = int(gun_df["incident_id"].count())
-        top_crime = gun_df['congressional_district'].value_counts().index[0]
-        top_crime_state = (gun_df.groupby('state')['incident_id'].count()).idxmax()
+        total_crime = int(filtered_gun_df["incident_id"].count())
+        top_crime = filtered_gun_df['congressional_district'].value_counts().index[0]
+        top_crime_state = (filtered_gun_df.groupby('state')['incident_id'].count()).idxmax()
 
-        top_crime_areas = gun_df.groupby(['city_or_county', 'state']).count().sort_values(by='incident_id', ascending=False).head(3)
+        top_crime_areas = filtered_gun_df.groupby(['city_or_county', 'state']).count().sort_values(by='incident_id', ascending=False).head(3)
         top_crime_areas = (top_crime_areas[['incident_id']].rename(columns={'incident_id': 'count'})).reset_index()
         st.markdown('---')
       # Crime Quick Glance
