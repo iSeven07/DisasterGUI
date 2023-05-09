@@ -100,7 +100,6 @@ shapeJoin = crop_dec.merge(df_files[0], right_on = 'GEOID', left_on = 'fips')
 
 # Convert the geometry column to a GeoSeries
 geometry = gpd.GeoSeries(shapeJoin['geometry'])
-
 # Convert the GeoSeries to JSON format
 geojson = json.loads(geometry.to_json())
 
