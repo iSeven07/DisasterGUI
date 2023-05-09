@@ -167,20 +167,38 @@ def quick_glance():
 def dev_info():
   # WHAT CAN YOU EXPECT --- BELOW THIS LINE
   with st.expander('What can you expect?'):
-      with st.container():
-          image_col, text_col = st.columns((1,2))
-          with image_col:
-              st.image("https://cdn-images-1.medium.com/max/906/1*dVSDol9pouoO9IX_E_-35Q.png", caption='PLACEHOLDER')
-          with text_col:
-              st.subheader('Interactive Data')
-              st.write('You can expect a fully interactive experience. All of our graphs have interactivity built in. Want to zoom in on a location? Just click and drag the box around the part you want to zoom in on!')
-      with st.container():
-          image_col, text_col = st.columns((1,2))
-          with image_col:
-              st.image("https://cdn-images-1.medium.com/max/906/1*dVSDol9pouoO9IX_E_-35Q.png", caption='PLACEHOLDER')
-          with text_col:
-              st.subheader('Hone in on Data')
-              st.write('Do you want to only look at data from a specific state? Head over to our "Custom ⚙️" tab on the Dashboard page. There you can select specific states as well as specific incidents to hone in on.')
+    st.markdown('#')
+    with st.container():
+        image_col, text_col = st.columns((1,2))
+        with image_col:
+            st.image("images/pic1.png", caption='Dashboard')
+        with text_col:
+            st.subheader('Interactive Dashboard')
+            st.write('The Dashboard offers a quick glance of natural disasters that have been recorded across the country.  Visualizations of the data are customizable, so you can narrow the scope of data to single or multiple states.')
+            st.markdown('#')
+    with st.container():
+        image_col, text_col = st.columns((1,2))
+        with image_col:
+            st.image("images/pic2.png", caption='Location Data')
+        with text_col:
+            st.subheader('Visualize the Data')
+            st.write('The Location Data page has an interactive chloropleth map of the U.S. that allows you to see where extreme weather events have occurred over time.')
+            st.markdown('#')
+    with st.container():
+        image_col, text_col = st.columns((1,2))
+        with image_col:
+            st.image("images/pic3.png", caption='Location Data')
+        with text_col:
+            st.subheader('Examine Crime Data')
+            st.write('The Crime Data page has an animated graph of gun violence that has occurred over time.  Get more details for each event by hovering your cursor over the marked location.')
+            st.markdown('#')
+    with st.container():
+        image_col, text_col = st.columns((1,2))
+        with image_col:
+            st.image("images/pic4.png", caption='Location Data')
+        with text_col:
+            st.subheader('Leverage the Power of AI')
+            st.write('Ask DisasterBot a question in plain language and get fast answers!')
   # WHAT CAN YOU EXPECT --- ABOVE THIS LINE
 
   # ABOUT THIS APPLICATION --- BELOW THIS LINE
