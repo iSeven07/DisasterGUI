@@ -12,6 +12,7 @@ import plotly.graph_objs as go
 #from dotenv import load_dotenv # can just use import os for the env token
 import os
 import geopandas as gpd
+from urllib.request import urlopen
 
 
 
@@ -69,8 +70,12 @@ def header():
   if askBot:
     switch_page('disasterbot')
 
-def choro_layered():
-  fig = go.Figure(go.Choroplethmapbox()) # here you set all attributes needed for a Choroplethmapbox
+def example_choro():
+  with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
+    counties = json.load(response)
+  fig = go.Figure(go.Choroplethmapbox(geojson=counties, locations=disaster_df.fips, z=disaster_df.ia_program_declared,
+                                    colorscale="Viridis", zmin=0, zmax=1,
+                                    marker_opacity=0.5, marker_line_width=0))
   fig.add_scattermapbox(lat = gun_df['latitude'],
                         lon = gun_df['longitude'],
                         mode = 'markers+text',
@@ -78,19 +83,46 @@ def choro_layered():
                         below='',
                         marker_size=3,
                         marker_color='rgb(235, 0, 100)')
-  fig.update_layout(title_text ='Scatter Mapbox',
-                    title_x =0.5,
-                    mapbox = dict(center=dict(lat=39.8, lon=-98.5),  #change to the center of your map
-                                  accesstoken= token,
-                                  zoom=2.5, #change this value correspondingly, for your map
-                                  style="dark"  # set your prefered mapbox style
-                               ))
+
+  fig.update_layout(mapbox_style="carto-positron",
+                  mapbox_zoom=3, mapbox_center = {"lat": 37.0902, "lon": -95.7129})
+  fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+
   return fig
+
+
+# def choro_layered():
+#   shape_file['GEOID'] = shape_file['GEOID'].astype(int)
+#   shapeJoin = disaster_df.merge(shape_file, right_on = 'GEOID', left_on = 'fips')
+#   # Convert the geometry column to a GeoSeries
+#   geometry = gpd.GeoSeries(shapeJoin['geometry'])
+#   # Convert the GeoSeries to JSON format
+#   geojson = json.loads(geometry.to_json())
+
+#   fig = go.Figure(go.Choroplethmapbox(geojson=geojson)) # here you set all attributes needed for a Choroplethmapbox
+#   fig.add_scattermapbox(lat = gun_df['latitude'],
+#                         lon = gun_df['longitude'],
+#                         mode = 'markers+text',
+#                         text = 'example',  #a list of strings, one  for each geographical position  (lon, lat)
+#                         below='',
+#                         marker_size=3,
+#                         marker_color='rgb(235, 0, 100)')
+#   fig.update_layout(title_text ='Scatter Mapbox',
+#                     title_x =0.5,
+#                     mapbox = dict(center=dict(lat=39.8, lon=-98.5),  #change to the center of your map
+#                                   accesstoken=token,
+#                                   zoom=2.5, #change this value correspondingly, for your map
+#                                   style="dark"  # set your prefered mapbox style
+#                                ))
+#   return fig
 
 def cluster_map():
   # https://plotly.com/python/scattermapbox/
-  fig = px.scatter_mapbox(gun_df, lat='latitude', lon='longitude', size='n_killed', zoom=3)
-  fig.update_layout(title_text ='Scatter Mapbox with Clustering')
+  fig = px.scatter_mapbox(gun_df, lat='latitude', lon='longitude', size='n_killed')
+  fig.update_layout(title_text ='Scatter Mapbox with Clustering', mapbox = dict(center=dict(lat=39.8, lon=-98.5),  #change to the center of your map
+                                  zoom=3, #change this value correspondingly, for your map
+                                  style="dark"  # set your prefered mapbox style
+                               ))
   fig.update_traces(cluster=dict(enabled=True))
   return fig
 
@@ -256,7 +288,8 @@ def dev_info():
 def graphs():
   choro_cont = st.container()
   cluster_cont = st.container()
-  choro_cont.plotly_chart(choro_layered(), use_container_width=True)
+  # choro_cont.plotly_chart(choro_layered(), use_container_width=True)
+  choro_cont.plotly_chart(example_choro(), use_container_width=True)
   cluster_cont.plotly_chart(cluster_map(), use_container_width=True)
 
 def render_page():
