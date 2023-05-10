@@ -56,12 +56,15 @@ defaultStates = list(df_main["state"].unique())
 
 
 def getSelection():
+  try:
    if st.session_state.state_selected == 'Ozark Region Plus':
       return ['MO', 'TN', 'AR', 'KY', 'KS']
    else:
       return defaultStates
+  except:
+      return ['MO', 'TN', 'AR', 'KY', 'KS']
 
-defaultQuery = df_main.query(f'state == {getSelection()}')  
+defaultQuery = df_main.query(f'state == {getSelection()}')
 
 
 # generate a unique color for each state
@@ -85,7 +88,11 @@ def filters(df):
           default=getSelection()
 
       )
-      state_selected=st.session_state.state_selected
+      try:
+        state_selected=st.session_state.state_selected
+      except:
+         state_selected='Ozark Region Plus'
+
     with fcol2:
       # Below variable IS USED, just used in string below on line 63
       incident_type = st.multiselect(
@@ -99,14 +106,20 @@ def filters(df):
     # st.sidebar.date_input("Select End Date")
     # Provides results to graphs for active filters
     global DF_SELECTION
-    if st.session_state.state_selected:
+    try:
+      # Not sure that this is needed, but leaving for now for future use
+      if st.session_state.state_selected:
+        DF_SELECTION = df.query(
+      #    "state == @state & incident_type == @incident_type"
+          "state == @state & incident_type == @incident_type",
+        )
+      else:
+        DF_SELECTION = df.query(
+          "state == @state & incident_type == @incident_type",
+        )
+    except:
       DF_SELECTION = df.query(
-    #    "state == @state & incident_type == @incident_type"
-         "state == @state & incident_type == @incident_type",
-      )
-    else:
-      DF_SELECTION = df.query(
-         "state == @state & incident_type == @incident_type",
+        "state == @state & incident_type == @incident_type",
       )
 
 # ---- MAINPAGE ----
@@ -117,7 +130,7 @@ def top_info(df):
   try:
     st.subheader('Your current data view: ' + st.session_state.state_selected)
   except:
-    st.subheader('You have not selected a data view from Home page. Showing default data.')
+    st.subheader('Your current data view: Ozark Region Plus')
 
   st.markdown("##")
 
@@ -187,6 +200,7 @@ def incidents_per_year(filter):
 
   return fig_year
 
+
 # Incident types by year [SCATTER GRAPH]
 def incident_type_year(filter):
     df = filter
@@ -240,26 +254,26 @@ def graphs(filter=defaultQuery):
   by_state_cont.plotly_chart(incident_by_state(filter), use_container_width=True)
 
   st.markdown("---")
+  scatter_row = st.container()
+  scatter_row.plotly_chart(incident_type_year(filter), use_container_width=True)
+  st.markdown("---")
   line_row = st.container()
   line_row.plotly_chart(incidents_per_year(filter), use_container_width=True)
 
-  st.markdown("---")
-  scatter_row = st.container()
-  scatter_row.plotly_chart(incident_type_year(filter), use_container_width=True)
 
 
 def render_page(df):
   with st.spinner('Currently loading data...'):
     top_info(df)
     st.title('Visualizations')
-    tab1, tab2, tab3, tab4 = st.tabs(["All 📈", "Fire 🔥", "Storms 🌩️", "Custom ⚙️"])
+    tab1, tab2, tab3, tab4 = st.tabs(["All 📈", "Flood 🌊", "Tornado 🌪️", "Custom ⚙️"])
     with tab1:
       graphs()
     with tab2:
-      df_fire = df.query('incident_type == ["Fire"]')
+      df_fire = df.query(f'state == {getSelection()} & incident_type == ["Flood"]')
       graphs(df_fire)
     with tab3:
-      df_storms = df.query('incident_type == ["Severe Storm(s)"]')
+      df_storms = df.query(f'state == {getSelection()} & incident_type == ["Tornado"]')
       graphs(df_storms)
     with tab4:
       filters(df)

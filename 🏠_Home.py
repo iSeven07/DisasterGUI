@@ -40,21 +40,27 @@ st.markdown(st_style, unsafe_allow_html=True)
 @st.cache_data
 def getData():
   d_df = pd.read_csv('data/us_disaster_declarations.csv')
-  g_df = pd.read_csv('data/updated_gun_violence_data.csv')
+  g_df = pd.read_csv('data/crime.csv')
   with open('data/state_info.json', 'r') as f:
     s_info = json.load(f)
   s_file = gpd.read_file('data/cb_2018_us_county_20m.shp')
 
   return [d_df, g_df, s_info, s_file]
 
+def reverse_dictionary(dictionary):
+    reversed_dict = {}
+    for key, value in dictionary.items():
+        reversed_dict[value] = key
+    return reversed_dict
+
 dfs = getData()
 disaster_df = dfs[0]
 gun_df = dfs[1]
 state_info = dfs[2]
 shape_file = dfs[3]
-#px.set_mapbox_access_token(os.getenv('AUZ_MAPBOX_KEY'))
 try:
   token = os.environ["MAPBOX_API"]
+  px.set_mapbox_access_token(token)
 except KeyError:
   st.write("API KEY was not found!")
 
@@ -76,50 +82,24 @@ def example_choro():
   fig = go.Figure(go.Choroplethmapbox(geojson=counties, locations=disaster_df.fips, z=disaster_df.ia_program_declared,
                                     colorscale="Viridis", zmin=0, zmax=1,
                                     marker_opacity=0.5, marker_line_width=0))
-  fig.add_scattermapbox(lat = gun_df['latitude'],
-                        lon = gun_df['longitude'],
-                        mode = 'markers+text',
-                        text = 'example',  #a list of strings, one  for each geographical position  (lon, lat)
-                        below='',
-                        marker_size=3,
-                        marker_color='rgb(235, 0, 100)')
+  # fig.add_scattermapbox(lat = gun_df['latitude'],
+  #                       lon = gun_df['longitude'],
+  #                       mode = 'markers+text',
+  #                       text = 'example',  #a list of strings, one  for each geographical position  (lon, lat)
+  #                       below='',
+  #                       marker_size=3,
+  #                       marker_color='rgb(235, 0, 100)')
 
   fig.update_layout(mapbox_style="carto-positron",
-                  mapbox_zoom=3, mapbox_center = {"lat": 37.0902, "lon": -95.7129})
-  fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+                  mapbox_zoom=2.5, mapbox_center = {"lat": 37.0902, "lon": -95.7129})
+  fig.update_layout(title='Choropleth Layering', margin={"r":0,"t":35,"l":0,"b":0})
 
   return fig
-
-
-# def choro_layered():
-#   shape_file['GEOID'] = shape_file['GEOID'].astype(int)
-#   shapeJoin = disaster_df.merge(shape_file, right_on = 'GEOID', left_on = 'fips')
-#   # Convert the geometry column to a GeoSeries
-#   geometry = gpd.GeoSeries(shapeJoin['geometry'])
-#   # Convert the GeoSeries to JSON format
-#   geojson = json.loads(geometry.to_json())
-
-#   fig = go.Figure(go.Choroplethmapbox(geojson=geojson)) # here you set all attributes needed for a Choroplethmapbox
-#   fig.add_scattermapbox(lat = gun_df['latitude'],
-#                         lon = gun_df['longitude'],
-#                         mode = 'markers+text',
-#                         text = 'example',  #a list of strings, one  for each geographical position  (lon, lat)
-#                         below='',
-#                         marker_size=3,
-#                         marker_color='rgb(235, 0, 100)')
-#   fig.update_layout(title_text ='Scatter Mapbox',
-#                     title_x =0.5,
-#                     mapbox = dict(center=dict(lat=39.8, lon=-98.5),  #change to the center of your map
-#                                   accesstoken=token,
-#                                   zoom=2.5, #change this value correspondingly, for your map
-#                                   style="dark"  # set your prefered mapbox style
-#                                ))
-#   return fig
 
 def cluster_map():
   # https://plotly.com/python/scattermapbox/
   fig = px.scatter_mapbox(gun_df, lat='latitude', lon='longitude', size='n_killed')
-  fig.update_layout(title_text ='Scatter Mapbox with Clustering', mapbox = dict(center=dict(lat=39.8, lon=-98.5),  #change to the center of your map
+  fig.update_layout(title_text ='Crime Data', mapbox = dict(center=dict(lat=39.8, lon=-98.5),  #change to the center of your map
                                   zoom=3, #change this value correspondingly, for your map
                                   style="dark"  # set your prefered mapbox style
                                ))
@@ -145,26 +125,28 @@ def getSelection():
   if st.session_state.state_selected == 'Ozark Region Plus':
     return ['MO', 'TN', 'AR', 'KY', 'KS']
   else:
-    return disaster_df['state'].unique()
+    return list(state_info.keys())
 
 # QUICK GLANCE --- BELOW THIS LINE
 def quick_glance():
-    # st.write('Maybe have this with a choropleth of all merged data in database? Or potentially have insights from DisasterBot here, if possible? Thinking that if data is scraped live from the internet, could have this become a "Latest Incident" section.')
 
     # Filter the DataFrames based on the included states
     filtered_disaster_df = disaster_df[disaster_df['state'].isin(getSelection())]
-    
-
-    # Load the state abbreviation to state name mapping from JSON file
-    with open('data/state_info.json', 'r') as file:
-        state_mapping = json.load(file)
-
-    filtered_gun_df = gun_df[gun_df['state'].isin([state_mapping.get(abbreviation) for abbreviation in getSelection()])]
-
+    filtered_gun_df = gun_df[gun_df['state'].isin([state_info.get(abbreviation) for abbreviation in getSelection()])]
+    # filtered_gun_df['state'] = filtered_gun_df['state'].replace(reverse_dictionary(state_info))
+    # filtered_gun_df['state'] = filtered_gun_df['state'].map(reverse_dictionary(state_info))
+    # print(filtered_gun_df['state'])
     # st.title('Quick Glance')
     total_incidents = int(filtered_disaster_df["incident_type"].count())
     #total_states = (filtered_disaster_df['state'].nunique() + gun_df['state'].nunique())
-    total_states = len(set(filtered_disaster_df['state']).union(set(filtered_gun_df['state'])))
+    # print(len(set(filtered_disaster_df['state']).union(set(filtered_gun_df['state']))))
+    # print(filtered_disaster_df['state'])
+    # print(set(filtered_disaster_df['state']).union(set(filtered_gun_df['state'])))
+    # for state in total_states:
+    #   if state.len() == 2:
+   # gun_df['state'] = gun_df['state'].replace(reverse_dictionary(state_info))
+    total_states = len(set(filtered_disaster_df['state']).union(set(filtered_gun_df['state'].replace(reverse_dictionary(state_info)))))
+    # total_states = len(set(filtered_disaster_df['state']))
     top_incident = filtered_disaster_df['incident_type'].value_counts().index[0]
     top_state = (filtered_disaster_df.groupby('state')['incident_type'].count()).idxmax()
 
@@ -190,7 +172,7 @@ def quick_glance():
             for index, row in top_areas.iterrows():
                 stringText += (f"{index+1}. {row['designated_area']}, {row['state']}: {row['count']} incidents<br>")
             st.markdown('<p style="font-weight: 600; font-color: white; font-size: 30px; margin: auto;">Top 3 Areas for Natural Disasters</p>' + stringText, unsafe_allow_html=True)
-        
+
 
         total_crime = int(filtered_gun_df["incident_id"].count())
         top_crime = filtered_gun_df['congressional_district'].value_counts().index[0]
