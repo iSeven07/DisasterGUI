@@ -44,7 +44,7 @@ st.markdown("##")
 def get_data():
      shapefile = gpd.read_file('data/cb_2018_us_county_20m.shp')
      crop_dec = pd.read_excel('data/crop-year-2014-disaster-declarations-1.xls')
-     df_main = pd.read_csv('big_data/storm_details_whole_nums.csv')
+     df_main = pd.read_csv('data/storm_details_whole_nums.csv')
      df_main = df_main[df_main['BEGIN_YEARMONTH'] > 201000]
 
      return [shapefile, crop_dec, df_main]
