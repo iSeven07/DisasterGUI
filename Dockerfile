@@ -12,6 +12,12 @@ ENV APP_HOME /app
 WORKDIR $APP_HOME
 COPY . ./
 
+# Install Git LFS and pull the large files
+RUN apt-get update && \
+    apt-get install -y git-lfs && \
+    git lfs install && \
+    git lfs pull
+
 # Install production dependencies.
 RUN pip install -r requirements.txt
 
