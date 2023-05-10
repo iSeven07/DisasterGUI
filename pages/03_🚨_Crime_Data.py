@@ -3,7 +3,6 @@ import pandas as pd
 import plotly.express as px
 from streamlit_extras.app_logo import add_logo
 from streamlit_extras.switch_page_button import switch_page
-import time
 
 
 st.set_page_config(page_title="NDD - Gun Violence Data",
