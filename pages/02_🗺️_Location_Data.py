@@ -45,7 +45,7 @@ def get_data():
      shapefile = gpd.read_file('data/cb_2018_us_county_20m.shp')
      crop_dec = pd.read_excel('data/crop-year-2014-disaster-declarations-1.xls')
      df_main = pd.read_csv('big_data/storm_details_whole_nums.csv')
-     df_main = df_main[df_main['BEGIN_YEARMONTH'] > 200000]
+     df_main = df_main[df_main['BEGIN_YEARMONTH'] > 201000]
 
      return [shapefile, crop_dec, df_main]
 
@@ -100,11 +100,10 @@ shapeJoin = crop_dec.merge(df_files[0], right_on = 'GEOID', left_on = 'fips')
 
 # Convert the geometry column to a GeoSeries
 geometry = gpd.GeoSeries(shapeJoin['geometry'])
-
 # Convert the GeoSeries to JSON format
 geojson = json.loads(geometry.to_json())
 
-def ch_graph(sel, scale):
+def ch_graph(sel, scale, df_main):
   # Load the shapefile using geopandas
 
 
@@ -137,6 +136,15 @@ def ch_graph(sel, scale):
                       color_continuous_scale=scale,
                       color_continuous_midpoint=0.5,
                       labels={sel: sel.capitalize()})
+  fig_ch.add_scattermapbox(lat = df_main['BEGIN_LAT'],
+                        lon = df_main['BEGIN_LON'],
+                        mode = 'markers+text',
+                        text = 'example',  #a list of strings, one  for each geographical position  (lon, lat)
+                        below='',
+                        marker_size=3,
+                        marker_color='rgb(235, 0, 100)')
+
+
 
   #timestamp = datetime.strptime('2013-10-01 00:00:00', '%Y-%m-%d %H:%M:%S')
 #month_year = timestamp.strftime('%B %Y')
@@ -191,56 +199,9 @@ def graphs(df_main):
     sel = st.selectbox('Selector for Choropleth Graph', shapeJoin.columns[5:28], help='Select the incident type you would like to see on the map. The darker the county, the more of selected incidents in that county. If you selected "drought", the county with the most droughts will appear darkest.')
     scale = getScale(sel)
     with st.spinner('Currently loading data...'):
-      choro_cont.plotly_chart(ch_graph(sel, scale), use_container_width=True)
+      choro_cont.plotly_chart(ch_graph(sel, scale, df_main), use_container_width=True)
 
 def render_page(df_main):
     graphs(df_main)
 
 render_page(df_files[2])
-
-
-# def scatter_map(df):
-#     hover_template = '<b>%{customdata[0]}</b><br>' + \
-#                      'Injuries: %{customdata[1]}<br>' + \
-#                      'Cost: %{customdata[2]}<br>' + \
-#                      'Date: %{customdata[3]} %{customdata[4]}<extra></extra>'
-
-#     scatter_map = go.Figure(go.Scattergeo(
-#         lat=df['BEGIN_LAT'],
-#         lon=df['BEGIN_LON'],
-#         mode='markers',
-#         marker=dict(
-#             size=1.5,
-#             line=dict(width=1, color='red'),
-#         ),
-#         hovertemplate=hover_template,
-#         customdata=df[['EVENT_TYPE', 'INJURIES_DIRECT', 'DAMAGE_PROPERTY', 'MONTH_NAME', 'YEAR']].values
-#     ))
-
-#     scatter_map.update_layout(
-#         title='U.S. Disasters Latitude / Longitude Locations',
-#         geo=dict(
-#             scope='usa',
-#             showsubunits=True,
-#             subunitcolor='white',
-#             subunitwidth=2,
-#             center=dict(lat=39.8, lon=-98.5),
-#             projection=dict(type='albers usa'),
-#             projection_scale=0.9,
-#             showcountries=True,
-#             bgcolor="rgba(14,17,23,1)",
-#             countrycolor="white",
-#         ),
-#         margin=dict(l=0, r=0, t=35, b=0),
-#     )
-
-#     # Customizes the map to add lakes and rivers
-#     scatter_map.update_geos(
-#         resolution=50,
-#         showlakes=True,
-#         lakecolor='Blue',
-#         showrivers=True,
-#         rivercolor='Blue',
-#     )
-
-#     return scatter_map
