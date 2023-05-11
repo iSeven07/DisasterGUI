@@ -40,7 +40,7 @@ st.markdown(st_style, unsafe_allow_html=True)
 @st.cache_data
 def getData():
   d_df = pd.read_csv('data/us_disaster_declarations.csv')
-  g_df = pd.read_csv('big_data/crime.csv')
+  g_df = pd.read_csv('data/crime.csv')
   with open('data/state_info.json', 'r') as f:
     s_info = json.load(f)
   s_file = gpd.read_file('data/cb_2018_us_county_20m.shp')
