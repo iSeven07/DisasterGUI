@@ -77,9 +77,10 @@ def header():
     switch_page('disasterbot')
 
 def example_choro():
+  filtered_disaster_df = disaster_df[disaster_df['state'].isin(getSelection())]
   with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
     counties = json.load(response)
-  fig = go.Figure(go.Choroplethmapbox(geojson=counties, locations=disaster_df.fips, z=disaster_df.ia_program_declared,
+  fig = go.Figure(go.Choroplethmapbox(geojson=counties, locations=filtered_disaster_df.fips, z=filtered_disaster_df.ia_program_declared,
                                     colorscale="Viridis", zmin=0, zmax=1,
                                     marker_opacity=0.5, marker_line_width=0))
   # fig.add_scattermapbox(lat = gun_df['latitude'],
@@ -97,11 +98,12 @@ def example_choro():
   return fig
 
 def cluster_map():
-  gun_df['total_killed'] = gun_df.groupby('city_or_county')['n_killed'].transform('sum')
-  gun_df['total_injured'] = gun_df.groupby('city_or_county')['n_injured'].transform('sum')
-  gun_df['total_incidents'] = gun_df.groupby('city_or_county')['incident_id'].transform('count')
+  filtered_gun_df = gun_df[gun_df['state'].isin([state_info.get(abbreviation) for abbreviation in getSelection()])]
+  filtered_gun_df['total_killed'] = filtered_gun_df.groupby('city_or_county')['n_killed'].transform('sum')
+  filtered_gun_df['total_injured'] = filtered_gun_df.groupby('city_or_county')['n_injured'].transform('sum')
+  filtered_gun_df['total_incidents'] = filtered_gun_df.groupby('city_or_county')['incident_id'].transform('count')
   # https://plotly.com/python/scattermapbox/
-  fig = px.scatter_mapbox(gun_df, lat='latitude', lon='longitude', size='total_incidents', color='total_incidents', color_continuous_scale=px.colors.sequential.OrRd)
+  fig = px.scatter_mapbox(filtered_gun_df, lat='latitude', lon='longitude', size='total_incidents', color='total_incidents', color_continuous_scale=px.colors.sequential.OrRd)
   fig.update_layout(title_text ='Crime Data', mapbox = dict(center=dict(lat=39.8, lon=-98.5),  #change to the center of your map
                                   zoom=3, #change this value correspondingly, for your map
                                   style="dark",  # set your prefered mapbox style
@@ -110,7 +112,7 @@ def cluster_map():
   fig.update_traces(
     hovertemplate='<b>City/County:</b> %{customdata[0]}<br>'
                   '<b>Total Incidents:</b> %{customdata[1]}<br>',
-    customdata=gun_df[['city_or_county', 'total_incidents']]
+    customdata=filtered_gun_df[['city_or_county', 'total_incidents']]
 )
 
   return fig
@@ -138,7 +140,6 @@ def getSelection():
 
 # QUICK GLANCE --- BELOW THIS LINE
 def quick_glance():
-
     # Filter the DataFrames based on the included states
     filtered_disaster_df = disaster_df[disaster_df['state'].isin(getSelection())]
     filtered_gun_df = gun_df[gun_df['state'].isin([state_info.get(abbreviation) for abbreviation in getSelection()])]
@@ -280,15 +281,18 @@ def graphs():
   choro_cont = st.container()
   cluster_cont = st.container()
   # choro_cont.plotly_chart(choro_layered(), use_container_width=True)
-  choro_cont.plotly_chart(example_choro(), use_container_width=True)
-  cluster_cont.plotly_chart(cluster_map(), use_container_width=True)
+  with st.spinner('Currently loading data...'):
+    choro_cont.plotly_chart(example_choro(), use_container_width=True)
+  with st.spinner('Currently loading data...'):
+    cluster_cont.plotly_chart(cluster_map(), use_container_width=True)
 
 def render_page():
   header()
   st.markdown('---')
   filter_data()
   st.markdown('---')
-  quick_glance()
+  with st.spinner('Currently loading data...'):
+    quick_glance()
   st.markdown('---')
   graphs()
   st.markdown('---')
