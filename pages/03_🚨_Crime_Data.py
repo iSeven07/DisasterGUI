@@ -8,6 +8,7 @@ import json
 from urllib.request import urlopen
 
 
+
 st.set_page_config(page_title="NDD - Gun Violence Data",
                    page_icon="🚨", layout="wide")
 
