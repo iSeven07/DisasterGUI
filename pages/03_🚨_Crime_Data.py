@@ -8,6 +8,7 @@ import json
 from urllib.request import urlopen
 
 
+
 st.set_page_config(page_title="NDD - Gun Violence Data",
                    page_icon="🚨", layout="wide")
 
@@ -46,14 +47,16 @@ st.markdown("##")
 def get_data():
   # crime_df = pd.read_csv('data/updated_gun_violence_data.csv')
   crime_df = pd.read_csv('data/crime.csv')
+  small_crime_df = pd.read_csv('data/updated_gun_violence_data.csv')
   with open('data/state_info.json', 'r') as f:
     s_info = json.load(f)
-  return [crime_df, s_info]
+  return [crime_df, s_info, small_crime_df]
 
 
 data_sets = get_data()
 crime_df = data_sets[0]
 state_info = data_sets[1]
+small_crime_df = data_sets[2]
 
 def getSelection():
   try:
@@ -66,8 +69,8 @@ def getSelection():
 
 
 @st.cache_data
-def animated_map(crime_df):
-  animation_map = px.scatter_geo(crime_df,
+def animated_map(small_crime_df):
+  animation_map = px.scatter_geo(small_crime_df,
                                  title='Gun Violence 2013 - 2018',
                                  lat='latitude',
                                  lon='longitude',
@@ -144,25 +147,25 @@ def cluster_map(crime_df):
   return fig
 
 
-def graphs(crime_df):
+def graphs(crime_df, small_crime_df):
   askBot = st.button("🤖 Ask DisasterBot", use_container_width=False)
   if askBot:
     switch_page('disasterbot')
   # Creates a container on the page and displays the map
-  # animated_container = st.container()
   scatter_container = st.container()
-  # animated_container.plotly_chart(
-  #   animated_map(crime_df), use_container_width=True)
-  # animated_container.markdown('---')
-  # scatter_container.plotly_chart(
-  #   scatter_map(crime_df), use_container_width=True)
+  animated_container = st.container()
   scatter_container.plotly_chart(
     cluster_map(crime_df), use_container_width=True)
+  animated_container.plotly_chart(
+    animated_map(small_crime_df), use_container_width=True)
+  animated_container.markdown('---')
+  # scatter_container.plotly_chart(
+  #   scatter_map(crime_df), use_container_width=True)
 
 
-def render_page(crime_df):
+def render_page(crime_df, small_crime_df):
   with st.spinner('Currently loading data...'):
-    graphs(crime_df)
+    graphs(crime_df, small_crime_df)
 
 
-render_page(crime_df)
+render_page(crime_df, small_crime_df)

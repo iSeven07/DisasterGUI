@@ -40,7 +40,7 @@ st.markdown(st_style, unsafe_allow_html=True)
 @st.cache_data
 def getData():
   d_df = pd.read_csv('data/us_disaster_declarations.csv')
-  g_df = pd.read_csv('data/crime.csv')
+  g_df = pd.read_csv('big_data/crime.csv')
   with open('data/state_info.json', 'r') as f:
     s_info = json.load(f)
   s_file = gpd.read_file('data/cb_2018_us_county_20m.shp')
@@ -279,7 +279,7 @@ def dev_info():
 
 def graphs():
   choro_cont = st.container()
-  cluster_cont = st.container()
+  # cluster_cont = st.container()
   # choro_cont.plotly_chart(choro_layered(), use_container_width=True)
   with st.spinner('Currently loading data...'):
     choro_cont.plotly_chart(example_choro(), use_container_width=True)
