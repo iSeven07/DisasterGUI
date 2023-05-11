@@ -149,11 +149,11 @@ def graphs(crime_df):
   if askBot:
     switch_page('disasterbot')
   # Creates a container on the page and displays the map
-  # animated_container = st.container()
+  animated_container = st.container()
   scatter_container = st.container()
-  # animated_container.plotly_chart(
-  #   animated_map(crime_df), use_container_width=True)
-  # animated_container.markdown('---')
+  animated_container.plotly_chart(
+    animated_map(crime_df), use_container_width=True)
+  animated_container.markdown('---')
   # scatter_container.plotly_chart(
   #   scatter_map(crime_df), use_container_width=True)
   scatter_container.plotly_chart(

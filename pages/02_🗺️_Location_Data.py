@@ -42,7 +42,7 @@ try:
   st.subheader('Your current data view: ' + st.session_state.state_selected)
 except:
   st.subheader('Your current data view: Ozark Region Plus')
-st.markdown("This is an interactive scatter map of disasters in the United States.  &nbsp;Hovering over a marked location will show more details.")
+# st.markdown("This is an interactive scatter map of disasters in the United States.  &nbsp;Hovering over a marked location will show more details.")
 st.markdown("##")
 
 @st.cache_data
@@ -68,10 +68,10 @@ def getSelection():
   except:
     return  ['MO', 'TN', 'AR', 'KY', 'KS']
 
-@st.cache_data
+# @st.cache_data
 
 def cluster_map(df_main):
-  cluster = px.scatter_mapbox(df_main, lat='BEGIN_LAT', lon='BEGIN_LON', zoom=2.5, center=dict(lat=39.8, lon=-98.5))
+  cluster = px.scatter_mapbox(df_main, lat='BEGIN_LAT', lon='BEGIN_LON', text=df_main['EVENT_TYPE'], zoom=2.5, title='Storm events since 2010', center=dict(lat=39.8, lon=-98.5))
   cluster.update_traces(cluster=dict(enabled=True))
 
   return cluster
@@ -131,43 +131,99 @@ def ch_graph(sel, scale, df_main):
   # Filter the shapeJoin dataframe based on the selected incident type
   shapeJoin_filtered = shapeJoin_filtered[shapeJoin_filtered[sel] == 1]
   # Use Plotly Express to create the choropleth graph
-  
+      # Choropleth figure
   fig_ch = px.choropleth_mapbox(shapeJoin_filtered,
-                      title='Choropleth Graph - Work in Progress',
-                      geojson=geojson,
-                      locations=shapeJoin_filtered.index,
-                      animation_frame=shapeJoin_filtered['Begin Date'].dt.strftime('%B %Y'),
-                      color=sel,
-                      opacity=0.2,
-                      hover_name='County',
-                      hover_data={
-                        sel: False,
-                        'State': True,
-                        'fips': True,
-                        #'Begin Date': True,
-                        #'End Date': True,
-                      },
-                      center=dict(lat=39.8, lon=-98.5),
-                      zoom=3.0,
-                      height=800,
-                      mapbox_style="carto-positron",
-                      color_continuous_scale=scale,
-                      color_continuous_midpoint=0.5,
-                      labels={sel: sel.capitalize()})
-  # fig_ch.add_scattermapbox(lat = df_main['BEGIN_LAT'],
-  #                       lon = df_main['BEGIN_LON'],
-  #                       mode = 'markers+text',
-  #                       text = 'example',  #a list of strings, one  for each geographical position  (lon, lat)
-  #                       below='',
-  #                       marker_size=3,
-  #                       marker_color='rgb(235, 0, 100)')
-  fig_ch.add_trace(go.Scattermapbox(lat = df_main['BEGIN_LAT'],
-                      lon = df_main['BEGIN_LON'],
-                      mode = 'markers+text',
-                      text = 'example',  #a list of strings, one  for each geographical position  (lon, lat)
-                      below='',
-                      marker_size=3,
-                      marker_color='rgb(235, 0, 100)'))
+                                title='Choropleth Graph & Scatter',
+                                geojson=geojson,
+                                locations=shapeJoin_filtered.index,
+                                color=sel,
+                                opacity=0.2,
+                                hover_name='County',
+                                hover_data={
+                                    sel: False,
+                                    'State': True,
+                                    'fips': True,
+                                },
+                                center=dict(lat=39.8, lon=-98.5),
+                                zoom=3.0,
+                                height=800,
+                                mapbox_style="carto-positron",
+                                color_continuous_scale=scale,
+                                color_continuous_midpoint=0.5,
+                                labels={sel: sel.capitalize()})
+
+  # Scatter trace figure
+  fig_scatter = go.Scattermapbox(lat=df_main['BEGIN_LAT'],
+                                lon=df_main['BEGIN_LON'],
+                                mode='markers+text',
+                                text=df_main['EVENT_TYPE'],  # a list of strings, one for each geographical position (lon, lat)
+                                below='',
+                                marker_size=3,
+                                marker_color='rgb(235, 0, 100)')
+
+  # Create animation frames for scatter trace
+  frames = []
+  for date in shapeJoin_filtered['Begin Date'].dt.strftime('%B %Y').unique():
+      frame_data = go.Frame(data=[go.Scattermapbox(
+          lat=df_main['BEGIN_LAT'],
+          lon=df_main['BEGIN_LON'],
+          mode='markers+text',
+          text='example',
+          below='',
+          marker_size=3,
+          marker_color='rgb(235, 0, 100)')],
+          name=str(date))
+      frames.append(frame_data)
+
+  # Add animation frames to choropleth figure
+  fig_ch.frames = frames
+
+  # Add scatter trace figure to choropleth figure
+  fig_ch.add_trace(fig_scatter)
+
+  # Update animation settings
+  fig_ch.update(frames=frames,
+                layout_updatemenus=[dict(type='buttons',
+                                        showactive=False,
+                                        buttons=[dict(label='Play',
+                                                      method='animate',
+                                                      args=[None, dict(frame=dict(duration=500, redraw=True), fromcurrent=True, transition=dict(duration=0))])])])
+  # fig_ch = px.choropleth_mapbox(shapeJoin_filtered,
+  #                     title='Choropleth Graph - Work in Progress',
+  #                     geojson=geojson,
+  #                     locations=shapeJoin_filtered.index,
+  #                     animation_frame=shapeJoin_filtered['Begin Date'].dt.strftime('%B %Y'),
+  #                     color=sel,
+  #                     opacity=0.2,
+  #                     hover_name='County',
+  #                     hover_data={
+  #                       sel: False,
+  #                       'State': True,
+  #                       'fips': True,
+  #                       #'Begin Date': True,
+  #                       #'End Date': True,
+  #                     },
+  #                     center=dict(lat=39.8, lon=-98.5),
+  #                     zoom=3.0,
+  #                     height=800,
+  #                     mapbox_style="carto-positron",
+  #                     color_continuous_scale=scale,
+  #                     color_continuous_midpoint=0.5,
+  #                     labels={sel: sel.capitalize()})
+  # # fig_ch.add_scattermapbox(lat = df_main['BEGIN_LAT'],
+  # #                       lon = df_main['BEGIN_LON'],
+  # #                       mode = 'markers+text',
+  # #                       text = 'example',  #a list of strings, one  for each geographical position  (lon, lat)
+  # #                       below='',
+  # #                       marker_size=3,
+  # #                       marker_color='rgb(235, 0, 100)')
+  # fig_ch.add_trace(go.Scattermapbox(lat = df_main['BEGIN_LAT'],
+  #                     lon = df_main['BEGIN_LON'],
+  #                     mode = 'markers+text',
+  #                     text = 'example',  #a list of strings, one  for each geographical position  (lon, lat)
+  #                     below='',
+  #                     marker_size=3,
+  #                     marker_color='rgb(235, 0, 100)'))
 
 
 
