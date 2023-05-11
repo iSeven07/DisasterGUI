@@ -97,13 +97,22 @@ def example_choro():
   return fig
 
 def cluster_map():
+  gun_df['total_killed'] = gun_df.groupby('city_or_county')['n_killed'].transform('sum')
+  gun_df['total_injured'] = gun_df.groupby('city_or_county')['n_injured'].transform('sum')
+  gun_df['total_incidents'] = gun_df.groupby('city_or_county')['incident_id'].transform('count')
   # https://plotly.com/python/scattermapbox/
-  fig = px.scatter_mapbox(gun_df, lat='latitude', lon='longitude', size='n_killed')
+  fig = px.scatter_mapbox(gun_df, lat='latitude', lon='longitude', size='total_incidents', color='total_incidents', color_continuous_scale=px.colors.sequential.OrRd)
   fig.update_layout(title_text ='Crime Data', mapbox = dict(center=dict(lat=39.8, lon=-98.5),  #change to the center of your map
                                   zoom=3, #change this value correspondingly, for your map
-                                  style="dark"  # set your prefered mapbox style
+                                  style="dark",  # set your prefered mapbox style
                                ))
-  fig.update_traces(cluster=dict(enabled=True))
+  # fig.update_traces(cluster=dict(enabled=True))
+  fig.update_traces(
+    hovertemplate='<b>City/County:</b> %{customdata[0]}<br>'
+                  '<b>Total Incidents:</b> %{customdata[1]}<br>',
+    customdata=gun_df[['city_or_county', 'total_incidents']]
+)
+
   return fig
 
 def date_change():
